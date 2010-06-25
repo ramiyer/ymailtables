@@ -51,13 +51,13 @@ function searchMessages(searchParams){
 
 function requestAnalyzer(reqs){
 	// Check to see if there are any search attributes present.	
-    if(){
+    
 	// check what are the search attrs and build the string	
 	//pass the attrs
 //		buildSearchString();		
 		
 		
-	}
+
 
 }
 
@@ -65,4 +65,7 @@ function requestAnalyzer(reqs){
 
 function buildSearchQuery(searchReqs){
 
+	
+	y.log("searchReqs are ");
+	y.log(searchReqs);
 }
