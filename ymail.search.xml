@@ -74,10 +74,9 @@
 					*/
 			
 			params = '[{' +
-					 '     "search": [{' +
-									'"query": "ram"' + ',' +
-									'"fid" : "Inbox"' +
-									'}]' +',' +
+					 '     "search": {' +
+									'"query": "ram"' +
+									'}' +',' +
 					 '"numInfo": "2000"' + ',' + 
 					 '"numMid": "2000"' + ',' +
 					 '"sortKey": "date"' + ',' +
