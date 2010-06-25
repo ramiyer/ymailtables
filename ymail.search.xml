@@ -9,7 +9,6 @@
       <urls>
         <url>http://mail.yahooapis.com/ws/mail/v1.1/jsonrpc</url>
       </urls>
-	
 	  <inputs>
   	    <key id="query" type='xs:string' paramType='variable' required="true" />
 		<key id="startMid" type='xs:string' paramType='variable' default='0' />
@@ -47,7 +46,7 @@
 
 
 	        // get parameters for the given cascade method
-
+			/*
 	       params = '[{' +
 	              	'    "numInfo"       : ' + inputs['numInfo'] + ',' +
 	                '    "startMid"      : ' + inputs['startMid'] + ',' +
@@ -58,7 +57,23 @@
 									'}]' + ',' +
 	                '    "sortKey"       : "' + inputs['sortKey'] + '",' +
 	                '    "sortOrder"     : "' + inputs['sortOrder'] + '"'
-	                '}]';
+	                '}]';*/
+			
+			params = '[
+					    {
+					      "search": {
+					        "fid": "Inbox",
+					        "query": "ram"
+					      },
+					      "numInfo": 2000,
+					      "numMid": 2000,
+					      "sortKey": "date",
+					      "sortOrder": "up"
+					    }
+					  ]';
+			
+	
+	
 
 	        content = '{' +
 	            '"method" : "' + ymwsMethod + '",' +
