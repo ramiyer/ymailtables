@@ -30,7 +30,7 @@
 	        //Intialization
 	        var content = '';
 	        var params = '[{}]';
-			var fid = escape(inputs["fid"]);
+	//		var fid = escape(inputs["fid"]);
 
 	        y.log("method = " + ymwsMethod);
 	        y.log("request = " +request);
@@ -75,18 +75,16 @@
 			
 			params = '[{' +
 					 '     "search": [{' +
-									'	"query": "ram"' + ',' +
-									'	"fid" : "Inbox"' +
+									'"query": "ram"' + ',' +
+									'"fid" : "Inbox"' +
 									'}]' +',' +
-					 '     "numInfo": "2000"' + ',' + 
-					 '     "numMid": "2000"' + ',' +
-					 '     "sortKey": "date"' + ',' +
-					 '     "sortOrder": "up"' +
+					 '"numInfo": "2000"' + ',' + 
+					 '"numMid": "2000"' + ',' +
+					 '"sortKey": "date"' + ',' +
+					 '"sortOrder": "up"' +
 					 '}]';
 
 			
-//					y.log(params);
-
 	        content = '{' +
 	            '"method" : "' + ymwsMethod + '",' +
 	            '"params" : ' + params +
