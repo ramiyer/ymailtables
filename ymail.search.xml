@@ -60,7 +60,10 @@
 	                '}]';*/
 			
 			params = '[{' +
-					 '     "search": [{ "query": "ram" }]' +',' +
+					 '     "search": [{' +
+									'	"query": "ram"' + ',' +
+									'	"fid" : "Inbox"' +
+									'}]' +',' +
 					 '     "numInfo": "2000"' + ',' + 
 					 '     "numMid": "2000"' + ',' +
 					 '     "sortKey": "date"' + ',' +
