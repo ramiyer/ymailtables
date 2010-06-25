@@ -44,6 +44,8 @@
 	           		'"method" : "' + ymwsMethod + '",' +
 		          	'"params" : ' + params +
 		          '}';
+		
+		y.log(content);
 
 		var returned_response = request.post(content).response;
 		response.object = returned_response;
