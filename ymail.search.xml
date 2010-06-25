@@ -63,7 +63,7 @@
 					 '     "search": [{' + 
 					       			' 	"fid": "Inbox" + ',' +
 					       			' 	"query": "ram" +
-					       ']}' + ',' +
+					       '}]' + ',' +
 					 '     "numInfo": "2000" + ',' + 
 					 '      "numMid": 2000 + ',' +
 					 '      "sortKey": "date" + ',' +
