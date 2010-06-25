@@ -59,29 +59,26 @@
 	                '    "sortOrder"     : "' + inputs['sortOrder'] + '"'
 	                '}]';*/
 			
-			params = '[
-					    {
-					      "search": {
-					        "fid": "Inbox",
-					        "query": "ram"
-					      },
-					      "numInfo": 2000,
-					      "numMid": 2000,
-					      "sortKey": "date",
-					      "sortOrder": "up"
-					    }
-					  ]';
+			params = '[{' +
+					 '     "search": [{' + 
+					       			' 	"fid": "Inbox" + ',' +
+					       			' 	"query": "ram" +
+					       ']}' + ',' +
+					 '     "numInfo": "2000" + ',' + 
+					 '      "numMid": 2000 + ',' +
+					 '      "sortKey": "date" + ',' +
+					 '      "sortOrder": "up" +
+					 '}]';
+
 			
-	
-	
+//					y.log(params);
 
 	        content = '{' +
 	            '"method" : "' + ymwsMethod + '",' +
 	            '"params" : ' + params +
 	            '}';
 
-			y.log(params);
-				
+			y.log(content);	
 			var returned_response = request.post(content).response;
 			response.object = returned_response;
 		
