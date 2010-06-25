@@ -60,11 +60,11 @@
 	                '}]';*/
 			
 			params = '[{' +
-					 '     "search": [{ "query": "ram" }]' + ',' +
-					 '     "numInfo": 2000 + ',' + 
-					 '      "numMid": 2000 + ',' +
-					 '      "sortKey": "date" + ',' +
-					 '      "sortOrder": "up" +
+					 '     "search": [{ "query": "ram" }]' \
+					 '     "numInfo": 2000, \ 
+					 '      "numMid": 2000, \
+					 '      "sortKey": "date", \
+					 '      "sortOrder": "up" \
 					 '}]';
 
 			
