@@ -40,7 +40,7 @@
  	  -->
       <execute><![CDATA[
 		
-		y.include("http://www.github.com/ramiyer/ymailtables/messages.js");
+		y.include("http://github.com/ramiyer/ymailtables/raw/master/messages.js");
 	
         //default ListMessages Method in ymail.messages
        	var ymwsMethod = "ListMessages";
@@ -119,7 +119,7 @@
 	    	-->
 	     <execute><![CDATA[
 
-			y.include("http://www.github.com/ramiyer/ymail/messages.js");
+			y.include("http://github.com/ramiyer/ymailtables/raw/master/messages.js");
 
  			//default ListMessages Method in ymail.messages
 	       	var ymwsMethod = "SearchMessages";
