@@ -119,7 +119,7 @@
 	    	-->
 	     <execute><![CDATA[
 
-			y.include("http://www.github.com/ramiyer/ymail/messages.js")
+			y.include("http://www.github.com/ramiyer/ymail/messages.js");
 
  			//default ListMessages Method in ymail.messages
 	       	var ymwsMethod = "SearchMessages";
