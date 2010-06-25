@@ -75,7 +75,7 @@
 			
 			params = '[{' +
 					 '     "search": {' +
-									'"query": "subject:test"' +
+									'"query": "' +inputs['query']+ '"' +
 									'}' +',' +
 					 '"numInfo": "2000"' + ',' + 
 					 '"numMid": "2000"' + ',' +
