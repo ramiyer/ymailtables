@@ -10,7 +10,7 @@
         <url>http://mail.yahooapis.com/ws/mail/v1.1/jsonrpc</url>
       </urls>
       <inputs>
-		<key id="method" type='xs:string' paramType='variable' required='true' />
+		<key id="method" type='xs:string' paramType='variable' required='false' />
         <key id="startMid" type='xs:string' paramType='variable' default='0' />
         <key id="numMid" type='xs:string' paramType='variable' default='50' />
         <key id="startInfo" type='xs:string' paramType='variable' default='0' />
@@ -25,7 +25,7 @@
         <key id="query" type='xs:string' paramType='variable' />
       </inputs>
 	  <execute><![CDATA[
-       	var ymwsMethod = inputs['method'];
+       	var ymwsMethod = "ListMessages";
         y.log("method = " + ymwsMethod);
 
         var content = '';
