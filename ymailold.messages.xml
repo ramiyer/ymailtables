@@ -24,7 +24,7 @@
 	  <execute><![CDATA[
        	var ymwsMethod = "ListMessages";
         y.log("method = " + ymwsMethod);
-		y.log("queryParams are = " + queryParams);
+		y.log("queryParams are = " + inputs);
 
         var content = '';
         var params = '[{}]';
