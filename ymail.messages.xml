@@ -67,8 +67,10 @@
 	
 		y.log("content is ");
 		y.log(content);
-
+		
 		var returned_response = request.post(content).response;
+		y.log(returned_response);
+		
 		response.object = returned_response;
 
       ]]></execute>
