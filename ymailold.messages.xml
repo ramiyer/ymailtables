@@ -65,7 +65,7 @@
 	        <key id="search" type='xs:string' paramType='variable' />
 	        <key id="sortKey" type='xs:string' paramType='variable' default='date' />
 	        <key id="sortOrder" type='xs:string' paramType='variable' default='up' />
-	        <key id="query" type='xs:string' paramType='variable' />
+	        <key id="query" type='xs:string' paramType='variable' required="true" />
 	      </inputs>
 		  <execute><![CDATA[
 			var ymwsMethod = "SearchMessages";
