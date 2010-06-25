@@ -5,7 +5,7 @@
     <sampleQuery>select * from {table}</sampleQuery>
   </meta>
   <i:bindings>
-   <i:select itemPath="" produces="JSON">
+   <i:select itemPath="" produces="JSON" auth="yahooOauth">
       <urls>
         <url>http://mail.yahooapis.com/ws/mail/v1.1/jsonrpc</url>
       </urls>
