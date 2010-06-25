@@ -10,33 +10,17 @@
         <url>http://mail.yahooapis.com/ws/mail/v1.1/jsonrpc</url>
       </urls>
       <inputs>
-        <key id="method" type='xs:string' paramType='variable' required='false' />
         <key id="startMid" type='xs:string' paramType='variable' default='0' />
         <key id="numMid" type='xs:string' paramType='variable' default='50' />
         <key id="startInfo" type='xs:string' paramType='variable' default='0' />
         <key id="numInfo" type='xs:string' paramType='variable' default='50' />
-        <key id="resetMessageUnseen" type='xs:string' paramType='variable' default='false' />
+		<key id="sortKey" type='xs:string' paramType='variable' default='date' />
+        <key id="sortOrder" type='xs:string' paramType='variable' default='up' />
+		<key id="groupBy" type='xs:string' paramType='variable' default='unRead' />
         <key id="fid" type='xs:string' paramType='variable' default='Inbox' />
         <key id="mid" type='xs:string' paramType='variable' />
         <key id="pid" type='xs:string' paramType='variable' />
-        <key id="search" type='xs:string' paramType='variable' />
-        <key id="sortKey" type='xs:string' paramType='variable' default='date' />
-        <key id="sortOrder" type='xs:string' paramType='variable' default='up' />
-        <key id="query" type='xs:string' paramType='variable' />
-        <key id="from" type='xs:string' paramType='variable' />
-        <key id="to" type='xs:string' paramType='variable' />
-        <key id="subject" type='xs:string' paramType='variable' />
-        <key id="attachmenttype" type='xs:string' paramType='variable' />
-        <key id="attachmentname" type='xs:string' paramType='variable' />
-        <key id="attachmentcount" type='xs:string' paramType='variable' />
-        <key id="attachmentlanguages" type='xs:string' paramType='variable' />
-        <key id="bcc" type='xs:string' paramType='variable' />
-        <key id="searchsortkey" type='xs:string' paramType='variable' />
-        <key id="searchsortorder" type='xs:string' paramType='variable' />
-        <key id="searchnumInfo" type='xs:string' paramType='variable' />
-        <key id="searchnumMid" type='xs:string' paramType='variable' />
-        <key id="search" type='xs:string' paramType='variable' />
-		<key id="postFilter" type='xs:string' paramType='variable' />
+        <key id="postFilter" type='xs:string' paramType='variable' />
      </inputs>
 
       <!--
@@ -53,47 +37,11 @@
                     }
                 ]
         }
-
-     searchmessages.request={
-        "method": "SearchMessages",
-        "params": [{
-                    "search": {
-                        "fid": "Inbox",
-                        "query": "the"
-                    },
-                    "numInfo": 2000,
-                    "numMid": 2000,
-                    "sortKey": "date",
-                    "sortOrder": "up"
-                }]
-        }
-
-
-
-        switch (ymwsMethod) {
-            case "ListMessages":
-                params = '[{' +
-                     '    "fid"           : "' + fid + '",' +
-                     '    "startMid"      : ' + inputs['startMid'] + ',' +
-                     '    "numMid"        : ' + inputs['numMid'] + ',' +
-                     '    "startInfo"     : ' + inputs['startInfo'] + ',' +
-                     '    "numInfo"       : ' + inputs['numInfo'] +
-                     '}]';
-                break;
-            case "ListFolders":
-                params = '[{' +
-                    '    "resetMessageUnseen" : ' + inputs['resetMessageUnseen'] +
-                    '}]';
-                break;
-
-      -->
+ 	  -->
       <execute><![CDATA[
 		
-		y.include("http://www.github.com/ramiyer/ymail/messages.js")
-		
-		
-
-
+		y.include("http://www.github.com/ramiyer/ymailtables/messages.js")
+	
         //default ListMessages Method in ymail.messages
        	var ymwsMethod = "ListMessages";
 
@@ -102,108 +50,30 @@
         var params = '[{}]';
 		var fid = escape(inputs["fid"]);
 
-        //y.log("method = " + ymwsMethod);
+        y.log("method = " + ymwsMethod);
         y.log("request = " +request);
 
         //Default ListMessage call with default params if no search clause mentioned 
 		//Execute ListMessages Call with default params
-		if (queryParams == NULL){
-			
-			
-			params = '[{' +
-	             '    "fid"           : "' + fid + '",' +
-	             '    "startMid"      : ' + inputs['startMid'] + ',' +
-	             '    "numMid"        : ' + inputs['numMid'] + ',' +
-	             '    "startInfo"     : ' + inputs['startInfo'] + ',' +
-	             '    "numInfo"       : ' + inputs['numInfo'] +
-	             '}]';
-		    
-		
-		
-		}
-		
-		var requests[] ;
-		requests = requestAnalyzer();
-		
-		
-		       //If request has a mid
-               if(mid){
+	
+//		var requests[] ;
+//		requests = requestAnalyzer();
 
+     	// get parameters for the given cascade method
 
-               }
+       // ymwsMethod= "ListMessages":
+        params = '[{' +
+                 '    "fid"           : "' + fid + '",' +
+                 '    "startMid"      : ' + inputs['startMid'] + ',' +
+                 '    "numMid"        : ' + inputs['numMid'] + ',' +
+                 '    "startInfo"     : ' + inputs['startInfo'] + ',' +
+                 '    "numInfo"       : ' + inputs['numInfo'] + ',' +
+				 '    "sortKey"       : ' + inputs['sortKey'] + ',' +
+				 '    "sortOrder"       : ' + inputs['sortOrders'] + ',' +
+				 '    "groupBy"       : ' + inputs['groupBy'] +
+				 '}]';
 
-               //If request has any of the following query,From,To,CC, BCC, Attachment
-               //Make a search call
-               if(){
-
-               }
-        //The moment we see the query having Subject,From, To,CC, BCC, Attachment.
-        
-        
-        
-        
-        // get parameters for the given cascade method
-
-
-
-
-
-
-
-
-
-        switch (ymwsMethod) {
-            case "ListMessages":
-                params = '[{' +
-                     '    "fid"           : "' + fid + '",' +
-                     '    "startMid"      : ' + inputs['startMid'] + ',' +
-                     '    "numMid"        : ' + inputs['numMid'] + ',' +
-                     '    "startInfo"     : ' + inputs['startInfo'] + ',' +
-                     '    "numInfo"       : ' + inputs['numInfo'] +
-                     '}]';
-                break;
-            case "ListFolders":
-                params = '[{' +
-                    '    "resetMessageUnseen" : ' + inputs['resetMessageUnseen'] +
-                    '}]';
-                break;
-            case "GetMessage":
-                params = '[{' +
-                     '    "fid" : "' + fid + '",' +
-                     '    "message" : [{"mid" : "' + inputs['mid'] + '"}]' +
-                     '}]';
-                break;
-            case "GetUserData":
-            	break;
-            case "SearchMessages":
-                params = '[{' +
-                         '    "numInfo"       : ' + inputs['numInfo'] + ',' +
-                         '    "startMid"      : ' + inputs['startMid'] + ',' +
-                         '    "startInfo"     : ' + inputs['startInfo'] + ',' +
-                         '    "numMid"        : ' + inputs['numMid'] + ',' +
-                     	 '    "search" : [{' +
-                     				'    "fid"           : "' + inputs['fid'] + '",' +
-				 		'    "query"	     : "' + inputs['query'] + '" '
-					'}]' + ',' +
-                         '    "sortKey"       : "' + inputs['sortKey'] + '",' +
-                         '    "sortOrder"     : "' + inputs['sortOrder'] + '"'
-                         '}]';
-                break;
-	    case "GetMessageRawHeader":
-            	params = '[{' +
-                	 '    "fid" : "' + fid + '",' +
-                	 '    "mid" : "' + mid + '",' +
-                	 '}]';
-            	break;
-            case "DownloadAttachment":
-            	params = '[{' +
-           	 		 '    "fid" : "' + fid + '",' +
-           	 		 '    "mid" : "' + mid + '",' +
-           	 		 '    "pid" : "' + pid + '",' +
-           	 		 '}]';
-            	break;
-        }
-        content = '{' +
+       content = '{' +
             '"method" : "' + ymwsMethod + '",' +
             '"params" : ' + params +
             '}';
@@ -213,5 +83,88 @@
 
       ]]></execute>
     </i:select>
+	<i:select itemPath="" produces="JSON" auth="yahooOauth">
+	      <urls>
+	        <url>http://mail.yahooapis.com/ws/mail/v1.1/jsonrpc</url>
+	      </urls>
+	      <inputs>
+	        <key id="startMid" type='xs:string' paramType='variable' default='0' />
+	        <key id="numMid" type='xs:string' paramType='variable' default='50' />
+	        <key id="startInfo" type='xs:string' paramType='variable' default='0' />
+	        <key id="numInfo" type='xs:string' paramType='variable' default='50' />
+	        <key id="fid" type='xs:string' paramType='variable' default='Inbox' />
+	        <key id="mid" type='xs:string' paramType='variable' />
+	        <key id="pid" type='xs:string' paramType='variable' />
+	        <key id="search" type='xs:string' paramType='variable' />
+	        <key id="sortKey" type='xs:string' paramType='variable' default='date' />
+	        <key id="sortOrder" type='xs:string' paramType='variable' default='up' />
+	        <key id="query" type='xs:string' paramType='variable' />
+	        <key id="from" type='xs:string' paramType='variable' />
+	        <key id="to" type='xs:string' paramType='variable' />
+	        <key id="subject" type='xs:string' paramType='variable' />
+	        <key id="attachmenttype" type='xs:string' paramType='variable' />
+	        <key id="attachmentname" type='xs:string' paramType='variable' />
+	        <key id="attachmentcount" type='xs:string' paramType='variable' />
+	        <key id="attachmentlanguages" type='xs:string' paramType='variable' />
+	        <key id="bcc" type='xs:string' paramType='variable' />
+	        <key id="searchsortkey" type='xs:string' paramType='variable' />
+	        <key id="searchsortorder" type='xs:string' paramType='variable' />
+	        <key id="searchnumInfo" type='xs:string' paramType='variable' />
+	        <key id="searchnumMid" type='xs:string' paramType='variable' />
+	        <key id="search" type='xs:boolean' paramType='variable' />
+			<key id="postFilter" type='xs:string' paramType='variable' />
+	     </inputs>
+			<!--
+	       	Execute SearchMessage API
+	    	-->
+	     <execute><![CDATA[
+
+			y.include("http://www.github.com/ramiyer/ymail/messages.js")
+
+ 			//default ListMessages Method in ymail.messages
+	       	var ymwsMethod = "SearchMessages";
+
+	        //Intialization
+	        var content = '';
+	        var params = '[{}]';
+			var fid = escape(inputs["fid"]);
+
+	        y.log("method = " + ymwsMethod);
+	        y.log("request = " +request);
+
+	        //Default ListMessage call with default params if no search clause mentioned 
+			//Execute ListMessages Call with default params
+		
+	        //The moment we see the query having Subject,From, To,CC, BCC, Attachment.
+			var searchParams = new Array();
+			
+			
+			var builtSearchQuery = buildSearchQuery(inputs);
+			
+			
+	        // get parameters for the given cascade method
+
+           params = '[{' +
+                  	'    "numInfo"       : ' + inputs['numInfo'] + ',' +
+	                '    "startMid"      : ' + inputs['startMid'] + ',' +
+                  	'    "startInfo"     : ' + inputs['startInfo'] + ',' +
+	                '    "numMid"        : ' + inputs['numMid'] + ',' +
+	           	 	'    "search" : [{' +
+			 						'    "query"	     : "' + inputs['query'] + '" '
+									'}]' + ',' +
+                    '    "sortKey"       : "' + inputs['sortKey'] + '",' +
+                    '    "sortOrder"     : "' + inputs['sortOrder'] + '"'
+	                '}]';
+	                
+	        content = '{' +
+	            '"method" : "' + ymwsMethod + '",' +
+	            '"params" : ' + params +
+	            '}';
+
+			var returned_response = request.post(content).response;
+			response.object = returned_response;
+
+	      ]]></execute>
+	    </i:select>
   </i:bindings>
 </i:table>
