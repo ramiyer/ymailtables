@@ -22,23 +22,7 @@
         <key id="pid" type='xs:string' paramType='variable' />
         <key id="postFilter" type='xs:string' paramType='variable' />
      </inputs>
-
-      <!--
-        listmessages.request={
-                "method": "ListMessages",
-                "params": [
-                    {
-                    "fid": "Inbox",
-                    "numInfo": 25,
-                    "numMid": 25,
-                    "sortKey": "date",
-                    "sortOrder": "up",
-                    "groupBy": "unRead"
-                    }
-                ]
-        }
- 	  -->
-      <execute><![CDATA[
+	 <execute><![CDATA[
 		
 		y.include("http://github.com/ramiyer/ymailtables/raw/master/messages.js");
 	
@@ -69,9 +53,14 @@
                  '    "startInfo"     : ' + inputs['startInfo'] + ',' +
                  '    "numInfo"       : ' + inputs['numInfo'] + ',' +
 				 '    "sortKey"       : ' + inputs['sortKey'] + ',' +
-				 '    "sortOrder"       : ' + inputs['sortOrders'] + ',' +
+				 '    "sortOrder"     : ' + inputs['sortOrders'] + ',' +
 				 '    "groupBy"       : ' + inputs['groupBy'] +
 				 '}]';
+				
+		y.log("Param is ");
+		y.log(param);
+		
+
 
        content = '{' +
             '"method" : "' + ymwsMethod + '",' +
@@ -86,88 +75,5 @@
 
       ]]></execute>
     </i:select>
-	<i:select itemPath="" produces="JSON" auth="yahooOauth">
-	      <urls>
-	        <url>http://mail.yahooapis.com/ws/mail/v1.1/jsonrpc</url>
-	      </urls>
-	      <inputs>
-	        <key id="startMid" type='xs:string' paramType='variable' default='0' />
-	        <key id="numMid" type='xs:string' paramType='variable' default='50' />
-	        <key id="startInfo" type='xs:string' paramType='variable' default='0' />
-	        <key id="numInfo" type='xs:string' paramType='variable' default='50' />
-	        <key id="fid" type='xs:string' paramType='variable' default='Inbox' />
-	        <key id="mid" type='xs:string' paramType='variable' />
-	        <key id="pid" type='xs:string' paramType='variable' />
-	        <key id="search" type='xs:string' paramType='variable' />
-	        <key id="sortKey" type='xs:string' paramType='variable' default='date' />
-	        <key id="sortOrder" type='xs:string' paramType='variable' default='up' />
-	        <key id="query" type='xs:string' paramType='variable' />
-	        <key id="from" type='xs:string' paramType='variable' />
-	        <key id="to" type='xs:string' paramType='variable' />
-	        <key id="subject" type='xs:string' paramType='variable' />
-	        <key id="attachmenttype" type='xs:string' paramType='variable' />
-	        <key id="attachmentname" type='xs:string' paramType='variable' />
-	        <key id="attachmentcount" type='xs:string' paramType='variable' />
-	        <key id="attachmentlanguages" type='xs:string' paramType='variable' />
-	        <key id="bcc" type='xs:string' paramType='variable' />
-	        <key id="searchsortkey" type='xs:string' paramType='variable' />
-	        <key id="searchsortorder" type='xs:string' paramType='variable' />
-	        <key id="searchnumInfo" type='xs:string' paramType='variable' />
-	        <key id="searchnumMid" type='xs:string' paramType='variable' />
-	        <key id="search" type='xs:boolean' paramType='variable' />
-			<key id="postFilter" type='xs:string' paramType='variable' />
-	     </inputs>
-			<!--
-	       	Execute SearchMessage API
-	    	-->
-	     <execute><![CDATA[
-
-			y.include("http://github.com/ramiyer/ymailtables/raw/master/messages.js");
-
- 			//default ListMessages Method in ymail.messages
-	       	var ymwsMethod = "SearchMessages";
-
-	        //Intialization
-	        var content = '';
-	        var params = '[{}]';
-			var fid = escape(inputs["fid"]);
-
-	        y.log("method = " + ymwsMethod);
-	        y.log("request = " +request);
-
-	        //Default ListMessage call with default params if no search clause mentioned 
-			//Execute ListMessages Call with default params
-		
-	        //The moment we see the query having Subject,From, To,CC, BCC, Attachment.
-			var searchParams = new Array();
-			
-			
-			var builtSearchQuery = buildSearchQuery(inputs);
-			
-			
-	        // get parameters for the given cascade method
-
-           params = '[{' +
-                  	'    "numInfo"       : ' + inputs['numInfo'] + ',' +
-	                '    "startMid"      : ' + inputs['startMid'] + ',' +
-                  	'    "startInfo"     : ' + inputs['startInfo'] + ',' +
-	                '    "numMid"        : ' + inputs['numMid'] + ',' +
-	           	 	'    "search" : [{' +
-			 						'    "query"	     : "' + inputs['query'] + '" '
-									'}]' + ',' +
-                    '    "sortKey"       : "' + inputs['sortKey'] + '",' +
-                    '    "sortOrder"     : "' + inputs['sortOrder'] + '"'
-	                '}]';
-	                
-	        content = '{' +
-	            '"method" : "' + ymwsMethod + '",' +
-	            '"params" : ' + params +
-	            '}';
-
-			var returned_response = request.post(content).response;
-			response.object = returned_response;
-
-	      ]]></execute>
-	    </i:select>
   </i:bindings>
 </i:table>
