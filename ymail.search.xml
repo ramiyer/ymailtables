@@ -75,7 +75,7 @@
 			
 			params = '[{' +
 					 '     "search": {' +
-									'"query": "ram"' +
+									'"query": "subject:test"' +
 									'}' +',' +
 					 '"numInfo": "2000"' + ',' + 
 					 '"numMid": "2000"' + ',' +
