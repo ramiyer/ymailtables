@@ -53,7 +53,7 @@
                  '    "startInfo"     : ' + inputs['startInfo'] + ',' +
                  '    "numInfo"       : ' + inputs['numInfo'] + ',' +
 				 '    "sortKey"       : ' + inputs['sortKey'] + ',' +
-				 '    "sortOrder"     : ' + inputs['sortOrders'] + ',' +
+				 '    "sortOrder"     : ' + inputs['sortOrder'] + ',' +
 				 '    "groupBy"       : ' + inputs['groupBy'] +
 				 '}]';
 				
