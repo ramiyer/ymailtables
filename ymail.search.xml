@@ -57,7 +57,21 @@
 									'}]' + ',' +
 	                '    "sortKey"       : "' + inputs['sortKey'] + '",' +
 	                '    "sortOrder"     : "' + inputs['sortOrder'] + '"'
-	                '}]';*/
+	                '}]';
+	
+			{
+				"method" : "SearchMessages",
+				"params" : [{ "search": 
+									[{	
+										"query": "ram",	
+										"fid" : "Inbox"
+									}],     
+						  "numInfo": "2000",     
+						  "numMid": "2000",     
+						  "sortKey": "date",    
+						  "sortOrder": "up"}]}
+		
+					*/
 			
 			params = '[{' +
 					 '     "search": [{' +
