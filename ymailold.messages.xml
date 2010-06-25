@@ -52,6 +52,7 @@
 	  </i:select>
 	  <i:select itemPath="" produces="XML" auth="yahooOauth">
 	      <inputs>
+  		    <key id="query" type='xs:string' paramType='variable' required="true" />
 			<key id="startMid" type='xs:string' paramType='variable' default='0' />
 	        <key id="numMid" type='xs:string' paramType='variable' default='50' />
 	        <key id="startInfo" type='xs:string' paramType='variable' default='0' />
@@ -63,7 +64,6 @@
 	        <key id="search" type='xs:string' paramType='variable' />
 	        <key id="sortKey" type='xs:string' paramType='variable' default='date' />
 	        <key id="sortOrder" type='xs:string' paramType='variable' default='up' />
-	        <key id="query" type='xs:string' paramType='variable' required="true" />
 	      </inputs>
 		  <execute><![CDATA[
 			var ymwsMethod = "SearchMessages";
