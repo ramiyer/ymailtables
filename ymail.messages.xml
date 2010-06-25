@@ -58,10 +58,8 @@
 				 '}]';
 				
 		y.log("Param is ");
-		y.log(param);
+		y.log(params);
 		
-
-
        content = '{' +
             '"method" : "' + ymwsMethod + '",' +
             '"params" : ' + params +
