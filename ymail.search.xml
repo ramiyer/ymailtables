@@ -76,6 +76,7 @@
 			params = '[{' +
 					 '     "search": {' +
 									'"query": "' +inputs['query']+ '"' +
+									'"fid" : "Inbox"' +
 									'}' +',' +
 					 '"numInfo": "2000"' + ',' + 
 					 '"numMid": "2000"' + ',' +
