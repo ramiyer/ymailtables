@@ -30,7 +30,7 @@
 	        //Intialization
 	        var content = '';
 	        var params = '[{}]';
-	//		var fid = escape(inputs["fid"]);
+//			var fid = escape(inputs["fid"]);
 
 	        y.log("method = " + ymwsMethod);
 	        y.log("request = " +request);
@@ -76,7 +76,7 @@
 			params = '[{' +
 					 '     "search": {' +
 									'"query": "' +inputs['query']+ '"' + ',' +
-									'"fid" : "Inbox"' +
+									'"fid" : "' +escape(inputs["fid"])+ '"' +
 									'}' +',' +
 					 '"numInfo": "2000"' + ',' + 
 					 '"numMid": "2000"' + ',' +
