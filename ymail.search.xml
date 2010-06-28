@@ -65,7 +65,7 @@
 			params = '[{' +
 				 '     "search": {' +
 								'"query":' +builtSearchParams+ ',' +
-								'"searchtype": "' +inputs[searchType]+ '" +  
+								'"searchtype": ' +inputs[searchType] +  
 						'}' +',' +
 				 '"numInfo": "2000"' + ',' + 
 				 '"numMid": "2000"' + ',' +
