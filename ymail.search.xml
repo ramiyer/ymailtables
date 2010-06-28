@@ -22,7 +22,7 @@
 	    <key id="attachmenttype" type='xs:string' paramType='variable' />
 	    <key id="attachmentname" type='xs:string' paramType='variable' />
 	    <key id="attachmentlanguages" type='xs:string' paramType='variable' />
-	    <key id="searchtype" type='xs:string' paramType='variable' default='whole' />
+	  <!--  <key id="searchtype" type='xs:string' paramType='variable' default='whole' /> -->
 	    <key id="startMid" type='xs:string' paramType='variable' default='0' />
 	    <key id="numMid" type='xs:string' paramType='variable' default='50' />
 	    <key id="startInfo" type='xs:string' paramType='variable' default='0' />
@@ -53,7 +53,7 @@
 
 	        //The moment we see the query having Subject,From, To,CC, BCC, Attachment.
 	//		var searchParams = new Array();
-
+		//	'"searchtype": ' +inputs['searchtype'] +  
 
 		var builtSearchParams = buildSearchQuery(inputs);
 	
@@ -64,8 +64,7 @@
 	        // get parameters for the given cascade method
 			params = '[{' +
 				 '     "search": {' +
-								'"query":' +builtSearchParams+ ',' +
-								'"searchtype": ' +inputs['searchtype'] +  
+								'"query":' +builtSearchParams+
 						'}' +',' +
 				 '"numInfo": "2000"' + ',' + 
 				 '"numMid": "2000"' + ',' +
