@@ -68,4 +68,22 @@ function buildSearchQuery(searchReqs){
 	
 	y.log("searchReqs are ");
 	y.log(searchReqs);
+	/*
+		'"to": "' +inputs['to']+ '"' + ',' +
+		'"from": "' +inputs['from']+ '"' + ',' +
+		'"cc": "' +inputs['cc']+ '"' + ',' +
+		'"bcc": "' +inputs['bcc']+ '"' + ',' +
+		'"subject": "' +inputs['subject']+ '"' + ',' +
+		'"attachmenttype": "' +inputs['attachmenttype']+ '"' + ',' +
+		'"attachmentname": "' +inputs['attachmentname']+ '"' + ',' +
+		'"attachment": "' +inputs['attachment']+ '"' + ',' +
+		'"attachmentlanguages": "' +inputs['attachmentlanguages']+ '"' + ',' +
+		'"attachmentcount": "' +inputs['attachmentcount']+ '"' + ',' +
+		'"flags": "' +inputs['flags']+ '"' + ',' +
+	*/
+	
+	
+	
+	return searchReqs;
+	
 }
