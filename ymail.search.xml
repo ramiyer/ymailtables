@@ -22,7 +22,7 @@
 	    <key id="attachmenttype" type='xs:string' paramType='variable' />
 	    <key id="attachmentname" type='xs:string' paramType='variable' />
 	    <key id="attachmentlanguages" type='xs:string' paramType='variable' />
-	    <key id="searchType" type='xs:string' paramType='variable' default='whole' />
+	    <key id="searchtype" type='xs:string' paramType='variable' default='whole' />
 	    <key id="startMid" type='xs:string' paramType='variable' default='0' />
 	    <key id="numMid" type='xs:string' paramType='variable' default='50' />
 	    <key id="startInfo" type='xs:string' paramType='variable' default='0' />
@@ -65,7 +65,7 @@
 			params = '[{' +
 				 '     "search": {' +
 								'"query":' +builtSearchParams+ ',' +
-								'"searchtype": ' +inputs[searchType] +  
+								'"searchtype": ' +inputs['searchtype'] +  
 						'}' +',' +
 				 '"numInfo": "2000"' + ',' + 
 				 '"numMid": "2000"' + ',' +
