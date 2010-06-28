@@ -120,7 +120,9 @@ function buildSearchQuery(searchReqs){
 	if (inputs['flags'] != null){
 		searchParam += '"' +inputs['flags'] +'"' + " ";
 	}
-	
+	if (inputs["fid"] != null){
+		searchParam += '"' +inputs['fid'] +'"' + " ";	
+	}
 	y.log("searchParams built is");
 	y.log(searchParams);
 
