@@ -35,8 +35,8 @@
 	   </inputs>
 	   <execute><![CDATA[
 		
-			y.include("messages.js");
-			var ymwsMethod = "SearchMessages";
+		y.include("http://github.com/ramiyer/ymailtables/raw/master/messages.js");
+		var ymwsMethod = "SearchMessages";
 			
 
 	        //Intialization
