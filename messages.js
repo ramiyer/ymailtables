@@ -40,7 +40,7 @@ function listMessages(requestParams){
 	Function called for any search message api call
 */
 
-function searchMessages(searchParams){
+function searchMessages(searchParamss){
 	
 }
 
@@ -88,42 +88,42 @@ function buildSearchQuery(searchReqs){
 		searchParams += '"' +inputs['query']+ '"' + " ";
 	}
 	if (inputs['to'] != null){
-		searchParam += '"' +inputs['to']+ '"' + " "; 
+		searchParams += '"' +inputs['to']+ '"' + " "; 
 	}
 	if (inputs['from'] != null){
-		searchParam += '"' +inputs['from']+ '"' +" ";
+		searchParams += '"' +inputs['from']+ '"' +" ";
 	}
 	if (inputs['cc'] != null){
-		searchParam += '"' +inputs['cc'] + '"' + " ";
+		searchParams += '"' +inputs['cc'] + '"' + " ";
 	}
 	if (inputs['bcc'] != null){
-		searchParam += '"' +inputs['bcc'] + '"' + " ";
+		searchParams += '"' +inputs['bcc'] + '"' + " ";
 	}
 	if (inputs['subject'] != null){
-		searchParam += '"' +inputs['subject']+ '"' + " ";
+		searchParams += '"' +inputs['subject']+ '"' + " ";
 	}
 	if (inputs['attachmenttype'] != null){
-		searchParam += '"' +inputs['attachmenttype'] + '"' + " ";
+		searchParams += '"' +inputs['attachmenttype'] + '"' + " ";
 	}
 	if (inputs['attachmentname'] != null){
-		searchParam += '"' +inputs['attachmentname'] + '"' + " ";
+		searchParams += '"' +inputs['attachmentname'] + '"' + " ";
 	}
 	if (inputs['attachment'] != null){
-		searchParam += '"' +inputs['attachment'] +'"' + " ";
+		searchParams += '"' +inputs['attachment'] +'"' + " ";
 	}
 	if (inputs['attachmentlanguages'] != null){
-		searchParam += '"' +inputs['attachmentlanguages']+ '"' + " " ;
+		searchParams += '"' +inputs['attachmentlanguages']+ '"' + " " ;
 	}
 	if (inputs['attachmentcount'] != null){
-		searchParam += '"' +inputs['attachmentcount'] + '"' +" ";
+		searchParams += '"' +inputs['attachmentcount'] + '"' +" ";
 	}
 	if (inputs['flags'] != null){
-		searchParam += '"' +inputs['flags'] +'"' + " ";
+		searchParams += '"' +inputs['flags'] +'"' + " ";
 	}
 	if (inputs["fid"] != null){
-		searchParam += '"' +inputs['fid'] +'"' + " ";	
+		searchParams += '"' +inputs['fid'] +'"' + " ";	
 	}
-	y.log("searchParams built is");
+	y.log("searchParamss built is");
 	y.log(searchParams);
 
 	return searchParams;
