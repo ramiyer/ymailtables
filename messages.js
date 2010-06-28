@@ -82,7 +82,7 @@ function buildSearchQuery(searchReqs){
 	*/
 	
 	var searchParams = new String();	
-	searchParams = 'null';
+//	searchParams = 'null';
 	
 	if (inputs['query'] != null){
 		searchParams += '"' +inputs['query']+ '"' + " ";
