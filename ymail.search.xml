@@ -11,18 +11,18 @@
       </urls>
 	  <inputs>
   	    <key id="query" type='xs:string' paramType='variable' />
-		<key id="from" type='xs:string' paramType='variable' />
-		<key id="to" type='xs:string' paramType='variable' />
-		<key id="subject" type='xs:string' paramType='variable'/>
-		<key id="cc" type='xs:string' paramType='variable' />
-		<key id="bcc" type='xs:string' paramType='variable' />
-		<key id="flags" type='xs:string' paramType='variable' />
-		<key id="attachment" type='xs:string' paramType='variable' />
-		<key id="attachmentcount" type='xs:string' paramType='variable' />
-		<key id="attachtmenttype" type='xs:string' paramType='variable' />
-		<key id="attachmentname" type='xs:string' paramType='variable' />
-		<key id="attachmentlanguages" type='xs:string' paramType='variable' />
-		<key id="startMid" type='xs:string' paramType='variable' default='0' />
+	    <key id="from" type='xs:string' paramType='variable' />
+   	    <key id="to" type='xs:string' paramType='variable' />
+ 	    <key id="subject" type='xs:string' paramType='variable'/>
+	    <key id="cc" type='xs:string' paramType='variable' />
+  	    <key id="bcc" type='xs:string' paramType='variable' />
+	    <key id="flags" type='xs:string' paramType='variable' />
+	    <key id="attachment" type='xs:string' paramType='variable' />
+	    <key id="attachmentcount" type='xs:string' paramType='variable' />
+	    <key id="attachmenttype" type='xs:string' paramType='variable' />
+	    <key id="attachmentname" type='xs:string' paramType='variable' />
+	    <key id="attachmentlanguages" type='xs:string' paramType='variable' />
+	    <key id="startMid" type='xs:string' paramType='variable' default='0' />
 	    <key id="numMid" type='xs:string' paramType='variable' default='50' />
 	    <key id="startInfo" type='xs:string' paramType='variable' default='0' />
 	    <key id="numInfo" type='xs:string' paramType='variable' default='50' />
