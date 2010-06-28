@@ -54,17 +54,16 @@
 	//		var searchParams = new Array();
 
 
-			var builtSearchQuery = buildSearchQuery(inputs);
+		var builtSearchParams = buildSearchQuery(inputs);
+	
+		y.log("builtSearchQuery values");
 		
-			y.log("builtSearchQuery values");
-			
-			y.log(builtSearchQuery);
+		y.log(builtSearchQuery);
 
 	        // get parameters for the given cascade method
 			params = '[{' +
 				 '     "search": {' +
-								'"query": "' +inputs['query']+ '"' + ',' +
-								'"fid" : "' +escape(inputs["fid"])+ '"' +
+								'"query": "' +builtSearchParams+ '"' + 
 						'}' +',' +
 				 '"numInfo": "2000"' + ',' + 
 				 '"numMid": "2000"' + ',' +
