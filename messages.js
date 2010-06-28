@@ -64,7 +64,6 @@ function requestAnalyzer(reqs){
 
 
 function buildSearchQuery(searchReqs){
-
 	
 	y.log("searchReqs are ");
 	y.log(searchReqs);
@@ -82,8 +81,49 @@ function buildSearchQuery(searchReqs){
 		'"flags": "' +inputs['flags']+ '"' + ',' +
 	*/
 	
+	var searchParams = new String();	
+	searchParams = 'null';
 	
+	if (inputs['query'] != null){
+		searchParams += '"' +inputs['query']+ '"' + " ";
+	}
+	if (inputs['to'] != null){
+		searchParam += '"' +inputs['to']+ '"' + " "; 
+	}
+	if (inputs['from'] != null){
+		searchParam += '"' +inputs['from']+ '"' +" ";
+	}
+	if (inputs['cc'] != null){
+		searchParam += '"' +inputs['cc'] + '"' + " ";
+	}
+	if (inputs['bcc'] != null){
+		searchParam += '"' +inputs['bcc'] + '"' + " ";
+	}
+	if (inputs['subject'] != null){
+		searchParam += '"' +inputs['subject']+ '"' + " ";
+	}
+	if (inputs['attachmenttype'] != null){
+		searchParam += '"' +inputs['attachmenttype'] + '"' + " ";
+	}
+	if (inputs['attachmentname'] != null){
+		searchParam += '"' +inputs['attachmentname'] + '"' + " ";
+	}
+	if (inputs['attachment'] != null){
+		searchParam += '"' +inputs['attachment'] +'"' + " ";
+	}
+	if (inputs['attachmentlanguages'] != null){
+		searchParam += '"' +inputs['attachmentlanguages']+ '"' + " " ;
+	}
+	if (inputs['attachmentcount'] != null){
+		searchParam += '"' +inputs['attachmentcount'] + '"' +" ";
+	}
+	if (inputs['flags'] != null){
+		searchParam += '"' +inputs['flags'] +'"' + " ";
+	}
 	
-	return searchReqs;
+	y.log("searchParams built is");
+	y.log(searchParams);
+
+	return searchParams;
 	
 }
