@@ -26,7 +26,7 @@
 	    <key id="numMid" type='xs:string' paramType='variable' default='50' />
 	    <key id="startInfo" type='xs:string' paramType='variable' default='0' />
 	    <key id="numInfo" type='xs:string' paramType='variable' default='50' />
-	    <key id="fid" type='xs:string' paramType='variable' default='Inbox' />
+	    <key id="fid" type='xs:string' paramType='variable' />
 	    <key id="mid" type='xs:string' paramType='variable' />
 	    <key id="pid" type='xs:string' paramType='variable' />
 	    <key id="search" type='xs:string' paramType='variable' />
@@ -42,7 +42,7 @@
 	        //Intialization
 	        var content = '';
 	        var params = '[{}]';
-//			var fid = escape(inputs["fid"]);
+//		var fid = escape(inputs["fid"]);
 
 	        y.log("method = " + ymwsMethod);
 	        y.log("request = " +request);
