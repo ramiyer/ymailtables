@@ -10,12 +10,22 @@
         <url>http://mail.yahooapis.com/ws/mail/v1.1/jsonrpc</url>
       </urls>
 	  <inputs>
-  	    <key id="query" type='xs:string' paramType='variable' required="true" />
+  	    <key id="query" type='xs:string' paramType='variable' />
+		<key id="from" type='xs:string' paramType='variable' />
+		<key id="to" type='xs:string' paramType='variable' />
+		<key id="subject" type='xs:string' paramType='variable'/>
+		<key id="cc" type='xs:string' paramType='variable' />
+		<key id="bcc" type='xs:string' paramType='variable' />
+		<key id="flags" type='xs:string' paramType='variable' />
+		<key id="attachment" type='xs:string' paramType='variable' />
+		<key id="attachmentcount" type='xs:string' paramType='variable' />
+		<key id="attachtmenttype" type='xs:string' paramType='variable' />
+		<key id="attachmentname" type='xs:string' paramType='variable' />
+		<key id="attachmentlanguages" type='xs:string' paramType='variable' />
 		<key id="startMid" type='xs:string' paramType='variable' default='0' />
 	    <key id="numMid" type='xs:string' paramType='variable' default='50' />
 	    <key id="startInfo" type='xs:string' paramType='variable' default='0' />
 	    <key id="numInfo" type='xs:string' paramType='variable' default='50' />
-	    <key id="resetMessageUnseen" type='xs:string' paramType='variable' default='false' />
 	    <key id="fid" type='xs:string' paramType='variable' default='Inbox' />
 	    <key id="mid" type='xs:string' paramType='variable' />
 	    <key id="pid" type='xs:string' paramType='variable' />
@@ -46,43 +56,27 @@
 
 
 	        // get parameters for the given cascade method
-			/*
-	       params = '[{' +
-	              	'    "numInfo"       : ' + inputs['numInfo'] + ',' +
-	                '    "startMid"      : ' + inputs['startMid'] + ',' +
-	              	'    "startInfo"     : ' + inputs['startInfo'] + ',' +
-	                '    "numMid"        : ' + inputs['numMid'] + ',' +
-	           	 	'    "search" : [{' +
-			 						'    "query"	     : "' + inputs['query'] + '" '
-									'}]' + ',' +
-	                '    "sortKey"       : "' + inputs['sortKey'] + '",' +
-	                '    "sortOrder"     : "' + inputs['sortOrder'] + '"'
-	                '}]';
-	
-			{
-				"method" : "SearchMessages",
-				"params" : [{ "search": 
-									[{	
-										"query": "ram",	
-										"fid" : "Inbox"
-									}],     
-						  "numInfo": "2000",     
-						  "numMid": "2000",     
-						  "sortKey": "date",    
-						  "sortOrder": "up"}]}
-		
-					*/
-			
-			params = '[{' +
-					 '     "search": {' +
-									'"query": "' +inputs['query']+ '"' + ',' +
-									'"fid" : "' +escape(inputs["fid"])+ '"' +
-									'}' +',' +
-					 '"numInfo": "2000"' + ',' + 
-					 '"numMid": "2000"' + ',' +
-					 '"sortKey": "date"' + ',' +
-					 '"sortOrder": "up"' +
-					 '}]';
+		params = '[{' +
+				 '     "search": {' +
+								'"query": "' +inputs['query']+ '"' + ',' +
+								'"to": "' +inputs['to']+ '"' + ',' +
+								'"from": "' +inputs['from']+ '"' + ',' +
+								'"cc": "' +inputs['cc']+ '"' + ',' +
+								'"bcc": "' +inputs['bcc']+ '"' + ',' +
+								'"subject": "' +inputs['subject']+ '"' + ',' +
+								'"attachmenttype": "' +inputs['attachmenttype']+ '"' + ',' +
+								'"attachmentname": "' +inputs['attachmentname']+ '"' + ',' +
+								'"attachment": "' +inputs['attachment']+ '"' + ',' +
+								'"attachmentlanguages": "' +inputs['attachmentlanguages']+ '"' + ',' +
+								'"attachmentcount": "' +inputs['attachmentcount']+ '"' + ',' +
+								'"flags": "' +inputs['flags']+ '"' + ',' +
+								'"fid" : "' +escape(inputs["fid"])+ '"' +
+						'}' +',' +
+				 '"numInfo": "2000"' + ',' + 
+				 '"numMid": "2000"' + ',' +
+				 '"sortKey": "date"' + ',' +
+				 '"sortOrder": "up"' +
+			 '}]';
 
 			
 	        content = '{' +
