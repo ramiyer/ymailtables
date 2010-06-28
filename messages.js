@@ -88,40 +88,40 @@ function buildSearchQuery(searchReqs){
 		searchParams += '"' +inputs['query']+ '"' + " ";
 	}
 	if (inputs['to'] != null){
-		searchParams += '"' +inputs['to']+ '"' + " "; 
+		searchParams += 'to:"' +inputs['to']+ '"' + " "; 
 	}
 	if (inputs['from'] != null){
-		searchParams += '"' +inputs['from']+ '"' +" ";
+		searchParams += 'from:"' +inputs['from']+ '"' +" ";
 	}
 	if (inputs['cc'] != null){
-		searchParams += '"' +inputs['cc'] + '"' + " ";
+		searchParams += 'cc:"' +inputs['cc'] + '"' + " ";
 	}
 	if (inputs['bcc'] != null){
-		searchParams += '"' +inputs['bcc'] + '"' + " ";
+		searchParams += 'bcc:"' +inputs['bcc'] + '"' + " ";
 	}
 	if (inputs['subject'] != null){
-		searchParams += '"' +inputs['subject']+ '"' + " ";
+		searchParams += 'subject:"' +inputs['subject']+ '"' + " ";
 	}
 	if (inputs['attachmenttype'] != null){
-		searchParams += '"' +inputs['attachmenttype'] + '"' + " ";
+		searchParams += 'attachmenttype:"' +inputs['attachmenttype'] + '"' + " ";
 	}
 	if (inputs['attachmentname'] != null){
-		searchParams += '"' +inputs['attachmentname'] + '"' + " ";
+		searchParams += 'attachmentname:"' +inputs['attachmentname'] + '"' + " ";
 	}
 	if (inputs['attachment'] != null){
-		searchParams += '"' +inputs['attachment'] +'"' + " ";
+		searchParams += 'attachment:"' +inputs['attachment'] +'"' + " ";
 	}
 	if (inputs['attachmentlanguages'] != null){
-		searchParams += '"' +inputs['attachmentlanguages']+ '"' + " " ;
+		searchParams += 'attachmentlanguages:"' +inputs['attachmentlanguages']+ '"' + " " ;
 	}
 	if (inputs['attachmentcount'] != null){
-		searchParams += '"' +inputs['attachmentcount'] + '"' +" ";
+		searchParams += 'attachmentcount"' +inputs['attachmentcount'] + '"' +" ";
 	}
 	if (inputs['flags'] != null){
-		searchParams += '"' +inputs['flags'] +'"' + " ";
+		searchParams += 'flags:"' +inputs['flags'] +'"' + " ";
 	}
 	if (inputs["fid"] != null){
-		searchParams += '"' +inputs['fid'] +'"' + " ";	
+		searchParams += 'fid:"' +inputs['fid'] +'"' + " ";	
 	}
 	y.log("searchParamss built is");
 	y.log(searchParams);
