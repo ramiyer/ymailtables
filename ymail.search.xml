@@ -56,9 +56,9 @@
 
 		var builtSearchParams = buildSearchQuery(inputs);
 	
-		y.log("builtSearchQuery values");
+		y.log("builtSearchParams values");
 		
-		y.log(builtSearchQuery);
+		y.log(builtSearchParams);
 
 	        // get parameters for the given cascade method
 			params = '[{' +
