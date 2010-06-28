@@ -35,7 +35,9 @@
 	   </inputs>
 	   <execute><![CDATA[
 		
+			y.include("messages.js");
 			var ymwsMethod = "SearchMessages";
+			
 
 	        //Intialization
 	        var content = '';
@@ -49,27 +51,19 @@
 			//Execute ListMessages Call with default params
 
 	        //The moment we see the query having Subject,From, To,CC, BCC, Attachment.
-			var searchParams = new Array();
+	//		var searchParams = new Array();
 
 
-		//	var builtSearchQuery = buildSearchQuery(inputs);
-
+			var builtSearchQuery = buildSearchQuery(inputs);
+		
+			y.log("builtSearchQuery values");
+			
+			y.log(builtSearchQuery);
 
 	        // get parameters for the given cascade method
-		params = '[{' +
+			params = '[{' +
 				 '     "search": {' +
 								'"query": "' +inputs['query']+ '"' + ',' +
-								'"to": "' +inputs['to']+ '"' + ',' +
-								'"from": "' +inputs['from']+ '"' + ',' +
-								'"cc": "' +inputs['cc']+ '"' + ',' +
-								'"bcc": "' +inputs['bcc']+ '"' + ',' +
-								'"subject": "' +inputs['subject']+ '"' + ',' +
-								'"attachmenttype": "' +inputs['attachmenttype']+ '"' + ',' +
-								'"attachmentname": "' +inputs['attachmentname']+ '"' + ',' +
-								'"attachment": "' +inputs['attachment']+ '"' + ',' +
-								'"attachmentlanguages": "' +inputs['attachmentlanguages']+ '"' + ',' +
-								'"attachmentcount": "' +inputs['attachmentcount']+ '"' + ',' +
-								'"flags": "' +inputs['flags']+ '"' + ',' +
 								'"fid" : "' +escape(inputs["fid"])+ '"' +
 						'}' +',' +
 				 '"numInfo": "2000"' + ',' + 
