@@ -63,17 +63,29 @@
 	//	var atttp = "attachmenttype:'pdf'";
 //		var test = encodeURIComponent(atttp);		
 //		var test = YAHOO.lang.JSON.stringify(builtSearchParams);		
-		var test = YUI().JSON.stringify(builtSearchParams);		
-		y.log(test);
+	//	var test = YUI().JSON.stringify(builtSearchParams);		
+	//	y.log(test);
 	
+		var jsonStr;
+		
+		YUI().use("json-stringify", function (Y) {
+
+		    jsonStr = Y.JSON.stringify(builtSearchParams);
+
+		    y.log(jsonStr); 
+		});
+		
+		//YUI().JSON.stringify(builtSearchParams);	
+			
+		y.log(jsonStr);
+
 	        // get parameters for the given cascade method
 			params = '[{' +
 				 '     "search": {' +
 						//		'"query":"' +builtSearchParams+ '"' +
 					//			'"query":"' +escape(builtSearchParams)+ '"' +
-								'"query":"' +test+ '"' +
-						//		"'query':'" +builtSearchParams+ "'" +
-						'}' +',' +
+								'"query":"' +jsonStr+ '"' +
+							'}' +',' +
 				 '"numInfo": "2000"' + ',' + 
 				 '"numMid": "2000"' + ',' +
 				 '"sortKey": "date"' + ',' +
