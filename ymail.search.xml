@@ -61,7 +61,7 @@
 		
 		y.log(builtSearchParams);
 		var atttp = 'attachmenttype:"pdf"'
-		var test = escape(atttp);		
+		var test = atttp;		
 
 	        // get parameters for the given cascade method
 			params = '[{' +
