@@ -60,14 +60,14 @@
 		y.log("builtSearchParams values");
 		
 		y.log(builtSearchParams);
-		var atttp = "pdf"
+		var atttp = 'attachmenttype:"pdf"'
 		var test = escape(atttp);		
 
 	        // get parameters for the given cascade method
 			params = '[{' +
 				 '     "search": {' +
 							//	'"query":' +builtSearchParams+
-								'"query":' +test+
+								'"query":"' +test+ '" +
 						'}' +',' +
 				 '"numInfo": "2000"' + ',' + 
 				 '"numMid": "2000"' + ',' +
