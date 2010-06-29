@@ -67,7 +67,7 @@
 			params = '[{' +
 				 '     "search": {' +
 							//	'"query":' +builtSearchParams+
-								'"query":"' +test+ '" +
+								'"query":"' +test+ '"' +
 						'}' +',' +
 				 '"numInfo": "2000"' + ',' + 
 				 '"numMid": "2000"' + ',' +
