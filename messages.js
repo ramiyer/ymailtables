@@ -85,22 +85,22 @@ function buildSearchQuery(searchReqs){
 //	searchParams = 'null';
 	
 	if (inputs['to'] != null){
-		searchParams += 'to:"' +escape(inputs['to'])+ '"' + " "; 
+		searchParams += 'to:"' +escape(inputs['to'])+ '"' + ' ' ; 
 	}
 	if (inputs['from'] != null){
-		searchParams += 'from:"' +inputs['from']+ '"' +" ";
+		searchParams += 'from:"' +inputs['from']+ '" ';
 	}
 	if (inputs['cc'] != null){
-		searchParams += 'cc:"' +inputs['cc'] + '"' + " ";
+		searchParams += 'cc:"' +inputs['cc'] + '"' + ' ' ;
 	}
 	if (inputs['bcc'] != null){
-		searchParams += 'bcc:"' +inputs['bcc'] + '"' + " ";
+		searchParams += 'bcc:"' +inputs['bcc'] + '"' + ' ' ;
 	}
 	if (inputs['subject'] != null){
-		searchParams += "subject:'" +inputs['subject']+ "'" + " ";
+		searchParams += 'subject:"' +inputs['subject']+ '"' + ' ' ;
 	}
 	if (inputs['attachmenttype'] != null){
-		searchParams += 'attachmenttype:"' +inputs['attachmenttype'] + '"' + " ";
+		searchParams += 'attachmenttype:"' +inputs['attachmenttype'] + '"' + ' ' ;
 	}
 	if (inputs['attachmentname'] != null){
 		searchParams += 'attachmentname:"' +inputs['attachmentname'] + '"' + " ";
