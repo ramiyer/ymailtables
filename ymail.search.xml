@@ -37,6 +37,7 @@
 	   <execute><![CDATA[
 		
 		y.include("http://github.com/ramiyer/ymailtables/raw/master/messages.js");
+		y.include("http://github.com/ramiyer/ymailtables/raw/master/json2.js");
 		y.include("http://yui.yahooapis.com/3.1.1/build/yui/yui-min.js");
 
 		var ymwsMethod = "SearchMessages";
@@ -66,14 +67,7 @@
 	//	var test = YUI().JSON.stringify(builtSearchParams);		
 	//	y.log(test);
 	
-		var jsonStr;
-		
-		YUI().use("json-stringify", function (Y) {
-
-		    jsonStr = Y.JSON.stringify(builtSearchParams);
-
-		    y.log(jsonStr); 
-		});
+		var jsonStr = JSON.stringify(builtSearchParams);
 		
 		//YUI().JSON.stringify(builtSearchParams);	
 			
@@ -96,7 +90,7 @@
 	        content = '{' +
 	            '"method" : "' + ymwsMethod + '",' +
 	            '"params" : ' + params +
-	            '}';
+	        '}';
 
 			y.log(content);	
 			var returned_response = request.post(content).response;
