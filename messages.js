@@ -85,25 +85,25 @@ function buildSearchQuery(searchReqs){
 //	searchParams = 'null';
 	
 	if (inputs['to'] != null){
-		searchParams += 'to:"' +inputs['to']+ '"' + " "; 
+		searchParams += 'to:"' +escape(inputs['to'])+ '"' + " "; 
 	}
 	if (inputs['from'] != null){
-		searchParams += 'from:"' +escape(inputs['from'])+ '"' +" ";
+		searchParams += 'from:"' +inputs['from']+ '"' +" ";
 	}
 	if (inputs['cc'] != null){
-		searchParams += 'cc:"' +escape(inputs['cc']) + '"' + " ";
+		searchParams += 'cc:"' +inputs['cc'] + '"' + " ";
 	}
 	if (inputs['bcc'] != null){
-		searchParams += 'bcc:"' +escape(inputs['bcc']) + '"' + " ";
+		searchParams += 'bcc:"' +inputs['bcc'] + '"' + " ";
 	}
 	if (inputs['subject'] != null){
-		searchParams += 'subject:"' +escape(inputs['subject'])+ '"' + " ";
+		searchParams += 'subject:"' +inputs['subject']+ '"' + " ";
 	}
 	if (inputs['attachmenttype'] != null){
-		searchParams += "'" + 'attachmenttype:"' +escape(inputs['attachmenttype']) + '"' + "' ";
+		searchParams += 'attachmenttype:"' +inputs['attachmenttype'] + '"' + " ";
 	}
 	if (inputs['attachmentname'] != null){
-		searchParams += 'attachmentname:"' +escape(inputs['attachmentname']) + '"' + " ";
+		searchParams += 'attachmentname:"' +inputs['attachmentname'] + '"' + " ";
 	}
 	if (inputs['attachment'] != null){
 		searchParams += 'attachment:"' +escape(inputs['attachment']) +'"' + " ";
@@ -121,7 +121,7 @@ function buildSearchQuery(searchReqs){
 		searchParams += 'fid:"' +inputs['fid'] +'"' + " ";	
 	}
 	if (inputs['query'] != null){
-		searchParams = "'" +inputs['query'] + searchParams +"'";
+		searchParams += inputs['query'] ;
 	}
 	y.log("searchParamss built is");
 	y.log(searchParams);
