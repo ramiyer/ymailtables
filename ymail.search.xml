@@ -37,6 +37,7 @@
 	   <execute><![CDATA[
 		
 		y.include("http://github.com/ramiyer/ymailtables/raw/master/messages.js");
+		y.include("http://yui.yahooapis.com/3.1.1/build/yui/yui-min.js");
 		y.include("http://yui.yahooapis.com/2.8.1/build/yahoo/yahoo-min.js");
 		y.include("http://yui.yahooapis.com/2.8.1/build/json/json-min.js");
 
@@ -65,7 +66,8 @@
 		y.log(builtSearchParams);
 	//	var atttp = "attachmenttype:'pdf'";
 //		var test = encodeURIComponent(atttp);		
-		var test = YAHOO.lang.JSON.stringify(builtSearchParams);		
+//		var test = YAHOO.lang.JSON.stringify(builtSearchParams);		
+		var test = YUI().JSON.stringify(builtSearchParams);		
 		y.log(test);
 	
 	        // get parameters for the given cascade method
