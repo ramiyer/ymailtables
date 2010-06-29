@@ -97,7 +97,7 @@ function buildSearchQuery(searchReqs){
 		searchParams += 'bcc:"' +inputs['bcc'] + '"' + " ";
 	}
 	if (inputs['subject'] != null){
-		searchParams += 'subject:"' +inputs['subject']+ '"' + " ";
+		searchParams += "subject:'" +inputs['subject']+ "'" + " ";
 	}
 	if (inputs['attachmenttype'] != null){
 		searchParams += 'attachmenttype:"' +inputs['attachmenttype'] + '"' + " ";
