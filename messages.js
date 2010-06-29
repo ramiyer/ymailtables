@@ -100,7 +100,7 @@ function buildSearchQuery(searchReqs){
 		searchParams += 'subject:"' +escape(inputs['subject'])+ '"' + " ";
 	}
 	if (inputs['attachmenttype'] != null){
-		searchParams += 'attachmenttype:"' +escape(inputs['attachmenttype']) + '"' + " ";
+		searchParams += "'" + 'attachmenttype:"' +escape(inputs['attachmenttype']) + '"' + "' ";
 	}
 	if (inputs['attachmentname'] != null){
 		searchParams += 'attachmentname:"' +escape(inputs['attachmentname']) + '"' + " ";
