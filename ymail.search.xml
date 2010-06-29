@@ -96,7 +96,7 @@
 			var returned_response = request.post(content).response;
 			response.object = returned_response;
 		
-		 ]]></execute>
-  	 </i:select>
-   </i:bindings>
+	 ]]></execute>
+    </i:select>
+  </i:bindings>
 </i:table>
