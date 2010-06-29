@@ -85,7 +85,7 @@ function buildSearchQuery(searchReqs){
 //	searchParams = 'null';
 	
 	if (inputs['to'] != null){
-		searchParams += 'to:"' +escape(inputs['to'])+ '"' + ' ' ; 
+		searchParams += 'to:"' +inputs['to']+ '"'; 
 	}
 	if (inputs['from'] != null){
 		searchParams += 'from:"' +inputs['from']+ '" ';
