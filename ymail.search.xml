@@ -60,7 +60,7 @@
 		y.log("builtSearchParams values");
 		
 		y.log(builtSearchParams);
-		var atttp = "attachmenttype:\"pdf\"";
+		var atttp = "attachmenttype:'pdf'";
 		var test = encodeURIComponent(atttp);		
 
 	        // get parameters for the given cascade method
