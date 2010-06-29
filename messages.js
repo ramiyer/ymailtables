@@ -84,48 +84,47 @@ function buildSearchQuery(searchReqs){
 	var searchParams = new String();	
 //	searchParams = 'null';
 	
-	if (inputs['query'] != null){
-		searchParams += '"' +inputs['query']+ '"' + " ";
-	}
 	if (inputs['to'] != null){
 		searchParams += 'to:"' +inputs['to']+ '"' + " "; 
 	}
 	if (inputs['from'] != null){
-		searchParams += 'from:"' +inputs['from']+ '"' +" ";
+		searchParams += 'from:"' +escape(inputs['from'])+ '"' +" ";
 	}
 	if (inputs['cc'] != null){
-		searchParams += 'cc:"' +inputs['cc'] + '"' + " ";
+		searchParams += 'cc:"' +escape(inputs['cc']) + '"' + " ";
 	}
 	if (inputs['bcc'] != null){
-		searchParams += 'bcc:"' +inputs['bcc'] + '"' + " ";
+		searchParams += 'bcc:"' +escape(inputs['bcc']) + '"' + " ";
 	}
 	if (inputs['subject'] != null){
-		searchParams += 'subject:"' +inputs['subject']+ '"' + " ";
+		searchParams += 'subject:"' +escape(inputs['subject'])+ '"' + " ";
 	}
 	if (inputs['attachmenttype'] != null){
-		searchParams += 'attachmenttype:"' +inputs['attachmenttype'] + '"' + " ";
+		searchParams += 'attachmenttype:"' +escape(inputs['attachmenttype']) + '"' + " ";
 	}
 	if (inputs['attachmentname'] != null){
-		searchParams += 'attachmentname:"' +inputs['attachmentname'] + '"' + " ";
+		searchParams += 'attachmentname:"' +escape(inputs['attachmentname']) + '"' + " ";
 	}
 	if (inputs['attachment'] != null){
-		searchParams += 'attachment:"' +inputs['attachment'] +'"' + " ";
+		searchParams += 'attachment:"' +escape(inputs['attachment']) +'"' + " ";
 	}
 	if (inputs['attachmentlanguages'] != null){
-		searchParams += 'attachmentlanguages:"' +inputs['attachmentlanguages']+ '"' + " " ;
+		searchParams += 'attachmentlanguages:"' +escape(inputs['attachmentlanguages'])+ '"' + " " ;
 	}
 	if (inputs['attachmentcount'] != null){
-		searchParams += 'attachmentcount"' +inputs['attachmentcount'] + '"' +" ";
+		searchParams += 'attachmentcount:"' +escape(inputs['attachmentcount']) + '"' +" ";
 	}
 	if (inputs['flags'] != null){
-		searchParams += 'flags:"' +inputs['flags'] +'"' + " ";
+		searchParams += 'flags:"' +escape(inputs['flags']) +'"' + " ";
 	}
 	if (inputs["fid"] != null){
 		searchParams += 'fid:"' +inputs['fid'] +'"' + " ";	
+	}
+	if (inputs['query'] != null){
+		searchParams = "'" +inputs['query'] + searchParams +"'";
 	}
 	y.log("searchParamss built is");
 	y.log(searchParams);
 
 	return searchParams;
-	
 }
