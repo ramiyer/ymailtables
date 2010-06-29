@@ -87,8 +87,8 @@ function buildSearchQuery(searchReqs){
 	if (inputs['to'] != null){
 		searchParams += 'to:"' +inputs['to']+ '"'; 
 	}
-	if (inputs['from'] != null){
-		searchParams += 'from:"' +inputs['from']+ '" ';
+	if (inputs['fr'] != null){
+		searchParams += 'from:"' +inputs['fr']+ '" ';
 	}
 	if (inputs['cc'] != null){
 		searchParams += 'cc:"' +inputs['cc'] + '"' + ' ' ;
@@ -97,7 +97,7 @@ function buildSearchQuery(searchReqs){
 		searchParams += 'bcc:"' +inputs['bcc'] + '"' + ' ' ;
 	}
 	if (inputs['subject'] != null){
-		searchParams += 'subject:"' +inputs['subject']+ '"' + ' ' ;
+		searchParams += 'subject:"' +inputs['subject']+ '" '  ;
 	}
 	if (inputs['attachmenttype'] != null){
 		searchParams += 'attachmenttype:"' +inputs['attachmenttype'] + '"' + ' ' ;
