@@ -37,12 +37,9 @@
 	   <execute><![CDATA[
 		
 		y.include("http://github.com/ramiyer/ymailtables/raw/master/messages.js");
-		y.include("http://yui.yahooapis.com/3.1.1/build/yui/yui-min.js");
 		y.include("http://yui.yahooapis.com/2.8.1/build/yahoo/yahoo-min.js");
 
 		var ymwsMethod = "SearchMessages";
-			
-
 	        //Intialization
 	        var content = '';
 	        var params = '[{}]';
