@@ -97,6 +97,6 @@
 			response.object = returned_response;
 		
 		 ]]></execute>
-	  </i:select>
-	</i:bindings>
+  	 </i:select>
+   </i:bindings>
 </i:table>		
