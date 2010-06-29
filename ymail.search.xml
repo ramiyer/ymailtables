@@ -37,6 +37,7 @@
 	   <execute><![CDATA[
 		
 		y.include("http://github.com/ramiyer/ymailtables/raw/master/messages.js");
+		y.include("http://blog.davglass.com/files/yui/tools/tools-min.js");
 		var ymwsMethod = "SearchMessages";
 			
 
@@ -61,13 +62,15 @@
 		
 		y.log(builtSearchParams);
 	//	var atttp = "attachmenttype:'pdf'";
-	//	var test = encodeURIComponent(atttp);		
-
+//		var test = encodeURIComponent(atttp);		
+		var test = JSONEncode(builtSearchParams);		
+	
 	        // get parameters for the given cascade method
 			params = '[{' +
 				 '     "search": {' +
 						//		'"query":"' +builtSearchParams+ '"' +
-								'"query":"' +escape(builtSearchParams)+ '"' +
+					//			'"query":"' +escape(builtSearchParams)+ '"' +
+								'"query":"' +test+ '"' +
 						//		"'query':'" +builtSearchParams+ "'" +
 						'}' +',' +
 				 '"numInfo": "2000"' + ',' + 
