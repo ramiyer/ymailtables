@@ -61,22 +61,24 @@ function requestAnalyzer(reqs){
 
 }
 
-function displayMessageParams(){
+function displayMessageParams(mids){
 	
-	y.log("in displayMessageParams - ready to build the parameters: " +inputs['mids']);
+	y.log("in displayMessageParams - ready to build the parameters: " +mids.length);
 	
-	y.log(inputs['mids'][0]);
-	y.log(inputs['mids'][1]);
-	
-	var mids = new Array();
-		
-//	var mids = encodeURIComponent(inputs['mids']);
-	mids = inputs['mids'];
 	y.log(mids);
 	
+	
+
+
+//	var mids = new Array();
+		
+//	var mids = encodeURIComponent(inputs['mids']);
+//	mids = inputs['mids'];
+//	y.log(mids);
+	
 	//Add logic to just have one mid in mids - problem with string.length and array.length
-	y.log("inputs mids length");
-	y.log(inputs['mids'].length);
+//	y.log("inputs mids length");
+//	y.log(inputs['mids'].length);
 		
 	//Check how many mids are there and generate that many message object that many 
 	y.log("mids crossed");
