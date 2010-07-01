@@ -68,11 +68,17 @@
 		}
 		*/
 		
+		/*
 		if(inputs['mids'].length > 0){
 			msgs = displayMessageParams();
-		}
+		}*/
 		
-		msgs = displayMessageParams();
+		y.log(inputs['mids']);
+		
+		var tmpArray = new Array();
+		tmpArray = inputs['mids'];
+		
+		msgs = displayMessageParams(tmpArray);
 		
 		y.log(msgs.toString());
 		
