@@ -68,26 +68,23 @@ function displayMessageParams(){
 	var mids = inputs['mid'];
 		
 	//Check how many mids are there and generate that many message object that many 
-//	for (var i = 0; i < mids.size; i++){
-		
-		var messages = {
-		    message: []
-		};
 
-		for(var i in mids) {
+	var messages = {
+	    message: []
+	};
 
-		    var midval = escape(mids[i]);
-		
-			messages.message.push({ 
-				"mid":'"'+midval+'"' +','
-		        "restrictCSS": '"' +inputs['restrictCSS']+ '"' + ','
-		        "enableWarnings":'"' +inputs['enableWarnings']+ '"' + ','
-		        "expandCIDReferences":'"' +inputs['expandCIDReferences']+ '"' +','
-		 		"blockImages":'"' +inputs['blockImages']+ '"' +  
-		    });
-		}
-		
-		
+	for(var i in mids) {
+
+	    var midval = escape(mids[i]);
+		messages.message.push({
+			"mid": midval,
+	        "restrictCSS": inputs['restrictCSS'],
+	        "enableWarnings": inputs['enableWarnings'],
+	        "expandCIDReferences": inputs['expandCIDReferences'],
+	 		"blockImages": inputs['blockImages']  
+	    });
+	}
+
 	/*	
 		 myObject = {
 			"mid":"'+ mids[i]  +'",
@@ -98,31 +95,18 @@ function displayMessageParams(){
 		};
 	}*/
 	
-	y.log(messages);
-	return messages;
-	
 	/*
-	
-	var messages = {
-	    message: []
-	};
-
-	for(var i in mids) {
-
-	    var item = mids[i];
-
-	    messages.message.push({ 
-	        "firstName" : item.firstName,
-	        "lastName"  : item.lastName,
-	        "age"       : item.age 
-	    });
-	}
-
+		"mid":'"'+midval+'"' +','
+        "restrictCSS": '"' +inputs['restrictCSS']+ '"' + ',' +
+        "enableWarnings":'"' +inputs['enableWarnings']+ '"' + ',' +
+        "expandCIDReferences":'"' +inputs['expandCIDReferences']+ '"' +',' +
+ 		"blockImages":'"' +inputs['blockImages']+ '"' +
 	
 	
 	*/
 	
-	
+	y.log(messages);
+	return messages;
 	
 }
 
