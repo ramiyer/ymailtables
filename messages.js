@@ -76,12 +76,14 @@ function displayMessageParams(){
 	
 		
 	//Check how many mids are there and generate that many message object that many 
-
+	y.log("mids crossed");
 	var messages = {
 	    message: []
 	};
 
 //	if(inputs['mids'])
+	
+	y.log("getting ready for loops");
 	for(var i=0; i<=mids.length; i++) {
 
 		//var midval = encodeURIComponent(mids[i]);
