@@ -57,13 +57,13 @@
 		var msgs;
 		
 		if(inputs['mid'] != 0 ){
-			msgs =  '{' +
+			msgs =  '"message":[{' +
 					 		'"mid": "' +escape(inputs["mid"])+ '",' + 
 					 		'"restrictCSS": "' +inputs['restrictCSS']+ '"' + ',' + 
 					 		'"enableWarnings": "' +inputs['enableWarnings']+ '"' + ',' + 
 					 		'"expandCIDReferences": "' +inputs['expandCIDReferences']+ '"' + ',' +
 							'"blockImages":"' +inputs['blockImages']+ '"' +
-					 '}';
+					 '}]';
 		}else if(inputs['mids'] != 0){
 			msgs = displayMessageParams();
 		}else {
@@ -86,7 +86,7 @@
 		
 			params = '[{' +
 					 		'"fid": "' +escape(inputs["fid"])+ '",' + 
-					 		msgs.toString() +',' +
+					 		 msgs.toString() +',' +
 					 		'"charsetHint": "' +inputs['charsetHint']+ '"' + ',' + 
 					 		'"truncateAt": "' +inputs['truncateAt']+ '"' + ',' +
 							'"enableRetry":"' +inputs['enableRetry']+ '"' +
