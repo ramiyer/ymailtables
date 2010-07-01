@@ -66,7 +66,7 @@ function displayMessageParams(){
 	y.log("in displayMessageParams - ready to build the parameters");
 		
 	var mids = inputs['mid'];
-	
+		
 	//Check how many mids are there and generate that many message object that many 
 //	for (var i = 0; i < mids.size; i++){
 		
@@ -79,11 +79,11 @@ function displayMessageParams(){
 		    var midval = escape(mids[i]);
 		
 			messages.message.push({ 
-				"mid":"'+midval+'" +','
-		        "restrictCSS": "' +inputs['restrictCSS']+ '" + ','
-		        "enableWarnings":"' +inputs['enableWarnings']+ '" + ','
-		        "expandCIDReferences":"' +inputs['expandCIDReferences']+ '" +','
-		 		"blockImages":"' +inputs['blockImages']+ '" +  
+				"mid":'"'+midval+'"' +','
+		        "restrictCSS": '"' +inputs['restrictCSS']+ '"' + ','
+		        "enableWarnings":'"' +inputs['enableWarnings']+ '"' + ','
+		        "expandCIDReferences":'"' +inputs['expandCIDReferences']+ '"' +','
+		 		"blockImages":'"' +inputs['blockImages']+ '"' +  
 		    });
 		}
 		
