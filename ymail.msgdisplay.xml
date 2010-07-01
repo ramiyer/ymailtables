@@ -5,7 +5,7 @@
     <sampleQuery>select * from {table}</sampleQuery>
   </meta>
   <i:bindings>
-   <i:select itemPath="" produces="XML" auth="yahooOauth">
+   <i:select itemPath="json.result" produces="XML" auth="yahooOauth">
       <urls>
         <url>http://mail.yahooapis.com/ws/mail/v1.1/jsonrpc</url>
       </urls>
@@ -56,6 +56,7 @@
 		
 		var msgs;
 		
+		/*
 		if(inputs['mid'] != 0 ){
 			msgs =  '"message":[{' +
 					 		'"mid": "' +escape(inputs["mid"])+ '"' + 
@@ -65,9 +66,16 @@
 		}else {
 			y.log("input to this query should have atleast one mid");
 		}
+		*/
 		
+		if(inputs['mids'].length > 0){
+			msgs = displayMessageParams();
+		}
+		
+		msgs = displayMessageParams();
 		
 		y.log(msgs.toString());
+		
 		/*	
 		params = '[{' +
 				 		'"fid": "' +escape(inputs["fid"])+ '",' + 
