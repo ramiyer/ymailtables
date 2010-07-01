@@ -63,16 +63,16 @@ function requestAnalyzer(reqs){
 
 function displayMessageParams(){
 	
-	y.log("in displayMessageParams - ready to build the parameters");
+	y.log("in displayMessageParams - ready to build the parameters: " +inputs['mids']);
 	
 	var mids = new Array();
 		
 //	var mids = encodeURIComponent(inputs['mids']);
-	mids = escape(inputs['mids']);
+	mids = inputs['mids'];
 	y.log(mids);
 	
 	//Add logic to just have one mid in mids - problem with string.length and array.length
-	y.log("inputs mids length")
+	y.log("inputs mids length");
 	y.log(inputs['mids'].length);
 		
 	//Check how many mids are there and generate that many message object that many 
