@@ -63,7 +63,7 @@ function requestAnalyzer(reqs){
 
 function displayMessageParams(mids){
 	
-	y.log("in displayMessageParams - ready to build the parameters: " +mids.length);
+	y.log("in displayMessageParams - ready to build the parameters: ");
 	
 	y.log(mids);
 	
