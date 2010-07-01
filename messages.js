@@ -61,12 +61,78 @@ function requestAnalyzer(reqs){
 
 }
 
-
-
-function buildSearchQuery(searchReqs){
+function displayMessageParams(){
 	
-	y.log("searchReqs are ");
-	y.log(searchReqs);
+	y.log("in displayMessageParams - ready to build the parameters");
+		
+	var mids = inputs['mid'];
+	
+	//Check how many mids are there and generate that many message object that many 
+//	for (var i = 0; i < mids.size; i++){
+		
+		var messages = {
+		    message: []
+		};
+
+		for(var i in mids) {
+
+		    var midval = escape(mids[i]);
+		
+			messages.message.push({ 
+				"mid":"'+midval+'" +','
+		        "restrictCSS": "' +inputs['restrictCSS']+ '" + ','
+		        "enableWarnings":"' +inputs['enableWarnings']+ '" + ','
+		        "expandCIDReferences":"' +inputs['expandCIDReferences']+ '" +','
+		 		"blockImages":"' +inputs['blockImages']+ '" +  
+		    });
+		}
+		
+		
+	/*	
+		 myObject = {
+			"mid":"'+ mids[i]  +'",
+			"restrictCSS":"true",
+			"enableWarnings":"true",
+			"expandCIDReferences":"true",
+			"blockImages":"true"
+		};
+	}*/
+	
+	y.log(messages);
+	return messages;
+	
+	/*
+	
+	var messages = {
+	    message: []
+	};
+
+	for(var i in mids) {
+
+	    var item = mids[i];
+
+	    messages.message.push({ 
+	        "firstName" : item.firstName,
+	        "lastName"  : item.lastName,
+	        "age"       : item.age 
+	    });
+	}
+
+	
+	
+	*/
+	
+	
+	
+}
+
+
+
+
+function buildSearchQuery(){
+	
+//	y.log("searchReqs are ");
+//	y.log(searchReqs);
 	/*
 		'"to": "' +inputs['to']+ '"' + ',' +
 		'"from": "' +inputs['from']+ '"' + ',' +
