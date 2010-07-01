@@ -66,6 +66,7 @@ function displayMessageParams(){
 	y.log("in displayMessageParams - ready to build the parameters");
 		
 	var mids = inputs['mid'];
+	
 		
 	//Check how many mids are there and generate that many message object that many 
 
@@ -73,7 +74,7 @@ function displayMessageParams(){
 	    message: []
 	};
 
-	for(var i in mids) {
+	for(var i=0;i<=mids.length; i++) {
 
 	    var midval = escape(mids[i]);
 		messages.message.push({
@@ -105,7 +106,7 @@ function displayMessageParams(){
 	
 	*/
 	
-	y.log(messages);
+	y.log(messages.toString());
 	return messages;
 	
 }
