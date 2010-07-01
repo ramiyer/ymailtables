@@ -86,10 +86,13 @@ function displayMessageParams(){
 
 		//var midval = encodeURIComponent(mids[i]);
 		var midval = mids[i];
+		y.log("mids array i");
+		y.log(mids[i].toString());
+		y.log("midval");
 		y.log(midval.toString());
 	
 		messages.message.push({
-			"mid": midval,
+			"mid": mids[i],
 	        "restrictCSS": inputs['restrictCSS'],
 	        "enableWarnings": inputs['enableWarnings'],
 	        "expandCIDReferences": inputs['expandCIDReferences'],
