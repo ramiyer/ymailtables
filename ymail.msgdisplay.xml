@@ -12,7 +12,6 @@
 	  <inputs>
   	    <key id="fid" type='xs:string' paramType='variable' default='Inbox'/>
 	    <key id="mid" type='xs:string' paramType='variable' required='true' />
-	    <key id="pid" type='xs:string' paramType='variable' />
 	    <key id="truncateAt" type='xs:string' paramType='variable' default='1024000'/>
 	    <key id="charsetHint" type='xs:string' paramType='variable' default='us-ascii' />
 	    <key id="blockImages" type='xs:string' paramType='variable' default='true' />
@@ -59,10 +58,6 @@
 		if(inputs['mid'] != 0 ){
 			msgs =  '"message":[{' +
 					 		'"mid": "' +escape(inputs["mid"])+ '",' + 
-					 		'"restrictCSS": "' +inputs['restrictCSS']+ '"' + ',' + 
-					 		'"enableWarnings": "' +inputs['enableWarnings']+ '"' + ',' + 
-					 		'"expandCIDReferences": "' +inputs['expandCIDReferences']+ '"' + ',' +
-							'"blockImages":"' +inputs['blockImages']+ '"' +
 					 '}]';
 		}else if(inputs['mids'] != 0){
 			msgs = displayMessageParams();
