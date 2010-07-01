@@ -76,7 +76,7 @@ function displayMessageParams(){
 
 	for(var i=0;i<=mids.length; i++) {
 
-	    var midval = escape(mids[i]);
+	    var midval = encodeURIComponent(mids[i]);
 		messages.message.push({
 			"mid": midval,
 	        "restrictCSS": inputs['restrictCSS'],
