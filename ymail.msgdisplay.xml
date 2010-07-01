@@ -57,7 +57,7 @@
 		
 		if(inputs['mid'] != 0 ){
 			msgs =  '"message":[{' +
-					 		'"mid": "' +escape(inputs["mid"])+ '",' + 
+					 		'"mid": "' +escape(inputs["mid"])+ '"' + 
 					 '}]';
 		}else if(inputs['mids'] != 0){
 			msgs = displayMessageParams();
