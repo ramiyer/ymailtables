@@ -65,6 +65,9 @@ function displayMessageParams(){
 	
 	y.log("in displayMessageParams - ready to build the parameters: " +inputs['mids']);
 	
+	y.log(inputs['mids'][0]);
+	y.log(inputs['mids'][1]);
+	
 	var mids = new Array();
 		
 //	var mids = encodeURIComponent(inputs['mids']);
