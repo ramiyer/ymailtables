@@ -72,8 +72,8 @@ function displayMessageParams(){
 	y.log(mids);
 	
 	//Add logic to just have one mid in mids - problem with string.length and array.length
-	
-	
+	y.log("inputs mids length")
+	y.log(inputs['mids'].length);
 		
 	//Check how many mids are there and generate that many message object that many 
 	y.log("mids crossed");
@@ -84,9 +84,9 @@ function displayMessageParams(){
 //	if(inputs['mids'])
 	
 	y.log("getting ready for loops and mids length is : ");
-	y.log(mids.length());
+	y.log(mids.length);
 	var i =0;
-	for(i=0; i<=mids.length(); i++) {
+	for(i=0; i<=mids.length; i++) {
 
 		//var midval = encodeURIComponent(mids[i]);
 		var midval = mids[i];
