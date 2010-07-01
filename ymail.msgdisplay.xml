@@ -52,15 +52,15 @@
 	//	y.log("mid array is ");
 	//	y.log(mids);
 		
-		
-		var msgs = displayMessageParams();
+		var msgs = [];
+		msgs = displayMessageParams();
 		
 		y.log(msgs);
 			
 		params = '[{' +
 				 		'"fid": "' +escape(inputs["fid"])+ '",' + 
 				 		'"message": [' 
-									+ msgs +
+									+ msgs.toString() +
 						']' +',' +
 				 		'"charsetHint": "' +inputs['charsetHint']+ '"' + ',' + 
 				 		'"truncateAt": "' +inputs['truncateAt']+ '"' + ',' +
