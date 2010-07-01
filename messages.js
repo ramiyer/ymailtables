@@ -84,9 +84,9 @@ function displayMessageParams(){
 //	if(inputs['mids'])
 	
 	y.log("getting ready for loops and mids length is : ");
-	y.log(mids.length);
+	y.log(mids.length());
 	var i =0;
-	for(i=0; i<=mids.length; i++) {
+	for(i=0; i<=mids.length(); i++) {
 
 		//var midval = encodeURIComponent(mids[i]);
 		var midval = mids[i];
