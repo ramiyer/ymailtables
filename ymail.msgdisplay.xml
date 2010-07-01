@@ -11,8 +11,8 @@
       </urls>
 	  <inputs>
   	    <key id="fid" type='xs:string' paramType='variable' default='Inbox'/>
-	    <key id="mid" type='xs:string' paramType='variable' required='true' />
-		<key id="mids" type='xs:string' paramType='variable' />
+	    <key id="mid" type='xs:string' paramType='variable' />
+		<key id="mids" type='xs:string' paramType='variable' batchable='true' maxBatchItems='20' />
 	    <key id="truncateAt" type='xs:string' paramType='variable' default='1024000'/>
 	    <key id="charsetHint" type='xs:string' paramType='variable' default="" />
 	    <key id="blockImages" type='xs:string' paramType='variable' default="true" />
