@@ -82,10 +82,10 @@ function displayMessageParams(){
 	};
 
 //	if(inputs['mids'])
-	for(var i=0; i<=inputs['mids'].length; i++) {
+	for(var i=0; i<=mids.length; i++) {
 
 		//var midval = encodeURIComponent(mids[i]);
-		var midval = inputs['mids'][i];
+		var midval = mids[i];
 		y.log(midval);
 	
 		messages.message.push({
