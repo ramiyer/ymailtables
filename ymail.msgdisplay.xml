@@ -52,11 +52,11 @@
 	//	y.log("mid array is ");
 	//	y.log(mids);
 		
-		var msgs = [];
-		msgs = displayMessageParams();
+//		var msgs = [];
+		var msgs = displayMessageParams();
 		
-		y.log(msgs);
-			
+		y.log(msgs.toString());
+		/*	
 		params = '[{' +
 				 		'"fid": "' +escape(inputs["fid"])+ '",' + 
 				 		'"message": [' 
@@ -66,7 +66,16 @@
 				 		'"truncateAt": "' +inputs['truncateAt']+ '"' + ',' +
 						'"enableRetry":"' +inputs['enableRetry']+ '"' +
 				 '}]';
-	
+		*/
+		
+			params = '[{' +
+					 		'"fid": "' +escape(inputs["fid"])+ '",' + 
+					 		msgs.toString() +',' +
+					 		'"charsetHint": "' +inputs['charsetHint']+ '"' + ',' + 
+					 		'"truncateAt": "' +inputs['truncateAt']+ '"' + ',' +
+							'"enableRetry":"' +inputs['enableRetry']+ '"' +
+					 '}]';
+		
 		
 	    // get parameters for the given cascade method
 			
