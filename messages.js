@@ -68,7 +68,7 @@ function displayMessageParams(){
 	var mids = new Array();
 		
 //	var mids = encodeURIComponent(inputs['mids']);
-	mids = inputs['mids'];
+	mids = escape(inputs['mids']);
 	y.log(mids);
 	
 	//Add logic to just have one mid in mids - problem with string.length and array.length
