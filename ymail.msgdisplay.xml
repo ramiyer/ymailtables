@@ -10,7 +10,7 @@
         <url>http://mail.yahooapis.com/ws/mail/v1.1/jsonrpc</url>
       </urls>
 	  <inputs>
-  	    <key id="fid" type='xs:string' paramType='variable' required='true' default='Inbox'/>
+  	    <key id="fid" type='xs:string' paramType='variable' default='Inbox'/>
 	    <key id="mid" type='xs:string' paramType='variable' required='true' />
 	    <key id="pid" type='xs:string' paramType='variable' />
 	    <key id="truncateAt" type='xs:string' paramType='variable' default='1024000'/>
@@ -22,19 +22,17 @@
 		<key id="enableRetry" type='xs:string' paramType='variable' default='true' />
 	   </inputs>
 	   <execute><![CDATA[
-		
+	
 		y.include("http://github.com/ramiyer/ymailtables/raw/master/messages.js");
-		y.include("http://github.com/ramiyer/ymailtables/raw/master/json2.js");
-		y.include("http://yui.yahooapis.com/3.1.1/build/yui/yui-min.js");
 
 		var ymwsMethod = "GetMessage";
-	        //Intialization
-	        var content = '';
-	        var params = '[{}]';
-//		var fid = escape(inputs["fid"]);
+	   //Intialization
+	    var content = '';
+	    var params = '[{}]';
 
-	        y.log("method = " + ymwsMethod);
-	        y.log("request = " +request);
+
+	    y.log("method = " + ymwsMethod);
+	    y.log("request = " +request);
 
 	      
 //		var builtSearchParams = buildSearchQuery(inputs);
