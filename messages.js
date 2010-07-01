@@ -65,7 +65,8 @@ function displayMessageParams(){
 	
 	y.log("in displayMessageParams - ready to build the parameters");
 		
-	var mids = inputs['mid'];
+	var mids = encodeURIComponent(inputs['mid']);
+	y.log(mids);
 	
 		
 	//Check how many mids are there and generate that many message object that many 
@@ -77,12 +78,16 @@ function displayMessageParams(){
 	for(var i=0;i<=mids.length; i++) {
 
 		//var midval = encodeURIComponent(mids[i]);
+		y.log("********1*********");
 		var midval = encodeURIComponent(mids[i]);
 		y.log(midval);
+		y.log("********2*********");
 		var midval = encodeURI(mids[i]);
 		y.log(midval);
+		y.log("********3*********");
 		var midval = escape(mids[i]);
 		y.log(midval);
+		y.log("********4*********");
 		var midval = mids[i];
 		y.log(midval);
 	
