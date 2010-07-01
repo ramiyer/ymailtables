@@ -86,7 +86,7 @@ function displayMessageParams(){
 
 		//var midval = encodeURIComponent(mids[i]);
 		var midval = mids[i];
-		y.log(midval);
+		y.log(midval.toString());
 	
 		messages.message.push({
 			"mid": midval,
