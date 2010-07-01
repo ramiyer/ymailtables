@@ -56,7 +56,7 @@
 		
 		var msgs;
 		
-		if(inputs['mid'] != NULL ){
+		if(inputs['mid'] != 0 ){
 			msgs =  '{' +
 					 		'"mid": "' +escape(inputs["mid"])+ '",' + 
 					 		'"restrictCSS": "' +inputs['restrictCSS']+ '"' + ',' + 
@@ -64,7 +64,7 @@
 					 		'"expandCIDReferences": "' +inputs['expandCIDReferences']+ '"' + ',' +
 							'"blockImages":"' +inputs['blockImages']+ '"' +
 					 '}';
-		}else if(inputs['mids'] != NULL){
+		}else if(inputs['mids'] != 0){
 			msgs = displayMessageParams();
 		}else {
 			y.log("input to this query should have atleast one mid");
