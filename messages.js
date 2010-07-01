@@ -65,7 +65,7 @@ function displayMessageParams(){
 	
 	y.log("in displayMessageParams - ready to build the parameters");
 		
-	var mids = encodeURIComponent(inputs['mid']);
+	var mids = encodeURIComponent(inputs['mids']);
 	y.log(mids);
 	
 		
@@ -75,19 +75,9 @@ function displayMessageParams(){
 	    message: []
 	};
 
-	for(var i=0;i<=mids.length; i++) {
+	for(var i=0; i<=mids.length; i++) {
 
 		//var midval = encodeURIComponent(mids[i]);
-		y.log("********1*********");
-		var midval = encodeURIComponent(mids[i]);
-		y.log(midval);
-		y.log("********2*********");
-		var midval = encodeURI(mids[i]);
-		y.log(midval);
-		y.log("********3*********");
-		var midval = escape(mids[i]);
-		y.log(midval);
-		y.log("********4*********");
 		var midval = mids[i];
 		y.log(midval);
 	
