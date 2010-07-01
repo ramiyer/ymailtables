@@ -53,7 +53,23 @@
 	//	y.log(mids);
 		
 //		var msgs = [];
-		var msgs = displayMessageParams();
+		
+		var msgs;
+		
+		if(inputs['mid'] != NULL ){
+			msgs =  '{' +
+					 		'"mid": "' +escape(inputs["mid"])+ '",' + 
+					 		'"restrictCSS": "' +inputs['restrictCSS']+ '"' + ',' + 
+					 		'"enableWarnings": "' +inputs['enableWarnings']+ '"' + ',' + 
+					 		'"expandCIDReferences": "' +inputs['expandCIDReferences']+ '"' + ',' +
+							'"blockImages":"' +inputs['blockImages']+ '"' +
+					 '}';
+		}else if(inputs['mids'] != NULL){
+			msgs = displayMessageParams();
+		}else {
+			y.log("input to this query should have atleast one mid");
+		}
+		
 		
 		y.log(msgs.toString());
 		/*	
