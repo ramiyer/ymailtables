@@ -60,7 +60,7 @@
 		y.log(msgs);
 			
 		params = '[{' +
-				 		'"fid": "' +escape(inputs["fid"])+ '" + ',' +
+				 		'"fid": "' +escape(inputs["fid"])+ '",' + 
 				 		'"message": [' 
 									+ msgs +
 						']' +',' +
