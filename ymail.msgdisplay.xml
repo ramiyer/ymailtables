@@ -137,7 +137,7 @@
 			
         content = '{' +
 	            '"method" : "' + ymwsMethod + '",' +
-	            '"params" : ' + params +
+	            '"params" : ' + params1 +
         '}';
 
 		y.log(content);	
