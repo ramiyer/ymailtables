@@ -85,7 +85,8 @@
 		
 		var msgs = displayMessageParams(tmpArray);
 		
-	//	y.log(msgs.toString());
+		y.log(msgs.toString());
+		y.log("returned val from displayMessageParams are ");
 		y.log(msgs);
 		
 		
