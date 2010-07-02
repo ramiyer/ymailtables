@@ -121,6 +121,7 @@
 		y.log(msgs);
 		y.log("going to stringfy");
 		var msgsjson = JSON.stringify(msgs);
+		y.log(msgsjson);
 			
 				params1 = '[{' +
 						 		'"fid": "' +escape(inputs["fid"])+ '",' + 
