@@ -112,6 +112,21 @@
 		
 		
 	    // get parameters for the given cascade method
+		y.log("params are ");
+		y.log(params);
+		
+			
+				params1 = '[{' +
+						 		'"fid": "' +escape(inputs["fid"])+ '",' + 
+						 		 msgs +',' +
+						 		'"charsetHint": "' +inputs['charsetHint']+ '"' + ',' + 
+						 		'"truncateAt": "' +inputs['truncateAt']+ '"' + ',' +
+								'"enableRetry":"' +inputs['enableRetry']+ '"' +
+						 '}]';
+
+			y.log("params1 are ");
+			y.log(params1);
+
 			
         content = '{' +
 	            '"method" : "' + ymwsMethod + '",' +
