@@ -100,7 +100,7 @@ function displayMessageParams(mids){
 		y.log(midval.toString());
 	
 		messages.message.push({
-			"mid": mids[i].toString(),
+			"mid": midval,
 	        "restrictCSS": inputs['restrictCSS'],
 	        "enableWarnings": inputs['enableWarnings'],
 	        "expandCIDReferences": inputs['expandCIDReferences'],
@@ -127,8 +127,11 @@ function displayMessageParams(mids){
 	
 	
 	*/
-	
+	y.log(messages);
+	y.log(message.toString());
+	y.log(messages.message.toString());
 	y.log(messages.toString());
+	
 	return messages.toString();
 	
 }
