@@ -136,9 +136,9 @@ function displayMessageParams(mids){
 	y.log(messages);
 //	y.log(messages.message.toString());
 //	y.log("messages.message is ");
-//	y.log(message.toString())	;
+	y.log(messages.toString())	;
 	
-	return messages;
+	return messages.toString();
 	
 }
 
