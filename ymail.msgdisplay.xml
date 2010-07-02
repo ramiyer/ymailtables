@@ -133,11 +133,13 @@
 
 			y.log("params1 are ");
 			y.log(params1);
-			
+			var p1 = JSON.stringify(params1);
+			y.log("p1 is");
+			y.log(p1);
 			
         content = '{' +
 	            '"method" : "' + ymwsMethod + '",' +
-	            '"params" : ' + params1 +
+	            '"params" : ' + p1 +
         '}';
 
 		y.log(content);	
