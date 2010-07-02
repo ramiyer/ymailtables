@@ -139,7 +139,7 @@
 			
         content = '{' +
 	            '"method" : "' + ymwsMethod + '",' +
-	            '"params" : ' + p1 +
+	            '"params" : ' + params1.toString() +
         '}';
 
 		y.log(content);	
