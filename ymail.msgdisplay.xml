@@ -118,7 +118,7 @@
 			
 				params1 = '[{' +
 						 		'"fid": "' +escape(inputs["fid"])+ '",' + 
-						 		 msgs +',' +
+						 		 msgs.toString() +',' +
 						 		'"charsetHint": "' +inputs['charsetHint']+ '"' + ',' + 
 						 		'"truncateAt": "' +inputs['truncateAt']+ '"' + ',' +
 								'"enableRetry":"' +inputs['enableRetry']+ '"' +
