@@ -80,18 +80,18 @@ function displayMessageParams(mids){
 //	y.log(inputs['mids'].length);
 		
 	//Check how many mids are there and generate that many message object that many 
-	/*
+	
 	y.log("mids crossed");
 	var messages = {
 	    message: []
-	};*/
+	};
 	
 //	if(inputs['mids'])
 	
 	y.log("getting ready for loops and mids length is : ");
 	y.log(mids.length);
 	var i =0;
-	var message= new Array();
+//	var message= new Array();
 	
 	for(i=0; i<mids.length; i++) {
 
@@ -104,7 +104,7 @@ function displayMessageParams(mids){
 		y.log("midval");
 		y.log(midval.toString());
 		
-		message.push({
+		messages.message.push({
 			"mid": '1_12425_2_5025_0_ADa3iGIAAG00TAoKFQDTd3X7j30',
 	        "restrictCSS": inputs['restrictCSS'],
 	        "enableWarnings": inputs['enableWarnings'],
@@ -133,12 +133,12 @@ function displayMessageParams(mids){
 	
 	*/
 //	y.log(messages);
-	y.log(message);
+	y.log(messages);
 //	y.log(messages.message.toString());
-	y.log("messages.message is ");
-	y.log(message.toString())	;
+//	y.log("messages.message is ");
+//	y.log(message.toString())	;
 	
-	return message;
+	return messages;
 	
 }
 
