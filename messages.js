@@ -80,16 +80,18 @@ function displayMessageParams(mids){
 //	y.log(inputs['mids'].length);
 		
 	//Check how many mids are there and generate that many message object that many 
+	/*
 	y.log("mids crossed");
 	var messages = {
 	    message: []
-	};
-
+	};*/
+	
 //	if(inputs['mids'])
 	
 	y.log("getting ready for loops and mids length is : ");
 	y.log(mids.length);
 	var i =0;
+	var message= new Array();
 	for(i=0; i<mids.length; i++) {
 
 		//var midval = encodeURIComponent(mids[i]);
@@ -98,8 +100,8 @@ function displayMessageParams(mids){
 		y.log(mids[i].toString());
 		y.log("midval");
 		y.log(midval.toString());
-	
-		messages.message.push({
+		
+		message.push({
 			"mid": midval,
 	        "restrictCSS": inputs['restrictCSS'],
 	        "enableWarnings": inputs['enableWarnings'],
