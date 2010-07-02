@@ -92,9 +92,12 @@ function displayMessageParams(mids){
 	y.log(mids.length);
 	var i =0;
 	var message= new Array();
+	
 	for(i=0; i<mids.length; i++) {
 
 		//var midval = encodeURIComponent(mids[i]);
+		y.log("mids[i]");
+		y.log(mids[i]);
 		var midval = mids[i];
 		y.log("mids array i");
 		y.log(mids[i].toString());
