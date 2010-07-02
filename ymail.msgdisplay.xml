@@ -85,7 +85,7 @@
 		
 		var msgs = displayMessageParams(tmpArray);
 		
-		y.log(msgs.toString());
+	//	y.log(msgs.toString());
 		y.log("returned val from displayMessageParams are ");
 		y.log(msgs);
 		
@@ -104,7 +104,7 @@
 		
 			params = '[{' +
 					 		'"fid": "' +escape(inputs["fid"])+ '",' + 
-					 		 msgs.toString() +',' +
+					 		 msgs +',' +
 					 		'"charsetHint": "' +inputs['charsetHint']+ '"' + ',' + 
 					 		'"truncateAt": "' +inputs['truncateAt']+ '"' + ',' +
 							'"enableRetry":"' +inputs['enableRetry']+ '"' +
