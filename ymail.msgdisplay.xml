@@ -76,7 +76,9 @@
 		y.log(inputs['mids']);
 		
 		var tmpArray = new Array();
-		tmpArray = inputs['mids'];
+		tmpArray = inputs['mids'].split(',');
+		
+		y.log(tmpArray);
 		
 		msgs = displayMessageParams(tmpArray);
 		
