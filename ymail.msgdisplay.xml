@@ -73,11 +73,14 @@
 			msgs = displayMessageParams();
 		}*/
 		
+		y.log("mid");
 		y.log(inputs['mids']);
+		y.log("input mids tostring");
+		y.log(inputs['mids'].toString());
 		
 		var tmpArray = new Array();
-		tmpArray = inputs['mids'].split(',');
-		
+		tmpArray = inputs['mids'].toString();
+		y.log("tmpArray");
 		y.log(tmpArray);
 		
 		msgs = displayMessageParams(tmpArray);
