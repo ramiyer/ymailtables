@@ -52,9 +52,9 @@
 	//	y.log("mid array is ");
 	//	y.log(mids);
 		
-//		var msgs = [];
+		var msgs = new Array();
 		
-		var msgs;
+//		var msgs;
 		
 		/*
 		if(inputs['mid'] != 0 ){
@@ -83,7 +83,7 @@
 		y.log("tmpArray");
 		y.log(tmpArray);
 		
-		var msgs = displayMessageParams(tmpArray);
+		msgs = displayMessageParams(tmpArray);
 		
 	//	y.log(msgs.toString());
 		y.log("returned val from displayMessageParams are ");
