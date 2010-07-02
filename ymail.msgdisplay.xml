@@ -83,11 +83,13 @@
 		y.log("tmpArray");
 		y.log(tmpArray);
 		
-		msgs = displayMessageParams(tmpArray);
+		var msgs = displayMessageParams(tmpArray);
 		
-		y.log(msgs.toString());
+	//	y.log(msgs.toString());
+		y.log(msgs);
 		
-		/*	
+		
+		/*		
 		params = '[{' +
 				 		'"fid": "' +escape(inputs["fid"])+ '",' + 
 				 		'"message": [' 
@@ -101,7 +103,7 @@
 		
 			params = '[{' +
 					 		'"fid": "' +escape(inputs["fid"])+ '",' + 
-					 		 msgs.toString() +',' +
+					 		 msgs +',' +
 					 		'"charsetHint": "' +inputs['charsetHint']+ '"' + ',' + 
 					 		'"truncateAt": "' +inputs['truncateAt']+ '"' + ',' +
 							'"enableRetry":"' +inputs['enableRetry']+ '"' +
