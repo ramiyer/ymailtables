@@ -24,6 +24,8 @@
 	   <execute><![CDATA[
 	
 		y.include("http://github.com/ramiyer/ymailtables/raw/master/messages.js");
+		y.include("http://github.com/ramiyer/ymailtables/raw/master/json2.js");								 
+		y.include("http://yui.yahooapis.com/3.1.1/build/yui/yui-min.js");
 
 		var ymwsMethod = "GetMessage";
 	   //Intialization
@@ -115,10 +117,14 @@
 		y.log("params are ");
 		y.log(params);
 		
+		y.log("msgs after params is");
+		y.log(msgs);
+		y.log("going to stringfy");
+		var msgsjson = JSON.stringify(msgs);
 			
 				params1 = '[{' +
 						 		'"fid": "' +escape(inputs["fid"])+ '",' + 
-						 		 msgs.toString() +',' +
+						 		 msgsjson +',' +
 						 		'"charsetHint": "' +inputs['charsetHint']+ '"' + ',' + 
 						 		'"truncateAt": "' +inputs['truncateAt']+ '"' + ',' +
 								'"enableRetry":"' +inputs['enableRetry']+ '"' +
@@ -126,7 +132,7 @@
 
 			y.log("params1 are ");
 			y.log(params1);
-
+			
 			
         content = '{' +
 	            '"method" : "' + ymwsMethod + '",' +
