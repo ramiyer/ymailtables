@@ -85,12 +85,13 @@
 		y.log("tmpArray");
 		y.log(tmpArray);
 		
-		msgs = displayMessageParams(tmpArray);
+	//	msgs = displayMessageParams(tmpArray);
 		
 	//	y.log(msgs.toString());
 		y.log("returned val from displayMessageParams are ");
 		y.log(msgs);
-		
+	
+		msgs = buildMsgParams(tmpArray);
 		
 		/*		
 		params = '[{' +
@@ -102,20 +103,32 @@
 				 		'"truncateAt": "' +inputs['truncateAt']+ '"' + ',' +
 						'"enableRetry":"' +inputs['enableRetry']+ '"' +
 				 '}]';
+				
+				params = '[{' +
+									 		'"fid": "' +escape(inputs["fid"])+ '",' + 
+									 		 msgs +',' +
+									 		'"charsetHint": "' +inputs['charsetHint']+ '"' + ',' + 
+									 		'"truncateAt": "' +inputs['truncateAt']+ '"' + ',' +
+											'"enableRetry":"' +inputs['enableRetry']+ '"' +
+									 '}]';
+		
+				
 		*/
 		
 			params = '[{' +
 					 		'"fid": "' +escape(inputs["fid"])+ '",' + 
-					 		 msgs +',' +
+					 		'"message": "' +msgs+ '",' +
 					 		'"charsetHint": "' +inputs['charsetHint']+ '"' + ',' + 
 					 		'"truncateAt": "' +inputs['truncateAt']+ '"' + ',' +
 							'"enableRetry":"' +inputs['enableRetry']+ '"' +
 					 '}]';
 		
 		
+		/*
 	    // get parameters for the given cascade method
 		y.log("params are ");
 		y.log(params);
+		y.log(params.toString());
 		
 		y.log("msgs after params is");
 		y.log(msgs);
@@ -125,7 +138,7 @@
 			
 				params1 = '[{' +
 						 		'"fid": "' +escape(inputs["fid"])+ '",' + 
-						 		 msgsjson +',' +
+						 		 msgs.toString() +',' +
 						 		'"charsetHint": "' +inputs['charsetHint']+ '"' + ',' + 
 						 		'"truncateAt": "' +inputs['truncateAt']+ '"' + ',' +
 								'"enableRetry":"' +inputs['enableRetry']+ '"' +
@@ -135,11 +148,11 @@
 			y.log(params1);
 			var p1 = JSON.stringify(params1);
 			y.log("p1 is");
-			y.log(p1);
+			y.log(p1); */
 			
         content = '{' +
 	            '"method" : "' + ymwsMethod + '",' +
-	            '"params" : ' + params1.toString() +
+	            '"params" : ' + params.toString() +
         '}';
 
 		y.log(content);	
