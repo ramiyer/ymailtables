@@ -94,6 +94,7 @@
 		msgs = buildMsgParams(tmpArray);
 		y.log("returned val from displayMessageParams are ");
 		y.log(msgs);
+		y.log(msgs.toString());
 		
 		/*		
 		params = '[{' +
