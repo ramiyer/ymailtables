@@ -154,8 +154,8 @@
 		 */
 		
 		y.log(msgs);	
-		var msgs1 = '{"params":[{"fid":"Inbox","charsetHint":"","message":[{"mid":"1_59412_AGO3iGIAAJN5TC0W9Qkst262lOM"}]}],"method":"GetMessage"}';
-		y.log(msgs1);
+		//var msgs1 = '{"params":[{"fid":"Inbox","charsetHint":"","message":[{"mid":"1_59412_AGO3iGIAAJN5TC0W9Qkst262lOM"}]}],"method":"GetMessage"}';
+		//y.log(msgs1);
 		
 		var req = JSON.stringify(msgs);
 		y.log("req");
