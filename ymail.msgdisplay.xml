@@ -123,6 +123,14 @@
 							'"enableRetry":"' +inputs['enableRetry']+ '"' +
 					 '}]';
 		
+		y.log("params are ");
+		y.log(params);
+		y.log(params.toString());
+		
+		var p1 = params.toString();
+		y.log("p1 is");
+		y.log(p1);
+		
 		
 		/*
 	    // get parameters for the given cascade method
