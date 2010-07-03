@@ -166,42 +166,43 @@ function buildMsgParams(mids){
 	//Check how many mids are there and generate that many message object that many 
 	
 	y.log("mids crossed");
-	/*
-	var messages = {
-	    message: []
-	}; */
 	
-	var messages = [];
 	
-//	if(inputs['mids'])
+	var params = {
+		method : "GetMessage",
+		params : []
+	};
 	
-	y.log("getting ready for loops and mids length is : ");
-	y.log(mids.length);
-	var i =0;
-//	var message= new Array();
+	//[{"mid":"1_4867_AKLPjkQAABFWTCVJ9AC4sj6tf3Y","expandCIDReferences":true,"enableWarnings":true,"blockImages":"userpreference"}]
+	var message = [];
+	
+	params.push({
+		"fid": "Inbox",
+		"message" : message ,
+		"charsetHint" : ""
+	});
 	
 	for(i=0; i<mids.length; i++) {
 
-		//var midval = encodeURIComponent(mids[i]);
-		y.log("mids[i]");
-		y.log(mids[i]);
-		var midval = mids[i];
-		y.log("mids array i");
-		y.log(mids[i].toString());
-		y.log("midval");
-		y.log(midval.toString());
-		
-		messages.push({
+		message.push({
 			"mid": '1_12425_2_5025_0_ADa3iGIAAG00TAoKFQDTd3X7j30',
 	        "restrictCSS": inputs['restrictCSS'],
 	        "enableWarnings": inputs['enableWarnings'],
 	        "expandCIDReferences": inputs['expandCIDReferences'],
 	 		"blockImages": inputs['blockImages']  
 	    });
-	}
+	
+	/*
+		params.message.push("mid" : '1_12425_2_5025_0_ADa3iGIAAG00TAoKFQDTd3X7j30');
+		messages.push("restrictCSS" : "true");
+		messages.push("enablewarnings":"true");
+		messages.push("expandCIDReferences":"true");
+		messages.push("blockImages":"true");
+	}*/
 
-	y.log(messages);
-	return messages;
+	}
+	y.log(message);
+	return params;
 	
 }
 
