@@ -42,21 +42,7 @@
 	//	y.log("builtSearchParams values");
 		
 	//	y.log(builtSearchParams);
-	//	var jsonStr = JSON.stringify(builtSearchParams);
-		
-		//YUI().JSON.stringify(builtSearchParams);	
-			
-	//	y.log(jsonStr);
-		
-	//	var mids = new Array();
-	//	mids = inputs['mid'];
-		
-	//	y.log("mid array is ");
-	//	y.log(mids);
-		
 	
-		
-//		var msgs;
 		
 		/*
 		if(inputs['mid'] != 0 ){
@@ -168,6 +154,9 @@
 		 */
 		
 		y.log(msgs);	
+		
+		var msgs = '{"params":[{"fid":"Inbox","charsetHint":"","message":[{"mid":"1_11819_2_5025_0_ADa3iGIAAG00TAoKFQDTd3X7j30"}]}],"method":"GetMessage"}';
+		
 		var returned_response = request.post(msgs).response;
 		response.object = returned_response;
 		
