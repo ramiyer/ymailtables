@@ -173,26 +173,26 @@ function buildMsgParams(mids){
 		params : []
 	};
 	*/
-	var params = [];
+	
+	
+	var param = {
+		params : []
+	};
 	//[{"mid":"1_4867_AKLPjkQAABFWTCVJ9AC4sj6tf3Y","expandCIDReferences":true,"enableWarnings":true,"blockImages":"userpreference"}]
 	var message = [];
 	
-	params.push({
-		"fid": "Inbox",
-		"message" : [] ,
-		"charsetHint" : ""
-	});
+
 	
 	for(i=0; i<mids.length; i++) {
 
-		params.message.push({
+		message.push({
 			"mid": '1_12425_2_5025_0_ADa3iGIAAG00TAoKFQDTd3X7j30',
 	        "restrictCSS": inputs['restrictCSS'],
 	        "enableWarnings": inputs['enableWarnings'],
 	        "expandCIDReferences": inputs['expandCIDReferences'],
 	 		"blockImages": inputs['blockImages']  
 	    });
-	
+	}
 	/*
 		params.message.push("mid" : '1_12425_2_5025_0_ADa3iGIAAG00TAoKFQDTd3X7j30');
 		messages.push("restrictCSS" : "true");
@@ -201,10 +201,20 @@ function buildMsgParams(mids){
 		messages.push("blockImages":"true");
 	}*/
 
-	}
-	
+	y.log("message");
 	y.log(message);
+	
+	param.params.push({
+		"fid": "Inbox",
+		"message" : message ,
+		"charsetHint" : ""
+	});
+	
+	
+	y.log("mparams");
+	y.log(param);
 	y.log(params);
+	y.log(params.toString());
 	
 	return params;
 
