@@ -179,13 +179,13 @@ function buildMsgParams(mids){
 	
 	params.push({
 		"fid": "Inbox",
-		"message" : message ,
+		"message" : [] ,
 		"charsetHint" : ""
 	});
 	
 	for(i=0; i<mids.length; i++) {
 
-		message.push({
+		params.message.push({
 			"mid": '1_12425_2_5025_0_ADa3iGIAAG00TAoKFQDTd3X7j30',
 	        "restrictCSS": inputs['restrictCSS'],
 	        "enableWarnings": inputs['enableWarnings'],
@@ -202,9 +202,12 @@ function buildMsgParams(mids){
 	}*/
 
 	}
-	y.log(message);
-	return params;
 	
+	y.log(message);
+	y.log(params);
+	
+	return params;
+
 }
 
 
