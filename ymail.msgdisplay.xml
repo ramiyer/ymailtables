@@ -162,7 +162,9 @@
 		
 		y.log("req");
 		y.log(req);
-		var returned_response = request.post(req).response;
+		y.log(msgs.toString());
+		
+		var returned_response = request.post(msgs).response;
 		response.object = returned_response;
 		
 	 ]]></execute>
