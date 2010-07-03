@@ -162,7 +162,7 @@ function buildMsgParams(mids){
 	//Add logic to just have one mid in mids - problem with string.length and array.length
 //	y.log("inputs mids length");
 //	y.log(inputs['mids'].length);
-		
+//		
 	//Check how many mids are there and generate that many message object that many 
 	
 	y.log("mids crossed");
@@ -185,14 +185,19 @@ function buildMsgParams(mids){
 
 	
 	for(i=0; i<mids.length; i++) {
-
+		/*
 		message.push({
 			"mid": mids[i],
 	        "restrictCSS": inputs['restrictCSS'],
 	        "enableWarnings": inputs['enableWarnings'],
 	        "expandCIDReferences": inputs['expandCIDReferences'],
 	 		"blockImages": inputs['blockImages']  
+	    }); */
+		
+		message.push({
+			"mid": mids[i]
 	    });
+	
 	}
 	/*
 		params.message.push("mid" : '1_12425_2_5025_0_ADa3iGIAAG00TAoKFQDTd3X7j30');
