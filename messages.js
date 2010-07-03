@@ -151,8 +151,8 @@ function buildMsgParams(mids){
 	
 	y.log(mids);
 	
-	var mids = ["1_12425_2_5025_0_ADa3iGIAAG00TAoKFQDTd3X7j30","1_11819_1_10818_0_AFS3iGIAANEuTAoKFQs55VN6t2U"];
-	
+	var mids = ["1_11819_2_5025_0_ADa3iGIAAG00TAoKFQDTd3X7j30","1_12210_1_10818_0_AFS3iGIAANEuTAoKFQs55VN6t2U"];
+//	1_12210_1_10818_0_AFS3iGIAANEuTAoKFQs55VN6t2U
 //	var mids = new Array();
 		
 //	var mids = encodeURIComponent(inputs['mids']);
@@ -187,7 +187,7 @@ function buildMsgParams(mids){
 	for(i=0; i<mids.length; i++) {
 
 		message.push({
-			"mid": '1_12425_2_5025_0_ADa3iGIAAG00TAoKFQDTd3X7j30',
+			"mid": mids[i],
 	        "restrictCSS": inputs['restrictCSS'],
 	        "enableWarnings": inputs['enableWarnings'],
 	        "expandCIDReferences": inputs['expandCIDReferences'],
@@ -206,9 +206,9 @@ function buildMsgParams(mids){
 	y.log(message);
 	
 	param.params.push({
-		"fid": "Inbox",
+		"fid": inputs['fid'],
 		"message" : message ,
-		"charsetHint" : ""
+		"charsetHint" : inputs['charsetHint']
 	});
 	
 	
