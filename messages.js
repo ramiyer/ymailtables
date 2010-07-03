@@ -151,7 +151,7 @@ function buildMsgParams(mids){
 	
 	y.log(mids);
 	
-	var mids = ["1_11819_2_5025_0_ADa3iGIAAG00TAoKFQDTd3X7j30"];
+	var mids = ["1_59412_AGO3iGIAAJN5TC0W9Qkst262lOM"];
 //	1_12210_1_10818_0_AFS3iGIAANEuTAoKFQs55VN6t2U
 //	var mids = new Array();
 		
