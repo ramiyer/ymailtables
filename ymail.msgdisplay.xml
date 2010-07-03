@@ -54,7 +54,7 @@
 	//	y.log("mid array is ");
 	//	y.log(mids);
 		
-		var msgs = new Array();
+	
 		
 //		var msgs;
 		
@@ -80,7 +80,7 @@
 		y.log("input mids tostring");
 		y.log(inputs['mids'].toString());
 		
-		var tmpArray = new Array();
+		var tmpArray;
 		tmpArray = inputs['mids'].toString();
 		y.log("tmpArray");
 		y.log(tmpArray);
@@ -91,10 +91,10 @@
 	
 		
 	
-		msgs = buildMsgParams(tmpArray);
+		var msgs = buildMsgParams(tmpArray);
 		y.log("returned val from displayMessageParams are ");
 		y.log(msgs);
-		y.log(msgs.toString());
+	//	y.log(msgs.toString());
 		
 		/*		
 		params = '[{' +
@@ -106,7 +106,7 @@
 				 		'"truncateAt": "' +inputs['truncateAt']+ '"' + ',' +
 						'"enableRetry":"' +inputs['enableRetry']+ '"' +
 				 '}]';
-				
+			
 				params = '[{' +
 									 		'"fid": "' +escape(inputs["fid"])+ '",' + 
 									 		 msgs +',' +
@@ -117,7 +117,7 @@
 		
 				
 		*/
-		
+		/*
 			params = '[{' +
 					 		'"fid": "' +escape(inputs["fid"])+ '",' + 
 					 		'"message": "' +msgs+ '",' +
@@ -133,7 +133,7 @@
 		var p1 = params.toString();
 		y.log("p1 is");
 		y.log(p1);
-		
+		*/
 		
 		/*
 	    // get parameters for the given cascade method
@@ -167,7 +167,7 @@
         '}';
 
 		y.log(content);	
-		var returned_response = request.post(content).response;
+		var returned_response = request.post(msgs).response;
 		response.object = returned_response;
 		
 	 ]]></execute>
