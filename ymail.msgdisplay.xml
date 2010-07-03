@@ -158,7 +158,7 @@
 		y.log(msgs1);
 		
 		var req = new String();
-		req = "'" +msgs+ "'";
+		req = msgs.toString();
 		
 		y.log("req");
 		y.log(req);
