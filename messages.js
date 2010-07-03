@@ -167,12 +167,13 @@ function buildMsgParams(mids){
 	
 	y.log("mids crossed");
 	
-	
+	/*
 	var params = {
 		method : "GetMessage",
 		params : []
 	};
-	
+	*/
+	var params = [];
 	//[{"mid":"1_4867_AKLPjkQAABFWTCVJ9AC4sj6tf3Y","expandCIDReferences":true,"enableWarnings":true,"blockImages":"userpreference"}]
 	var message = [];
 	
