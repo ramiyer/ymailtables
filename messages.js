@@ -176,6 +176,7 @@ function buildMsgParams(mids){
 	
 	
 	var param = {
+		method : "GetMessage",
 		params : []
 	};
 	//[{"mid":"1_4867_AKLPjkQAABFWTCVJ9AC4sj6tf3Y","expandCIDReferences":true,"enableWarnings":true,"blockImages":"userpreference"}]
@@ -213,10 +214,10 @@ function buildMsgParams(mids){
 	
 	y.log("mparams");
 	y.log(param);
-	y.log(params);
-	y.log(params.toString());
+//	y.log(params);
+//	y.log(params.toString());
 	
-	return params;
+	return param;
 
 }
 
