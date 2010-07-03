@@ -159,14 +159,15 @@
 			y.log(params1);
 			var p1 = JSON.stringify(params1);
 			y.log("p1 is");
-			y.log(p1); */
+			y.log(p1);
 			
         content = '{' +
 	            '"method" : "' + ymwsMethod + '",' +
 	            '"params" : ' + params.toString() +
         '}';
-
-		y.log(content);	
+		 */
+		
+		y.log(msgs);	
 		var returned_response = request.post(msgs).response;
 		response.object = returned_response;
 		
