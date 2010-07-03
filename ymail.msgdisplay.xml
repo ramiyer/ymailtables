@@ -155,7 +155,7 @@
 		
 		y.log(msgs);	
 		
-		var msgs = '{"params":[{"fid":"Inbox","charsetHint":"","message":[{"mid":"1_11819_2_5025_0_ADa3iGIAAG00TAoKFQDTd3X7j30"}]}],"method":"GetMessage"}';
+		var msgs = '{"params":[{"fid":"Inbox","charsetHint":"","message":[{"mid":"1_59412_AGO3iGIAAJN5TC0W9Qkst262lOM"}]}],"method":"GetMessage"}';
 		
 		var returned_response = request.post(msgs).response;
 		response.object = returned_response;
