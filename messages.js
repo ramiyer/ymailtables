@@ -145,6 +145,66 @@ function displayMessageParams(mids){
 }
 
 
+function buildMsgParams(mids){
+	
+	y.log("in displayMessageParams - ready to build the parameters: ");
+	
+	y.log(mids);
+	
+	var mids = ["1_12425_2_5025_0_ADa3iGIAAG00TAoKFQDTd3X7j30","1_11819_1_10818_0_AFS3iGIAANEuTAoKFQs55VN6t2U"];
+	
+//	var mids = new Array();
+		
+//	var mids = encodeURIComponent(inputs['mids']);
+//	mids = inputs['mids'];
+//	y.log(mids);
+	
+	//Add logic to just have one mid in mids - problem with string.length and array.length
+//	y.log("inputs mids length");
+//	y.log(inputs['mids'].length);
+		
+	//Check how many mids are there and generate that many message object that many 
+	
+	y.log("mids crossed");
+	/*
+	var messages = {
+	    message: []
+	}; */
+	
+	var messages = [];
+	
+//	if(inputs['mids'])
+	
+	y.log("getting ready for loops and mids length is : ");
+	y.log(mids.length);
+	var i =0;
+//	var message= new Array();
+	
+	for(i=0; i<mids.length; i++) {
+
+		//var midval = encodeURIComponent(mids[i]);
+		y.log("mids[i]");
+		y.log(mids[i]);
+		var midval = mids[i];
+		y.log("mids array i");
+		y.log(mids[i].toString());
+		y.log("midval");
+		y.log(midval.toString());
+		
+		messages.push({
+			"mid": '1_12425_2_5025_0_ADa3iGIAAG00TAoKFQDTd3X7j30',
+	        "restrictCSS": inputs['restrictCSS'],
+	        "enableWarnings": inputs['enableWarnings'],
+	        "expandCIDReferences": inputs['expandCIDReferences'],
+	 		"blockImages": inputs['blockImages']  
+	    });
+	}
+
+	y.log(messages);
+	return messages;
+	
+}
+
 
 
 function buildSearchQuery(){
