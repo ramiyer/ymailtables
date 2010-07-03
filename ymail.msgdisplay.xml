@@ -88,10 +88,12 @@
 	//	msgs = displayMessageParams(tmpArray);
 		
 	//	y.log(msgs.toString());
-		y.log("returned val from displayMessageParams are ");
-		y.log(msgs);
+	
+		
 	
 		msgs = buildMsgParams(tmpArray);
+		y.log("returned val from displayMessageParams are ");
+		y.log(msgs);
 		
 		/*		
 		params = '[{' +
