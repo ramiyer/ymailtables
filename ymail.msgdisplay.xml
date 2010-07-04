@@ -75,14 +75,14 @@
 		var msgs = buildMsgParams();
 		y.log("returned val from displayMessageParams are ");
 		
-		var msgs = ' {"params":[{"fid":"Inbox","charsetHint":"","message":[{"blockImages":"true","expandCIDReferences":"true","mid":"1_59412_AGO3iGIAAJN5TC0W9Qkst262lOM","restrictCSS":"true","enableWarnings":"true"}]}],"method":"GetMessage"}';
+		var req = ' {"params":[{"fid":"Inbox","charsetHint":"","message":[{"blockImages":"true","expandCIDReferences":"true","mid":"1_59412_AGO3iGIAAJN5TC0W9Qkst262lOM","restrictCSS":"true","enableWarnings":"true"}]}],"method":"GetMessage"}';
 		
 		y.log(msgs);
 		
 		
-		var req = JSON.stringify(msgs);
-		y.log("req");
-		y.log(req);
+		//var req = JSON.stringify(msgs);
+	//	y.log("req");
+	//	y.log(req);
 		var returned_response = request.post(req).response;
 		response.object = returned_response;
 		
