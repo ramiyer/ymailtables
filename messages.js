@@ -153,11 +153,13 @@ function buildMsgParams(){
 	y.log(inputs['mids']);
 	y.log("object length");
 	y.log(inputs['mids'].length);
+//	y.log(inputs['mids'].length)
 
 	messageIds.push({
-				inputs['mids'];
+				"mids": inputs['mids'];
 	});
 	
+	y.log(messageIds.mids);
 	y.log(messageIds);
 
 	//Add logic to just have one mid in mids - problem with string.length and array.length
