@@ -145,84 +145,54 @@ function displayMessageParams(mids){
 }
 
 
-function buildMsgParams(mids){
+function buildMsgParams(){
 	
 	y.log("in displayMessageParams - ready to build the parameters: ");
-	
+	mids = encodeURIComponent(inputs['mids']);
 	y.log(mids);
-	
-	var mids = ["1_59412_AGO3iGIAAJN5TC0W9Qkst262lOM"];
-//	1_12210_1_10818_0_AFS3iGIAANEuTAoKFQs55VN6t2U
-//	var mids = new Array();
-		
-//	var mids = encodeURIComponent(inputs['mids']);
-//	mids = inputs['mids'];
-//	y.log(mids);
-	
+
 	//Add logic to just have one mid in mids - problem with string.length and array.length
-//	y.log("inputs mids length");
-//	y.log(inputs['mids'].length);
-//		
+	y.log("inputs mids length");
+	y.log(mids.length);
+	y.log(inputs['mids'].length);
+		
 	//Check how many mids are there and generate that many message object that many 
 	
 	y.log("mids crossed");
 	
-	/*
-	var params = {
-		method : "GetMessage",
-		params : []
-	};
-	*/
-	
-	
-	var param = {
+	var methodReq = {
 		method : "GetMessage",
 		params : []
 	};
 	//[{"mid":"1_4867_AKLPjkQAABFWTCVJ9AC4sj6tf3Y","expandCIDReferences":true,"enableWarnings":true,"blockImages":"userpreference"}]
 	var message = [];
 	
-
-	
 	for(i=0; i<mids.length; i++) {
-		/*
-		message.push({
-			"mid": mids[i],
-	        "restrictCSS": inputs['restrictCSS'],
-	        "enableWarnings": inputs['enableWarnings'],
-	        "expandCIDReferences": inputs['expandCIDReferences'],
-	 		"blockImages": inputs['blockImages']  
-	    }); */
 		
 		message.push({
-			"mid": mids[i]
+			"mid": mids[i],
+			"restrictCSS": inputs['restrictCSS'],
+	        "enableWarnings": inputs['enableWarnings'],
+	        "expandCIDReferences": inputs['expandCIDReferences'],
+	 		"blockImages": inputs['blockImages']
 	    });
 	
 	}
-	/*
-		params.message.push("mid" : '1_12425_2_5025_0_ADa3iGIAAG00TAoKFQDTd3X7j30');
-		messages.push("restrictCSS" : "true");
-		messages.push("enablewarnings":"true");
-		messages.push("expandCIDReferences":"true");
-		messages.push("blockImages":"true");
-	}*/
 
 	y.log("message");
 	y.log(message);
 	
-	param.params.push({
+	methodReq.params.push({
 		"fid": inputs['fid'],
 		"message" : message ,
 		"charsetHint" : inputs['charsetHint']
 	});
 	
 	
-	y.log("mparams");
-	y.log(param);
-//	y.log(params);
-//	y.log(params.toString());
-	
-	return param;
+	y.log("methodReq is ");
+	y.log(methodReq);
+
+	return methodReq;
 
 }
 
