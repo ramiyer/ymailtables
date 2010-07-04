@@ -148,6 +148,7 @@ function displayMessageParams(mids){
 function buildMsgParams(){
 	
 	y.log("in displayMessageParams - ready to build the parameters: ");
+	var mids = [];
 	mids = inputs['mids'];
 	y.log(mids);
 
