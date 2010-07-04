@@ -156,7 +156,7 @@ function buildMsgParams(){
 //	y.log(inputs['mids'].length)
 
 	messageIds.push({
-				"mids": inputs['mids'];
+				"mids": inputs['mids']
 	});
 	
 	y.log(messageIds.mids);
