@@ -70,92 +70,10 @@
 		tmpArray = inputs['mids'].toString();
 		y.log("tmpArray");
 		y.log(tmpArray);
-		
-	//	msgs = displayMessageParams(tmpArray);
-		
-	//	y.log(msgs.toString());
 	
-		
 	
-		var msgs = buildMsgParams(tmpArray);
+		var msgs = buildMsgParams();
 		y.log("returned val from displayMessageParams are ");
-		y.log(msgs);
-	//	y.log(msgs.toString());
-		
-		/*		
-		params = '[{' +
-				 		'"fid": "' +escape(inputs["fid"])+ '",' + 
-				 		'"message": [' 
-									+ msgs.toString() +
-						']' +',' +
-				 		'"charsetHint": "' +inputs['charsetHint']+ '"' + ',' + 
-				 		'"truncateAt": "' +inputs['truncateAt']+ '"' + ',' +
-						'"enableRetry":"' +inputs['enableRetry']+ '"' +
-				 '}]';
-			
-				params = '[{' +
-									 		'"fid": "' +escape(inputs["fid"])+ '",' + 
-									 		 msgs +',' +
-									 		'"charsetHint": "' +inputs['charsetHint']+ '"' + ',' + 
-									 		'"truncateAt": "' +inputs['truncateAt']+ '"' + ',' +
-											'"enableRetry":"' +inputs['enableRetry']+ '"' +
-									 '}]';
-		
-				
-		*/
-		/*
-			params = '[{' +
-					 		'"fid": "' +escape(inputs["fid"])+ '",' + 
-					 		'"message": "' +msgs+ '",' +
-					 		'"charsetHint": "' +inputs['charsetHint']+ '"' + ',' + 
-					 		'"truncateAt": "' +inputs['truncateAt']+ '"' + ',' +
-							'"enableRetry":"' +inputs['enableRetry']+ '"' +
-					 '}]';
-		
-		y.log("params are ");
-		y.log(params);
-		y.log(params.toString());
-		
-		var p1 = params.toString();
-		y.log("p1 is");
-		y.log(p1);
-		*/
-		
-		/*
-	    // get parameters for the given cascade method
-		y.log("params are ");
-		y.log(params);
-		y.log(params.toString());
-		
-		y.log("msgs after params is");
-		y.log(msgs);
-		y.log("going to stringfy");
-		var msgsjson = JSON.stringify(msgs);
-		y.log(msgsjson);
-			
-				params1 = '[{' +
-						 		'"fid": "' +escape(inputs["fid"])+ '",' + 
-						 		 msgs.toString() +',' +
-						 		'"charsetHint": "' +inputs['charsetHint']+ '"' + ',' + 
-						 		'"truncateAt": "' +inputs['truncateAt']+ '"' + ',' +
-								'"enableRetry":"' +inputs['enableRetry']+ '"' +
-						 '}]';
-
-			y.log("params1 are ");
-			y.log(params1);
-			var p1 = JSON.stringify(params1);
-			y.log("p1 is");
-			y.log(p1);
-			
-        content = '{' +
-	            '"method" : "' + ymwsMethod + '",' +
-	            '"params" : ' + params.toString() +
-        '}';
-		 */
-		
-		y.log(msgs);	
-		//var msgs1 = '{"params":[{"fid":"Inbox","charsetHint":"","message":[{"mid":"1_59412_AGO3iGIAAJN5TC0W9Qkst262lOM"}]}],"method":"GetMessage"}';
-		//y.log(msgs1);
 		
 		var req = JSON.stringify(msgs);
 		y.log("req");
