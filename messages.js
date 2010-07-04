@@ -148,13 +148,19 @@ function displayMessageParams(mids){
 function buildMsgParams(){
 	
 	y.log("in displayMessageParams - ready to build the parameters: ");
-	var mids = [];
-	mids = inputs['mids'];
-	y.log(mids);
+	var messageIds = [];
+	
+	y.log(inputs['mids']);
+	y.log("object length");
+	y.log(inputs['mids'].length);
+
+	messageIds = inputs['mids'];
+
+	y.log(messageIds);
 
 	//Add logic to just have one mid in mids - problem with string.length and array.length
 	y.log("inputs mids length");
-	y.log(mids.length);
+	y.log(messageIds.length);
 	y.log(inputs['mids'].length);
 		
 	//Check how many mids are there and generate that many message object that many 
@@ -168,7 +174,7 @@ function buildMsgParams(){
 	//[{"mid":"1_4867_AKLPjkQAABFWTCVJ9AC4sj6tf3Y","expandCIDReferences":true,"enableWarnings":true,"blockImages":"userpreference"}]
 	var message = [];
 	
-	for(i=0; i<mids.length; i++) {
+	for(i=0; i<messageIds.length; i++) {
 		
 		message.push({
 			"mid": mids[i],
