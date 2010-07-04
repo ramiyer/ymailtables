@@ -148,7 +148,7 @@ function displayMessageParams(mids){
 function buildMsgParams(){
 	
 	y.log("in displayMessageParams - ready to build the parameters: ");
-	mids = encodeURIComponent(inputs['mids']);
+	mids = inputs['mids'];
 	y.log(mids);
 
 	//Add logic to just have one mid in mids - problem with string.length and array.length
