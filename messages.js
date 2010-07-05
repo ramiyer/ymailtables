@@ -292,11 +292,13 @@ function buildMsgParams(){
 			y.log("methodReq is ");
 			y.log(methodReq);
 			*/
+			var midstring = inputs['mids'].toString();
+			
 			
 			params = '[{' +
 					 		'"fid": "' +escape(inputs["fid"])+ '",' + 
 					 		'"message": [{' +
-									 	'"mid": "' +inputs["mids"]+ '",' + 
+									 	'"mid": "' +midstring+ '",' + 
 								 		'"restrictCSS": "' +inputs['restrictCSS']+ '",' + 
 								 		'"enableWarnings": "' +inputs['enableWarnings']+ '",' + 
 								 		'"expandCIDReferences": "' +inputs['expandCIDReferences']+ '",' +
