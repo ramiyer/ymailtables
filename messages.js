@@ -166,33 +166,23 @@ function buildMsgParams(){
 	var messageIds = [];
 	y.log('inputs');
 	y.log(inputs['mids']);
-	var initmids = inputs['mids'];
-	
-	
-	
+	var initmids = inputs['mids'].split(',');
 	y.log(initmids);
-	var flagArrayCheck = true;
+	
+	var flagArrayCheck = false;
 	
 	flagArrayCheck = objarray(initmids);
 	y.log(flagArrayCheck);
 	
 	var initmids = ['1_60714_AGi3iGIAAA39TDIgzAsox0W9CIE','1_59997_ACK3iGIAAF3CTDGHlAlnuiCEQ98'];
 	y.log(initmids);
-	var flagArrayCheck = true;
+	var flagArrayCheck = false;
 	flagArrayCheck = objarray(initmids);
 	y.log(flagArrayCheck);
 	
 	if (flagArrayCheck == true){
 			y.log(inputs['mids']);
 			y.log("object length");
-			
-	//		y.log(inputs['mids'].length);
-		//	y.log(inputs['mids'].length)
-			
-			/*
-			messageIds.push({
-						"mids": inputs['mids']
-			});*/
 			
 			messageIds.push(inputs['mids']);
 
@@ -201,7 +191,12 @@ function buildMsgParams(){
 
 			//Add logic to just have one mid in mids - problem with string.length and array.length
 			y.log("inputs mids length");
-			y.log(messageIds.length);
+			y.log(messageIds.length);         
+			
+			var mids = [];
+			
+			mids.push = messageIds.split(',');
+			
 		//	y.log(inputs['mids'].length);
 
 			//Check how many mids are there and generate that many message object that many 
@@ -214,7 +209,7 @@ function buildMsgParams(){
 			};
 			
 			var message = [];
-			for(i=0; i<messageIds.length; i++) {
+			for(i=0; i<mids.length; i++) {
 
 				message.push({
 					"mid": mids[i],
