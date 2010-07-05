@@ -196,6 +196,7 @@ function buildMsgParams(){
 	flagArrayCheck = objarray(initmids);
 	y.log(flagArrayCheck);
 	*/
+	y.log(flagArrayCheck);
 	
 	if (flagArrayCheck == true){
 		
