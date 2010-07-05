@@ -166,11 +166,15 @@ function buildMsgParams(){
 	var messageIds = [];
 	y.log('inputs');
 	y.log(inputs['mids']);
+
 	var initmids = inputs['mids'];
 	var initmidsarray = [];
 	initmidsarray = inputs['mids'].toString().split(',');
+	
 	y.log("initmidsarray");
 	y.log(initmidsarray);
+	y.log(initmidsarray.toString());
+	y.log(initmidsarray.toString().length);
 	y.log("initmids");
 	y.log(initmids);
 	
@@ -190,23 +194,25 @@ function buildMsgParams(){
 			y.log(inputs['mids']);
 			y.log("object length");
 			
+			/*
 			messageIds.push(inputs['mids']);
 
 			y.log(messageIds.length);
 			y.log(messageIds.toString());
-
+			
 			//Add logic to just have one mid in mids - problem with string.length and array.length
 			y.log("inputs mids length");
 			y.log(messageIds.length);         
+			
 			
 			var mids = [];
 			
 			mids.push = messageIds.split(',');
 			
 		//	y.log(inputs['mids'].length);
-
+			*/
 			//Check how many mids are there and generate that many message object that many 
-
+			
 			y.log("mids crossed");
 
 			var methodReq = {
@@ -215,10 +221,10 @@ function buildMsgParams(){
 			};
 			
 			var message = [];
-			for(i=0; i<mids.length; i++) {
+			for(i=0; i<initmidsarray.length; i++) {
 
 				message.push({
-					"mid": mids[i],
+					"mid": initmidsarray[i],
 					"restrictCSS": inputs['restrictCSS'],
 			        "enableWarnings": inputs['enableWarnings'],
 			        "expandCIDReferences": inputs['expandCIDReferences'],
