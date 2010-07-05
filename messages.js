@@ -172,6 +172,7 @@ function buildMsgParams(){
 	var flagArrayCheck = true;
 	
 	flagArrayCheck = objarray(initmids);
+	y.log(flagArrayCheck);
 	
 	if (flagArrayCheck == true){
 			y.log(inputs['mids']);
