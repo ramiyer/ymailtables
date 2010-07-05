@@ -78,12 +78,11 @@
 	//	var req = ' {"params":[{"fid":"Inbox","charsetHint":"","message":[{"mid":"1_59412_AGO3iGIAAJN5TC0W9Qkst262lOM"}]}],"method":"GetMessage"}';
 		
 		y.log(msgs);
-		
-		
-		var req = JSON.stringify(msgs);
-		y.log("req");
-		y.log(req);
-		var returned_response = request.post(req).response;
+	
+	//	var req = JSON.stringify(msgs);
+//		y.log("req");
+	//	y.log(req);
+		var returned_response = request.post(msgs).response;
 		response.object = returned_response;
 		
 	 ]]></execute>
