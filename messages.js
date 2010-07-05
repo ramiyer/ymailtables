@@ -277,12 +277,8 @@ function buildMsgParams(){
 			var message = [];
 	
 			message.push({
-				"mid": inputs['mids'],
-				"restrictCSS": inputs['restrictCSS'],
-		        "enableWarnings": inputs['enableWarnings'],
-		        "expandCIDReferences": inputs['expandCIDReferences'],
-		 		"blockImages": inputs['blockImages']
-		    });
+				"mid": inputs['mids']
+			});
 		//	}
 
 			y.log("message");
