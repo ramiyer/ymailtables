@@ -168,9 +168,17 @@ function buildMsgParams(){
 	y.log(inputs['mids']);
 	var initmids = inputs['mids'];
 	
+	
+	
 	y.log(initmids);
 	var flagArrayCheck = true;
 	
+	flagArrayCheck = objarray(initmids);
+	y.log(flagArrayCheck);
+	
+	var initmids = ['1_60714_AGi3iGIAAA39TDIgzAsox0W9CIE','1_59997_ACK3iGIAAF3CTDGHlAlnuiCEQ98'];
+	y.log(initmids);
+	var flagArrayCheck = true;
 	flagArrayCheck = objarray(initmids);
 	y.log(flagArrayCheck);
 	
