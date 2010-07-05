@@ -146,10 +146,16 @@ function displayMessageParams(mids){
 
 function objarray(obj) {
 
-  	if (obj.constructor.toString().indexOf("Array") == -1)
+	y.log(obj.constructor == Array);
+	return obj.constructor == Array;
+	
+	/*
+  	if (obj.constructor == Array)
       	return false;
    	else
       	return true;
+	*/
+		
 }
 
 
