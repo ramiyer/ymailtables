@@ -158,8 +158,11 @@ function buildMsgParams(){
 	
 	y.log("in displayMessageParams - ready to build the parameters: ");
 	var messageIds = [];
+	y.log('inputs');
+	y.log(inputs['mids']);
+	var initmids = inputs['mids'];
 	
-	var flagArrayCheck = isArray(inputs['mids']);
+	var flagArrayCheck = isArray(initmids);
 	
 	if (flagArrayCheck == true){
 			y.log(inputs['mids']);
