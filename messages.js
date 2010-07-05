@@ -144,65 +144,130 @@ function displayMessageParams(mids){
 	
 }
 
+function isArray(obj) {
+
+  	if (obj.constructor.toString().indexOf("Array") == -1)
+      	return false;
+   	else
+      	return true;
+}
+
+
 
 function buildMsgParams(){
 	
 	y.log("in displayMessageParams - ready to build the parameters: ");
 	var messageIds = [];
 	
-	y.log(inputs['mids']);
-	y.log("object length");
-	y.log(inputs['mids'].length);
-//	y.log(inputs['mids'].length)
+	var flagArrayCheck = isArray(inputs['mids']);
+	
+	if (flagArrayCheck == true){
+			y.log(inputs['mids']);
+			y.log("object length");
+			y.log(inputs['mids'].length);
+		//	y.log(inputs['mids'].length)
 
-	messageIds.push({
-				"mids": inputs['mids']
-	});
-	
-	y.log(messageIds.mids);
-	y.log(messageIds);
+			messageIds.push({
+						"mids": inputs['mids']
+			});
 
-	//Add logic to just have one mid in mids - problem with string.length and array.length
-	y.log("inputs mids length");
-	y.log(messageIds.length);
-	y.log(inputs['mids'].length);
+			y.log(messageIds.mids);
+			y.log(messageIds);
+
+			//Add logic to just have one mid in mids - problem with string.length and array.length
+			y.log("inputs mids length");
+			y.log(messageIds.length);
+		//	y.log(inputs['mids'].length);
+
+			//Check how many mids are there and generate that many message object that many 
+
+			y.log("mids crossed");
+
+			var methodReq = {
+				method : "GetMessage",
+				params : []
+			};
+			
+			var message = [];
+			for(i=0; i<messageIds.length; i++) {
+
+				message.push({
+					"mid": mids[i],
+					"restrictCSS": inputs['restrictCSS'],
+			        "enableWarnings": inputs['enableWarnings'],
+			        "expandCIDReferences": inputs['expandCIDReferences'],
+			 		"blockImages": inputs['blockImages']
+			    });
+			}
+
+			y.log("message");
+			y.log(message);
+
+			methodReq.params.push({
+				"fid": inputs['fid'],
+				"message" : message ,
+				"charsetHint" : inputs['charsetHint']
+			});
+
+
+			y.log("methodReq is ");
+			y.log(methodReq);
 		
-	//Check how many mids are there and generate that many message object that many 
-	
-	y.log("mids crossed");
-	
-	var methodReq = {
-		method : "GetMessage",
-		params : []
-	};
-	//[{"mid":"1_4867_AKLPjkQAABFWTCVJ9AC4sj6tf3Y","expandCIDReferences":true,"enableWarnings":true,"blockImages":"userpreference"}]
-	var message = [];
-	
-	for(i=0; i<messageIds.length; i++) {
+	}else {
+			y.log(inputs['mids']);
+			y.log("object length");
+			y.log(inputs['mids'].length);
+		//	y.log(inputs['mids'].length)
+
+			messageIds.push({
+						"mids": inputs['mids']
+			});
+
+			y.log(messageIds.mids);
+			y.log(messageIds);
+
+			//Add logic to just have one mid in mids - problem with string.length and array.length
+			y.log("inputs mids length");
+			y.log(messageIds.length);
+		//	y.log(inputs['mids'].length);
+
+			//Check how many mids are there and generate that many message object that many 
+
+			y.log("mids crossed");
+
+			var methodReq = {
+				method : "GetMessage",
+				params : []
+			};
+			
+			var message = [];
+		//	for(i=0; i<messageIds.length; i++) {
+
+			message.push({
+				"mid": inputs['mids'],
+				"restrictCSS": inputs['restrictCSS'],
+		        "enableWarnings": inputs['enableWarnings'],
+		        "expandCIDReferences": inputs['expandCIDReferences'],
+		 		"blockImages": inputs['blockImages']
+		    });
+		//	}
+
+			y.log("message");
+			y.log(message);
+
+			methodReq.params.push({
+				"fid": inputs['fid'],
+				"message" : message ,
+				"charsetHint" : inputs['charsetHint']
+			});
+
+
+			y.log("methodReq is ");
+			y.log(methodReq);
 		
-		message.push({
-			"mid": mids[i],
-			"restrictCSS": inputs['restrictCSS'],
-	        "enableWarnings": inputs['enableWarnings'],
-	        "expandCIDReferences": inputs['expandCIDReferences'],
-	 		"blockImages": inputs['blockImages']
-	    });
-	
+		
 	}
-
-	y.log("message");
-	y.log(message);
-	
-	methodReq.params.push({
-		"fid": inputs['fid'],
-		"message" : message ,
-		"charsetHint" : inputs['charsetHint']
-	});
-	
-	
-	y.log("methodReq is ");
-	y.log(methodReq);
-
+	//[{"mid":"1_4867_AKLPjkQAABFWTCVJ9AC4sj6tf3Y","expandCIDReferences":true,"enableWarnings":true,"blockImages":"userpreference"}]
 	return methodReq;
 
 }
