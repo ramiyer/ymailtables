@@ -167,9 +167,9 @@ function buildMsgParams(){
 	y.log('inputs');
 	y.log(inputs['mids']);
 
-	var initmids = inputs['mids'];
+	var initmids = String(inputs['mids']);
 	var initmidsarray = [];
-	initmidsarray = inputs['mids'].toString().split(',');
+	initmidsarray = initmids.split(',');
 	
 	y.log("initmidsarray");
 	y.log(initmidsarray);
