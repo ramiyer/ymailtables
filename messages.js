@@ -176,14 +176,18 @@ function buildMsgParams(){
 	if (flagArrayCheck == true){
 			y.log(inputs['mids']);
 			y.log("object length");
-			y.log(inputs['mids'].length);
+			
+	//		y.log(inputs['mids'].length);
 		//	y.log(inputs['mids'].length)
-
+			
+			/*
 			messageIds.push({
 						"mids": inputs['mids']
-			});
+			});*/
+			
+			messageIds.push(inputs['mids']);
 
-			y.log(messageIds.mids);
+			y.log(messageIds.length);
 			y.log(messageIds);
 
 			//Add logic to just have one mid in mids - problem with string.length and array.length
