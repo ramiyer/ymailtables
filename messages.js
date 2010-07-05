@@ -169,10 +169,11 @@ function buildMsgParams(){
 
 	var initmids = String(inputs['mids']);
 	var flagArrayCheck = false;
+	var initmidsarray = [];
 
 	if (initmids.search(/,/) != -1) {
 	
-		var initmidsarray = [];
+		
 		initmidsarray = initmids.split(',');
 
 		y.log("initmidsarray");
@@ -224,8 +225,6 @@ function buildMsgParams(){
 //	        "enableWarnings": inputs['enableWarnings'],
 //	        "expandCIDReferences": inputs['expandCIDReferences'],
 //	 		"blockImages": inputs['blockImages']
-
-		
 			*/
 			//Check how many mids are there and generate that many message object that many 
 			var methodReq = {
