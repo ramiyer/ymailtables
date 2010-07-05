@@ -144,7 +144,7 @@ function displayMessageParams(mids){
 	
 }
 
-function q			(obj) {
+function objarray(obj) {
 
   	if (obj.constructor.toString().indexOf("Array") == -1)
       	return false;
@@ -162,7 +162,9 @@ function buildMsgParams(){
 	y.log(inputs['mids']);
 	var initmids = inputs['mids'];
 	
-	var flagArrayCheck = isArray(initmids);
+	y.log(initmids);
+	
+	var flagArrayCheck = objarray(initmids);
 	
 	if (flagArrayCheck == true){
 			y.log(inputs['mids']);
