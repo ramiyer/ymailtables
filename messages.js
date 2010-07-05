@@ -166,7 +166,11 @@ function buildMsgParams(){
 	var messageIds = [];
 	y.log('inputs');
 	y.log(inputs['mids']);
-	var initmids = inputs['mids'].split(',');
+	var initmids = inputs['mids'];
+	var initmidsarray = [];
+	initmidsarray = inputs['mids'].toString().split(',');
+	y.log(initmidsarray);
+	
 	y.log(initmids);
 	
 	var flagArrayCheck = false;
