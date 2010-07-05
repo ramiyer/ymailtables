@@ -168,19 +168,26 @@ function buildMsgParams(){
 	y.log(inputs['mids']);
 
 	var initmids = String(inputs['mids']);
-	var initmidsarray = [];
-	initmidsarray = initmids.split(',');
-	
-	y.log("initmidsarray");
-	y.log(initmidsarray);
-	y.log(initmidsarray.toString());
-	y.log(initmidsarray.length);
-	y.log("initmids");
-	y.log(initmids);
-	
 	var flagArrayCheck = false;
-	flagArrayCheck = objarray(initmidsarray);
-	y.log(flagArrayCheck);
+
+	if (initmids.search(/,/) != -1) {
+	
+		var initmidsarray = [];
+		initmidsarray = initmids.split(',');
+
+		y.log("initmidsarray");
+		y.log(initmidsarray);
+		y.log(initmidsarray.toString());
+		y.log(initmidsarray.length);
+		y.log("initmids");
+		y.log(initmids);
+
+		flagArrayCheck = objarray(initmidsarray);
+		y.log(flagArrayCheck);
+	}else {
+		flagArrayCheck = false;
+	}
+	
 	
 	/*
 	var initmids = ['1_60714_AGi3iGIAAA39TDIgzAsox0W9CIE','1_59997_ACK3iGIAAF3CTDGHlAlnuiCEQ98'];
@@ -191,8 +198,9 @@ function buildMsgParams(){
 	*/
 	
 	if (flagArrayCheck == true){
-			y.log(inputs['mids']);
-			y.log("object length");
+		
+		//	y.log(inputs['mids']);
+		//	y.log("object length");
 			
 			/*
 			messageIds.push(inputs['mids']);
@@ -219,9 +227,6 @@ function buildMsgParams(){
 		
 			*/
 			//Check how many mids are there and generate that many message object that many 
-			
-			y.log("mids crossed");
-
 			var methodReq = {
 				method : "GetMessage",
 				params : []
@@ -234,10 +239,7 @@ function buildMsgParams(){
 					"mid": initmidsarray[i]
 			 	});
 			}
-
-			y.log("message");
-			y.log(message);
-
+			
 			methodReq.params.push({
 				"fid": inputs['fid'],
 				"message" : message ,
@@ -249,21 +251,17 @@ function buildMsgParams(){
 			y.log(methodReq);
 		
 	}else {
+		
 			y.log(inputs['mids']);
-			y.log("object length");
-			y.log(inputs['mids'].length);
+		
 		//	y.log(inputs['mids'].length)
 
-			messageIds.push({
-						"mids": inputs['mids']
-			});
 
-			y.log(messageIds.mids);
-			y.log(messageIds);
+		//	y.log(messageIds.mids);
+		//	y.log(messageIds);
 
 			//Add logic to just have one mid in mids - problem with string.length and array.length
-			y.log("inputs mids length");
-			y.log(messageIds.length);
+
 		//	y.log(inputs['mids'].length);
 
 			//Check how many mids are there and generate that many message object that many 
@@ -276,8 +274,7 @@ function buildMsgParams(){
 			};
 			
 			var message = [];
-		//	for(i=0; i<messageIds.length; i++) {
-
+	
 			message.push({
 				"mid": inputs['mids'],
 				"restrictCSS": inputs['restrictCSS'],
