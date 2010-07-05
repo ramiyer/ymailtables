@@ -278,8 +278,7 @@ function buildMsgParams(){
 			message.push({
 				"mid": inputs['mids']
 			});
-		//	}
-
+	
 			y.log("message");
 			y.log(message);
 
