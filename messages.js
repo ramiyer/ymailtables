@@ -144,7 +144,7 @@ function displayMessageParams(mids){
 	
 }
 
-function isArray(obj) {
+function q			(obj) {
 
   	if (obj.constructor.toString().indexOf("Array") == -1)
       	return false;
