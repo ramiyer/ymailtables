@@ -174,7 +174,7 @@ function buildMsgParams(){
 	y.log("initmidsarray");
 	y.log(initmidsarray);
 	y.log(initmidsarray.toString());
-	y.log(initmidsarray.toString().length);
+	y.log(initmidsarray.length);
 	y.log("initmids");
 	y.log(initmids);
 	
@@ -210,6 +210,13 @@ function buildMsgParams(){
 			mids.push = messageIds.split(',');
 			
 		//	y.log(inputs['mids'].length);
+		
+//			"restrictCSS": inputs['restrictCSS'],
+//	        "enableWarnings": inputs['enableWarnings'],
+//	        "expandCIDReferences": inputs['expandCIDReferences'],
+//	 		"blockImages": inputs['blockImages']
+
+		
 			*/
 			//Check how many mids are there and generate that many message object that many 
 			
@@ -224,12 +231,8 @@ function buildMsgParams(){
 			for(i=0; i<initmidsarray.length; i++) {
 
 				message.push({
-					"mid": initmidsarray[i],
-					"restrictCSS": inputs['restrictCSS'],
-			        "enableWarnings": inputs['enableWarnings'],
-			        "expandCIDReferences": inputs['expandCIDReferences'],
-			 		"blockImages": inputs['blockImages']
-			    });
+					"mid": initmidsarray[i]
+			 	});
 			}
 
 			y.log("message");
