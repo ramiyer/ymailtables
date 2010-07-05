@@ -265,7 +265,7 @@ function buildMsgParams(){
 		//	y.log(inputs['mids'].length);
 
 			//Check how many mids are there and generate that many message object that many 
-
+			/*
 			y.log("mids crossed");
 
 			var methodReq = {
@@ -291,7 +291,27 @@ function buildMsgParams(){
 
 			y.log("methodReq is ");
 			y.log(methodReq);
-		
+			*/
+			
+			params = '[{' +
+					 		'"fid": "' +escape(inputs["fid"])+ '",' + 
+					 		'"message": [{' +
+									 	'"mid": "' +escape(inputs["mid"])+ '",' + 
+								 		'"restrictCSS": "' +inputs['restrictCSS']+ '"' + ',' + 
+								 		'"enableWarnings": "' +inputs['enableWarnings']+ '"' + ',' + 
+								 		'"expandCIDReferences": "' +inputs['expandCIDReferences']+ '"' + ',' +
+										'"blockImages":"' +inputs['blockImages']+ '"' + +
+							'}]' +',' +
+					 		'"charsetHint": "' +inputs['charsetHint']+ '"' + ',' + 
+					 		'"truncateAt": "' +inputs['truncateAt']+ '"' + ',' +
+							'"enableRetry":"' +inputs['enableRetry']+ '"' +
+					 '}]';
+					
+			var ymwsMethod = 'GetMessage';
+			methodReq = '{' +
+			            '"method" : "' + ymwsMethod + '",' +
+			           	'"params" : ' + params +
+					'}';
 		
 	}
 	//[{"mid":"1_4867_AKLPjkQAABFWTCVJ9AC4sj6tf3Y","expandCIDReferences":true,"enableWarnings":true,"blockImages":"userpreference"}]
