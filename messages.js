@@ -296,11 +296,11 @@ function buildMsgParams(){
 			params = '[{' +
 					 		'"fid": "' +escape(inputs["fid"])+ '",' + 
 					 		'"message": [{' +
-									 	'"mid": "' +escape(inputs["mid"])+ '",' + 
-								 		'"restrictCSS": "' +inputs['restrictCSS']+ '"' + ',' + 
-								 		'"enableWarnings": "' +inputs['enableWarnings']+ '"' + ',' + 
-								 		'"expandCIDReferences": "' +inputs['expandCIDReferences']+ '"' + ',' +
-										'"blockImages":"' +inputs['blockImages']+ '"' + +
+									 	'"mid": "' +inputs["mids"]+ '",' + 
+								 		'"restrictCSS": "' +inputs['restrictCSS']+ '",' + 
+								 		'"enableWarnings": "' +inputs['enableWarnings']+ '",' + 
+								 		'"expandCIDReferences": "' +inputs['expandCIDReferences']+ '",' +
+										'"blockImages":"' +inputs['blockImages']+ '"' +
 							'}]' +',' +
 					 		'"charsetHint": "' +inputs['charsetHint']+ '"' + ',' + 
 					 		'"truncateAt": "' +inputs['truncateAt']+ '"' + ',' +
