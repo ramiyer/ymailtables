@@ -169,20 +169,22 @@ function buildMsgParams(){
 	var initmids = inputs['mids'];
 	var initmidsarray = [];
 	initmidsarray = inputs['mids'].toString().split(',');
+	y.log("initmidsarray");
 	y.log(initmidsarray);
-	
+	y.log("initmids");
 	y.log(initmids);
 	
 	var flagArrayCheck = false;
-	
-	flagArrayCheck = objarray(initmids);
+	flagArrayCheck = objarray(initmidsarray);
 	y.log(flagArrayCheck);
 	
+	/*
 	var initmids = ['1_60714_AGi3iGIAAA39TDIgzAsox0W9CIE','1_59997_ACK3iGIAAF3CTDGHlAlnuiCEQ98'];
 	y.log(initmids);
 	var flagArrayCheck = false;
 	flagArrayCheck = objarray(initmids);
 	y.log(flagArrayCheck);
+	*/
 	
 	if (flagArrayCheck == true){
 			y.log(inputs['mids']);
