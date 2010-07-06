@@ -56,8 +56,8 @@
 	//		var searchParams = new Array();
 		//	'"searchtype": ' +inputs['searchtype'] +  
 
-		var builtSearchParams = buildSearchQuery();
-	
+		var content = buildSearchQuery();
+		/*
 		y.log("builtSearchParams values");
 		
 		y.log(builtSearchParams);
@@ -71,8 +71,6 @@
 	        // get parameters for the given cascade method
 			params = '[{' +
 				 '     "search": {' +
-					//			'"query":' +builtSearchParams+
-					//			'"query":"' +escape(builtSearchParams)+ '"' +
 								'"query":' +jsonStr+ 
 							'}' +',' +
 				 '"numInfo": "2000"' + ',' + 
@@ -86,7 +84,8 @@
 	            '"method" : "' + ymwsMethod + '",' +
 	            '"params" : ' + params +
 	        '}';
-
+			*/
+			
 			y.log(content);	
 			var returned_response = request.post(content).response;
 			response.object = returned_response;
