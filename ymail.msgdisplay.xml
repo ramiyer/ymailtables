@@ -79,9 +79,10 @@
 		
 		y.log(msgs);
 	
-	//	var req = JSON.stringify(msgs);
-//		y.log("req");
-	//	y.log(req);
+		var req = JSON.stringify(msgs);
+		y.log("req");
+		y.log(req);
+	
 		var returned_response = request.post(msgs).response;
 		response.object = returned_response;
 		
