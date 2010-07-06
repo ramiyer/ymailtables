@@ -5,7 +5,7 @@
     <sampleQuery>select * from {table}</sampleQuery>
   </meta>
   <i:bindings>
-   <i:select itemPath="" produces="XML" auth="yahooOauth">
+   <i:select itemPath="json.result" produces="XML" auth="yahooOauth">
       <urls>
         <url>http://mail.yahooapis.com/ws/mail/v1.1/jsonrpc</url>
       </urls>
@@ -56,20 +56,14 @@
 	//		var searchParams = new Array();
 		//	'"searchtype": ' +inputs['searchtype'] +  
 
-		var builtSearchParams = buildSearchQuery(inputs);
+		var builtSearchParams = buildSearchQuery();
 	
 		y.log("builtSearchParams values");
 		
 		y.log(builtSearchParams);
-	//	var atttp = "attachmenttype:'pdf'";
-//		var test = encodeURIComponent(atttp);		
-//		var test = YAHOO.lang.JSON.stringify(builtSearchParams);		
-	//	var test = YUI().JSON.stringify(builtSearchParams);		
-	//	y.log(test);
-	
 		var jsonStr = JSON.stringify(builtSearchParams);
 		
-		//YUI().JSON.stringify(builtSearchParams);	
+		
 			
 		y.log(jsonStr);
 
