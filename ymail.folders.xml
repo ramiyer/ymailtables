@@ -20,7 +20,7 @@
         //Intialization
         var content = '';
         var params = '[{'+ 
-						'"resetMessengerUnseen:"' +  inputs['resetMessengerUnseen'] + 
+						'"resetMessengerUnseen":'+ '"' +  inputs['resetMessengerUnseen'] +'"' + 
 					  '}]'
 	
 		
