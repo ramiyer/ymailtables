@@ -243,10 +243,11 @@ function buildMsgParams(){
 			};
 			
 			var message = [];
-			for(i=0; i<initmidsarray.length; i++) {
+			
+			for(i=0; i<newmids.length; i++) {
 
 				message.push({
-					"mid": initmidsarray[i]
+					"mid": newmids[i]
 			 	});
 			}
 			
