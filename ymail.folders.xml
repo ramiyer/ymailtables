@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+      <inputs>
+	  	    <key id="resetMessengerUnseen" type='xs:boolean' paramType='variable' default='true' />
+		   	  </inputs>
+	  <execute><![CDATA[
+		
+		y.include("http://github.com/ramiyer/ymailtables/raw/master/messages.js");
+
+	
+        //Intialization
+        var content = '';
+        var params = '[{'+ '"resetMessengerUnseen:"' +  inputs['resetMessageUnseen'] + '}]'
+	
+		
+		//content = listFoldersReq();
+	
+		y.log(content);
+        
+        content = '{' +
+                   '"method:"' + '"ListFolders"' + ',' +
+                   '"params:"' + params + '}';
+                   
+		y.log(content);
+		var returned_response = request.post(content).response;
+		y.log(returned_response);
+		
+		response.object = returned_response;
+
+      ]]></execute>
+   </i:select>
+  </i:bindings>
+</i:table>
