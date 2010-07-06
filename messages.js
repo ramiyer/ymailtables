@@ -42,26 +42,12 @@ function listMessagesReq(){
                  '    "numInfo"       : ' + inputs['numInfo'] +
                  '}]';
 
-		content = '{' +
+	content = '{' +
 	           		'"method" : "' + method + '",' +
 		          	'"params" : ' + params +
 		          '}';
-		y.log(content);
-	/*
-	var params = '[{' +
-             '    "fid"           : "' + escape(inputs['fid']) + '",' +
-             '    "startMid"      : ' + inputs['startMid'] + ',' +
-             '    "numMid"        : ' + inputs['numMid'] + ',' +
-             '    "startInfo"     : ' + inputs['startInfo'] + ',' +
-             '    "numInfo"       : ' + inputs['numInfo'] + ',' +
-			 '    "sortKey"       : ' + inputs['sortKey'] + ',' +
-			 '    "sortOrder"     : ' + inputs['sortOrder'] + ',' +
-			 '    "groupBy"       : ' + inputs['groupBy'] +
-			 '}]';
-				
-	y.log("Param is ");
-	y.log(params);
-	*/
+	y.log(content);
+
 	var listMsgReq = '{' +
 		            	'"method" : "' + method + '",' +
 		            	'"params" : ' + params +
@@ -397,13 +383,13 @@ function buildSearchQuery(){
 //	searchParams = 'null';
 	
 	if (inputs['to'] != null){
-		searchParams += 'to:"' +inputs['to']+ '"'; 
+		searchParams += 'to:"' +inputs['to']+ '" '; 
 	}
 	if (inputs['fr'] != null){
 		searchParams += 'from:"' +inputs['fr']+ '" ';
 	}
 	if (inputs['cc'] != null){
-		searchParams += 'cc:"' +inputs['cc'] + '"' + ' ' ;
+		searchParams += 'cc:"' +inputs['cc'] + '" ';
 	}
 	if (inputs['bcc'] != null){
 		searchParams += 'bcc:"' +inputs['bcc'] + '"' + ' ' ;
@@ -424,7 +410,7 @@ function buildSearchQuery(){
 		searchParams += 'attachmentlanguages:"' +escape(inputs['attachmentlanguages'])+ '"' + " " ;
 	}
 	if (inputs['attachmentcount'] != null){
-		searchParams += 'attachmentcount:"' +escape(inputs['attachmentcount']) + '"' +" ";
+		searchParams += 'attachmentcount:"' +escape(inputs['attachmentcount']) + '"' +' ' ;
 	}
 	if (inputs['flags'] != null){
 		searchParams += 'flags:"' +escape(inputs['flags']) +'"' + " ";
@@ -437,6 +423,10 @@ function buildSearchQuery(){
 	}
 	y.log("searchParamss built is");
 	y.log(searchParams);
+	
+	
+	
+	
 
 	return searchParams;
 }
