@@ -83,7 +83,7 @@
 		y.log("req");
 		y.log(req);
 	
-		var returned_response = request.post(msgs).response;
+		var returned_response = request.post(req).response;
 		response.object = returned_response;
 		
 	 ]]></execute>
