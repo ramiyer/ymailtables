@@ -29,8 +29,8 @@
 		y.log(content);
         
         content = '{' +
-                   '"method:"' + '"ListFolders"' + ',' +
-                   '"params:"' + params + '}';
+                   '"method":' + '"ListFolders"' + ',' +
+                   '"params":' + params + '}';
                    
 		y.log(content);
 		var returned_response = request.post(content).response;
