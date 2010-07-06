@@ -208,6 +208,7 @@ function buildMsgParams(){
 	flagArrayCheck = objarray(initmids);
 	y.log(flagArrayCheck);
 	*/
+	
 	y.log("flag array check");
 	y.log(flagArrayCheck);
 	
@@ -246,10 +247,10 @@ function buildMsgParams(){
 			
 			var message = [];
 			
-			for(i=0; i<newmids.length; i++) {
-
+			for(i=0; i<mids.length; i++) {
+				y.log("mids i val is " +mids[i].toString());
 				message.push({
-					"mid": newmids[i].toString()
+					"mid": mids[i].toString()
 			 	});
 			}
 			
