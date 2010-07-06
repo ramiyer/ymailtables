@@ -47,7 +47,7 @@ function listMessagesReq(){
 	y.log(params);
 	
 	var listMsgReq = '{' +
-		            	'"method" : "' + ymwsMethod + '",' +
+		            	'"method" : "' + method + '",' +
 		            	'"params" : ' + params +
 		            '}';
 				
