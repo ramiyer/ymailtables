@@ -31,7 +31,23 @@ function postResponseFilter(response,filter ) {
 function listMessagesReq(){
 	
 	var method = 'ListMessages';
+	var params = '[{}]';
+	var fid = escape(inputs['fid']);
 	
+	params = '[{' +
+                 '    "fid"           : "' + fid + '",' +
+                 '    "startMid"      : ' + inputs['startMid'] + ',' +
+                 '    "numMid"        : ' + inputs['numMid'] + ',' +
+                 '    "startInfo"     : ' + inputs['startInfo'] + ',' +
+                 '    "numInfo"       : ' + inputs['numInfo'] +
+                 '}]';
+
+		content = '{' +
+	           		'"method" : "' + method + '",' +
+		          	'"params" : ' + params +
+		          '}';
+		y.log(content);
+	/*
 	var params = '[{' +
              '    "fid"           : "' + escape(inputs['fid']) + '",' +
              '    "startMid"      : ' + inputs['startMid'] + ',' +
@@ -45,7 +61,7 @@ function listMessagesReq(){
 				
 	y.log("Param is ");
 	y.log(params);
-	
+	*/
 	var listMsgReq = '{' +
 		            	'"method" : "' + method + '",' +
 		            	'"params" : ' + params +
