@@ -32,6 +32,13 @@ function listMessagesReq(){
 	
 	var method = 'ListMessages';
 	var params = '[{}]';
+	
+	
+	//If Null then set to Inbox - This creates a problem when executed with Search hence not having any default value for fid in inputs element
+	if(inputs['fid'] == null){
+		inputs['fid'] = "Inbox";
+	}
+	
 	var fid = escape(inputs['fid']);
 	
 	params = '[{' +
@@ -65,23 +72,6 @@ function listMessagesReq(){
 
 function searchMessages(searchParamss){
 	
-}
-
-/*
- * Request analyzer- Analyzes the request and responds with the API call to execute and
- * values of its params
- */
-
-function requestAnalyzer(reqs){
-	// Check to see if there are any search attributes present.	
-    
-	// check what are the search attrs and build the string	
-	//pass the attrs
-//		buildSearchString();		
-		
-		
-
-
 }
 
 function displayMessageParams(mids){
@@ -417,7 +407,7 @@ function searchMessagesReq(){
 		searchParams += 'flags:"' +escape(inputs['flags']) +'"' + " ";
 	}
 	if (inputs["fid"] != null){
-		searchParams += 'folder:"' +inputs['fid'] +'"' + " ";	
+		searchParams += 'folder:' +inputs['fid'] +' + " ";	
 	}
 	if (inputs['query'] != null){
 		searchParams += inputs['query'] ;
