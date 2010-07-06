@@ -174,6 +174,8 @@ function buildMsgParams(){
 	// 1. mids in ('mids val1','mids val2') / mids in ('midval1) or mids='midval' 
 	//Check for array or string here
 	flagArrayCheck = objarray(initmidsarray);
+	y.log("mids val data is ");
+	y.log(mids);
 	
 	var newmids = new Array(initmids);
 	y.log("newmids");
