@@ -378,6 +378,7 @@ function searchMessagesReq(){
 		'"attachmentcount": "' +inputs['attachmentcount']+ '"' + ',' +
 		'"flags": "' +inputs['flags']+ '"' + ',' +
 	*/
+	var ymwsMethod = "SearchMessages";
 	
 	var searchParams = new String();	
 //	searchParams = 'null';
@@ -428,7 +429,7 @@ function searchMessagesReq(){
 	y.log(jsonStr);
 
 	        // get parameters for the given cascade method
-	params = '[{' +
+	var params = '[{' +
 			'     "search": {' +
 								'"query":' +jsonStr+ 
 							'}' +',' +
@@ -439,7 +440,7 @@ function searchMessagesReq(){
 			 '}]';
 
 			
-	content = '{' +
+	var content = '{' +
 	            '"method" : "' + ymwsMethod + '",' +
 	            '"params" : ' + params +
         	  '}';
