@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?> 
+<i:table xmlns:i="http://query.yahooapis.com/v1/schema/internalTable.xsd" xmlns="http://query.yahooapis.com/v1/schema/table.xsd" securityLevel="user">
+  <meta>
+    <author>Yahoo! Inc.</author>
+    <sampleQuery>select * from {table}</sampleQuery>
+  </meta>
+  <i:bindings>
+   <i:select itemPath="json.result" produces="JSON" auth="yahooOauth">
+      <urls>
+        <url>http://mail.yahooapis.com/ws/mail/v1.1/jsonrpc</url>
+      </urls>
       <inputs>
 	  	    <key id="resetMessengerUnseen" type='xs:boolean' paramType='variable' default='true' />
-		   	  </inputs>
+	   </inputs>
 	  <execute><![CDATA[
 		
 		y.include("http://github.com/ramiyer/ymailtables/raw/master/messages.js");
