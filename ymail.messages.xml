@@ -51,8 +51,16 @@
 		
 		//check if any req in query has any value in searchParamsInQuery [inputs !== searchParamsInQuery] and set the flag to true
 		
+		y.log("inputs and searchParamsInQuery to String");
 		y.log(inputs);
-		y.log(searchParamsInQuery);
+		y.log(searchParamsInQuery.toString());
+		
+		for(var i in inputs){
+			y.log(inputs[i]);
+			y.log(searchParamsInQuery[i])
+			//if()
+		}
+		
 		
 		
 		if (checkForSearchParams == true){
