@@ -48,33 +48,22 @@
 		//Initialize Array which holds all the search params
 		var searchParamsInQuery = ['query','from','to','subject','cc','bcc','flags','attachment','attachmentcount','attachmentname','attachmentlanguages','attachmenttype'];
 		var checkForSearchParams = false;
-		
-		//check if any req in query has any value in searchParamsInQuery [inputs !== searchParamsInQuery] and set the flag to true
-		
-		y.log("inputs and searchParamsInQuery to String");
-		y.log(inputs);
-		y.log(searchParamsInQuery.toString());
-		
-	   	for(var propertyName in inputs) {
-			y.log(propertyName);
-			/*
-	   		if(inputs[propertyName] == searchParamsInQuery[propertyName]) {
-		         checkForSearchParams = true;
-		         break;
-		    }*/
-	    }
 
 		y.log("value of ");
-		y.log(inputs.query)
+		y.log(inputs.query);
 		
+		if(inputs.query != null || inputs.from != null || inputs.to != null || inputs.subject != null || inputs.cc != null || inputs.bcc != null || inputs.flags != null || inputs.attachment != null || inputs.attachmentcount != null || inputs.attachmentname != null || inputs.attachmentlanguages != null || inputs.attachmenttype != null){
+				
+					checkForSearchParams = true;
+	
+		}
 		
 		if (checkForSearchParams == true){
 			content = searchMessagesReq();
 		}else {
 			content = listMessagesReq();
 		}
-       	
-		//content = JSON.stringify(content);
+    
 		y.log("content is ");
 		y.log(content);
 		
