@@ -417,7 +417,7 @@ function searchMessagesReq(){
 		searchParams += 'flags:"' +escape(inputs['flags']) +'"' + " ";
 	}
 	if (inputs["fid"] != null){
-		searchParams += 'fid:"' +inputs['fid'] +'"' + " ";	
+		searchParams += 'folder:"' +inputs['fid'] +'"' + " ";	
 	}
 	if (inputs['query'] != null){
 		searchParams += inputs['query'] ;
@@ -444,6 +444,7 @@ function searchMessagesReq(){
 	            '"method" : "' + ymwsMethod + '",' +
 	            '"params" : ' + params +
         	  '}';
+
 	y.log("search content is");
 	y.log(content);
 	return content;
