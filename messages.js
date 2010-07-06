@@ -33,7 +33,7 @@ function listMessagesReq(){
 	var method = 'ListMessages';
 	
 	var params = '[{' +
-             '    "fid"           : "' + fid + '",' +
+             '    "fid"           : "' + escape(inputs['fid']) + '",' +
              '    "startMid"      : ' + inputs['startMid'] + ',' +
              '    "numMid"        : ' + inputs['numMid'] + ',' +
              '    "startInfo"     : ' + inputs['startInfo'] + ',' +
