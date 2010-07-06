@@ -361,7 +361,7 @@ function buildMsgParams(){
 
 
 
-function buildSearchQuery(){
+function searchMessagesReq(){
 	
 //	y.log("searchReqs are ");
 //	y.log(searchReqs);
@@ -424,9 +424,27 @@ function buildSearchQuery(){
 	y.log("searchParamss built is");
 	y.log(searchParams);
 	
-	
-	
-	
+	var jsonStr = JSON.stringify(searchParams);
+	y.log(jsonStr);
 
-	return searchParams;
+	        // get parameters for the given cascade method
+	params = '[{' +
+			'     "search": {' +
+								'"query":' +jsonStr+ 
+							'}' +',' +
+				 '"numInfo": "2000"' + ',' + 
+				 '"numMid": "2000"' + ',' +
+				 '"sortKey": "date"' + ',' +
+				 '"sortOrder": "up"' +
+			 '}]';
+
+			
+	content = '{' +
+	            '"method" : "' + ymwsMethod + '",' +
+	            '"params" : ' + params +
+        	  '}';
+	y.log("search content is");
+	y.log(content);
+	return content;
+	
 }
