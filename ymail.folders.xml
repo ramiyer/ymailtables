@@ -19,7 +19,9 @@
 	
         //Intialization
         var content = '';
-        var params = '[{'+ '"resetMessengerUnseen:"' +  inputs['resetMessageUnseen'] + '}]'
+        var params = '[{'+ 
+						'"resetMessengerUnseen:"' +  inputs['resetMessengerUnseen'] + 
+					  '}]'
 	
 		
 		//content = listFoldersReq();
