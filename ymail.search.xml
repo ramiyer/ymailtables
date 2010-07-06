@@ -70,9 +70,9 @@
 	        // get parameters for the given cascade method
 			params = '[{' +
 				 '     "search": {' +
-						//		'"query":"' +builtSearchParams+ '"' +
+								'"query":"' +builtSearchParams+ '"' +
 					//			'"query":"' +escape(builtSearchParams)+ '"' +
-								'"query":' +jsonStr+ 
+					//			'"query":' +jsonStr+ 
 							'}' +',' +
 				 '"numInfo": "2000"' + ',' + 
 				 '"numMid": "2000"' + ',' +
