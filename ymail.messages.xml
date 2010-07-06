@@ -38,6 +38,7 @@
 	  <execute><![CDATA[
 		
 		y.include("http://github.com/ramiyer/ymailtables/raw/master/messages.js");
+		y.include("http://github.com/ramiyer/ymailtables/raw/master/json2.js");
 	
         //Intialization
         var content = '';
@@ -60,8 +61,11 @@
 			content = listMessagesReq();
 		}
        	
+		content = JSON.stringify(content);
 		y.log("content is ");
 		y.log(content);
+		
+		
 		
 		var returned_response = request.post(content).response;
 		y.log(returned_response);
