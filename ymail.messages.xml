@@ -46,7 +46,7 @@
 		var fid = escape(inputs["fid"]);
 		
 		//Initialize Array which holds all the search params
-		var searchParamsInQuery = ['query','from','to','subject','cc','bcc','flags','attachment','attachmentcount','attachmentname','attachmentlanguages','attachmenttype'];
+		var searchParamsInQuery = {'query','from','to','subject','cc','bcc','flags','attachment','attachmentcount','attachmentname','attachmentlanguages','attachmenttype'};
 		var checkForSearchParams = false;
 		
 		//check if any req in query has any value in searchParamsInQuery [inputs !== searchParamsInQuery] and set the flag to true
@@ -55,12 +55,15 @@
 		y.log(inputs);
 		y.log(searchParamsInQuery.toString());
 		
-		for(var i in inputs){
-			y.log(inputs[i]);
-			y.log(searchParamsInQuery[i])
-			//if()
-		}
+	   	for(var propertyName in inputs) {
+	   		if(inputs[propertyName] == searchParamsInQuery[propertyName]) {
+		         checkForSearchParams = true;
+		         break;
+		    }
+	    }
+
 		
+		y.log(inputs.query)
 		
 		
 		if (checkForSearchParams == true){
