@@ -170,10 +170,19 @@ function buildMsgParams(){
 	var initmids = String(inputs['mids']);
 	var flagArrayCheck = false;
 	var initmidsarray = [];
-
+	// There are two ways to get mids 
+	// 1. mids in ('mids val1','mids val2') / mids in ('midval1) or mids='midval' 
+	//Check for array or string here
+	flagArrayCheck = objarray(initmidsarray);
+	
+	var newmids = new Array(initmids);
+	y.log("newmids");
+	y.log(newmids);
+	
+	
+	/*
 	if (initmids.search(/,/) != -1) {
 	
-		
 		initmidsarray = initmids.split(',');
 
 		y.log("initmidsarray");
@@ -187,7 +196,7 @@ function buildMsgParams(){
 		y.log(flagArrayCheck);
 	}else {
 		flagArrayCheck = false;
-	}
+	}*/
 	
 	
 	/*
@@ -294,7 +303,6 @@ function buildMsgParams(){
 			y.log(methodReq);
 			*/
 			var midstring = inputs['mids'].toString();
-			
 			
 			params = '[{' +
 					 		'"fid": "' +escape(inputs["fid"])+ '",' + 
