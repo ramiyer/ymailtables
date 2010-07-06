@@ -28,39 +28,14 @@
 		y.include("http://yui.yahooapis.com/3.1.1/build/yui/yui-min.js");
 
 		var ymwsMethod = "GetMessage";
+
 	   //Intialization
 	    var content = '';
 	    var params = '[{}]';
 
-
 	    y.log("method = " + ymwsMethod);
 	    y.log("request = " +request);
-
-	      
-//		var builtSearchParams = buildSearchQuery(inputs);
-	
-	//	y.log("builtSearchParams values");
-		
-	//	y.log(builtSearchParams);
-	
-		
-		/*
-		if(inputs['mid'] != 0 ){
-			msgs =  '"message":[{' +
-					 		'"mid": "' +escape(inputs["mid"])+ '"' + 
-					 '}]';
-		}else if(inputs['mids'] != 0){
-			msgs = displayMessageParams();
-		}else {
-			y.log("input to this query should have atleast one mid");
-		}
-		*/
-		
-		/*
-		if(inputs['mids'].length > 0){
-			msgs = displayMessageParams();
-		}*/
-		
+	    
 		y.log("mid");
 		y.log(inputs['mids']);
 		y.log("input mids tostring");
@@ -73,10 +48,9 @@
 	
 	
 		var msgs = buildMsgParams();
+		
+		
 		y.log("returned val from displayMessageParams are ");
-		
-	//	var req = ' {"params":[{"fid":"Inbox","charsetHint":"","message":[{"mid":"1_59412_AGO3iGIAAJN5TC0W9Qkst262lOM"}]}],"method":"GetMessage"}';
-		
 		y.log(msgs);
 	
 		var req = JSON.stringify(msgs);
