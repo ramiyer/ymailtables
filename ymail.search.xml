@@ -56,7 +56,8 @@
 	//		var searchParams = new Array();
 		//	'"searchtype": ' +inputs['searchtype'] +  
 
-		var content = buildSearchQuery();
+		var content = searchMessagesReq();
+		
 		/*
 		y.log("builtSearchParams values");
 		
