@@ -28,12 +28,33 @@ function postResponseFilter(response,filter ) {
  * Function called for any ListMessage api call
  */
 
-function listMessages(requestParams){
+function listMessagesReq(){
 	
+	var method = 'ListMessages';
 	
-	var listMsgResponse = request.post(requestParams).response
+	var params = '[{' +
+             '    "fid"           : "' + fid + '",' +
+             '    "startMid"      : ' + inputs['startMid'] + ',' +
+             '    "numMid"        : ' + inputs['numMid'] + ',' +
+             '    "startInfo"     : ' + inputs['startInfo'] + ',' +
+             '    "numInfo"       : ' + inputs['numInfo'] + ',' +
+			 '    "sortKey"       : ' + inputs['sortKey'] + ',' +
+			 '    "sortOrder"     : ' + inputs['sortOrder'] + ',' +
+			 '    "groupBy"       : ' + inputs['groupBy'] +
+			 '}]';
+				
+	y.log("Param is ");
+	y.log(params);
 	
-	return listMsgResponse;
+	var listMsgReq = '{' +
+		            	'"method" : "' + ymwsMethod + '",' +
+		            	'"params" : ' + params +
+		            '}';
+				
+	y.log("listMsgReq is ");
+	y.log(listMsgReq);
+	
+	return listMsgReq;
 }
 
 /* 
