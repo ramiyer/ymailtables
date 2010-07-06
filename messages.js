@@ -197,6 +197,7 @@ function buildMsgParams(){
 	flagArrayCheck = objarray(initmids);
 	y.log(flagArrayCheck);
 	*/
+	y.log("flag array check");
 	y.log(flagArrayCheck);
 	
 	if (flagArrayCheck == true){
@@ -298,11 +299,7 @@ function buildMsgParams(){
 			params = '[{' +
 					 		'"fid": "' +escape(inputs["fid"])+ '",' + 
 					 		'"message": [{' +
-									 	'"mid": "' +midstring+ '",' + 
-								 		'"restrictCSS": "' +inputs['restrictCSS']+ '",' + 
-								 		'"enableWarnings": "' +inputs['enableWarnings']+ '",' + 
-								 		'"expandCIDReferences": "' +inputs['expandCIDReferences']+ '",' +
-										'"blockImages":"' +inputs['blockImages']+ '"' +
+									 	'"mid": "' +midstring+ '"' + 
 							'}]' +',' +
 					 		'"charsetHint": "' +inputs['charsetHint']+ '"' + ',' + 
 					 		'"truncateAt": "' +inputs['truncateAt']+ '"' + ',' +
@@ -314,6 +311,9 @@ function buildMsgParams(){
 			            '"method" : "' + ymwsMethod + '",' +
 			           	'"params" : ' + params +
 					'}';
+					
+			y.log("methodReq");		
+			y.log(methodReq);		
 		
 	}
 	//[{"mid":"1_4867_AKLPjkQAABFWTCVJ9AC4sj6tf3Y","expandCIDReferences":true,"enableWarnings":true,"blockImages":"userpreference"}]
