@@ -248,7 +248,8 @@ function buildMsgParams(){
 			var message = [];
 			
 			for(i=0; i<mids.length; i++) {
-				y.log("mids i val is " +mids[i].toString());
+				
+				y.log(mids[i]);
 				message.push({
 					"mid": mids[i].toString()
 			 	});
