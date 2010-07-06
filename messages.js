@@ -175,7 +175,7 @@ function buildMsgParams(){
 	//Check for array or string here
 	flagArrayCheck = objarray(initmidsarray);
 	y.log("mids val data is ");
-	y.log(mids);
+	y.log(mids.toString());
 	
 	var newmids = new Array(initmids);
 	y.log("newmids");
