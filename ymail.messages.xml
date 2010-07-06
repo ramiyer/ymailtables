@@ -22,12 +22,12 @@
 		    <key id="attachmenttype" type='xs:string' paramType='variable' />
 		    <key id="attachmentname" type='xs:string' paramType='variable' />
 		    <key id="attachmentlanguages" type='xs:string' paramType='variable' />
-		  <!--  <key id="searchtype" type='xs:string' paramType='variable' default='whole' /> -->
+		    <key id="searchtype" type='xs:string' paramType='variable' default='whole' /> 
 		    <key id="startMid" type='xs:string' paramType='variable' default='0' />
 		    <key id="numMid" type='xs:string' paramType='variable' default='50' />
 		    <key id="startInfo" type='xs:string' paramType='variable' default='0' />
 		    <key id="numInfo" type='xs:string' paramType='variable' default='50' />
-		    <key id="fid" type='xs:string' paramType='variable' default='Inbox'/>
+		    <key id="fid" type='xs:string' paramType='variable' />
 		    <key id="mid" type='xs:string' paramType='variable' />
 		    <key id="pid" type='xs:string' paramType='variable' />
 		    <key id="search" type='xs:string' paramType='variable' />
@@ -68,7 +68,7 @@
 		y.log(content);
 		
 		var returned_response = request.post(content).response;
-		y.log(returned_response);
+//		y.log(returned_response);
 		
 		response.object = returned_response;
 
