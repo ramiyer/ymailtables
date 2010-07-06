@@ -247,7 +247,7 @@ function buildMsgParams(){
 			for(i=0; i<newmids.length; i++) {
 
 				message.push({
-					"mid": newmids[i]
+					"mid": newmids[i].toString()
 			 	});
 			}
 			
