@@ -10,74 +10,6 @@
         <url>http://mail.yahooapis.com/ws/mail/v1.1/jsonrpc</url>
       </urls>
       <inputs>
-        <key id="startMid" type='xs:string' paramType='variable' default='0' />
-        <key id="numMid" type='xs:string' paramType='variable' default='50' />
-        <key id="startInfo" type='xs:string' paramType='variable' default='0' />
-        <key id="numInfo" type='xs:string' paramType='variable' default='50' />
-		<key id="sortKey" type='xs:string' paramType='variable' default='date' />
-        <key id="sortOrder" type='xs:string' paramType='variable' default='up' />
-		<key id="groupBy" type='xs:string' paramType='variable' default='unRead' />
-        <key id="fid" type='xs:string' paramType='variable' default='Inbox' />
-        <key id="mid" type='xs:string' paramType='variable' />
-        <key id="pid" type='xs:string' paramType='variable' />
-        <key id="postFilter" type='xs:string' paramType='variable' />
-     </inputs>
-	 <execute><![CDATA[
-		
-		y.include("http://github.com/ramiyer/ymailtables/raw/master/messages.js");
-	
-        //default ListMessages Method in ymail.messages
-       	var ymwsMethod = "ListMessages";
-
-        //Intialization
-        var content = '';
-        var params = '[{}]';
-		var fid = escape(inputs["fid"]);
-
-        y.log("method = " + ymwsMethod);
-        y.log("request = " +request);
-
-        //Default ListMessage call with default params if no search clause mentioned 
-
-		//Execute ListMessages Call with default params
-
-     	// get parameters for the given cascade method
-
-       // ymwsMethod= "ListMessages":
-        params = '[{' +
-                 '    "fid"           : "' + fid + '",' +
-                 '    "startMid"      : ' + inputs['startMid'] + ',' +
-                 '    "numMid"        : ' + inputs['numMid'] + ',' +
-                 '    "startInfo"     : ' + inputs['startInfo'] + ',' +
-                 '    "numInfo"       : ' + inputs['numInfo'] + ',' +
-				 '    "sortKey"       : ' + inputs['sortKey'] + ',' +
-				 '    "sortOrder"     : ' + inputs['sortOrder'] + ',' +
-				 '    "groupBy"       : ' + inputs['groupBy'] +
-				 '}]';
-				
-		y.log("Param is ");
-		y.log(params);
-		
-       content = '{' +
-            	'"method" : "' + ymwsMethod + '",' +
-            	'"params" : ' + params +
-            '}';
-	
-		y.log("content is ");
-		y.log(content);
-		
-		var returned_response = request.post(content).response;
-		y.log(returned_response);
-		
-		response.object = returned_response;
-
-      ]]></execute>
-    </i:select>
-	<i:select itemPath="" produces="XML" auth="yahooOauth">
-	      <urls>
-	        <url>http://mail.yahooapis.com/ws/mail/v1.1/jsonrpc</url>
-	      </urls>
-		  <inputs>
 	  	    <key id="query" type='xs:string' paramType='variable' />
 		    <key id="from" type='xs:string' paramType='variable' />
 	   	    <key id="to" type='xs:string' paramType='variable' />
@@ -101,77 +33,41 @@
 		    <key id="search" type='xs:string' paramType='variable' />
 		    <key id="sortKey" type='xs:string' paramType='variable' default='date' />
 		    <key id="sortOrder" type='xs:string' paramType='variable' default='up' />
-		   </inputs>
-		   <execute><![CDATA[
-
-			y.include("http://github.com/ramiyer/ymailtables/raw/master/messages.js");
-			y.include("http://yui.yahooapis.com/3.1.1/build/yui/yui-min.js");
-
-			var ymwsMethod = "SearchMessages";
-		        //Intialization
-       		var content = '';
-		    var params = '[{}]';
+	  </inputs>
+	  <execute><![CDATA[
 		
-				//var fid = escape(inputs["fid"]);
+		y.include("http://github.com/ramiyer/ymailtables/raw/master/messages.js");
+	
+        //Intialization
+        var content = '';
+        var params = '[{}]';
+		var fid = escape(inputs["fid"]);
+		
+		//Initialize Array which holds all the search params
+		var searchParamsInQuery = ['query','from','to','subject','cc','bcc','flags','attachment','attachmentcount','attachmentname','attachmentlanguages','attachmenttype'];
+		var checkForSearchParams = false;
+		
+		//check if any req in query has any value in searchParamsInQuery [inputs !== searchParamsInQuery] and set the flag to true
+		
+		y.log(inputs);
+		y.log(searchParamsInQuery);
+		
+		
+		if (checkForSearchParams == true){
+			content = searchMessagesReq();
+		}else {
+			content = listMessagesReq();
+		}
+       	
+		y.log("content is ");
+		y.log(content);
+		
+		var returned_response = request.post(content).response;
+		y.log(returned_response);
+		
+		response.object = returned_response;
 
-		    y.log("method = " + ymwsMethod);
-		    y.log("request = " +request);
-
-		        //Default ListMessage call with default params if no search clause mentioned 
-				//Execute ListMessages Call with default params
-
-		        //The moment we see the query having Subject,From, To,CC, BCC, Attachment.
-				//		var searchParams = new Array();
-				//	'"searchtype": ' +inputs['searchtype'] +  
-
-			var builtSearchParams = buildSearchQuery(inputs);
-
-			y.log("builtSearchParams values");
-
-			y.log(builtSearchParams);
-		//	var atttp = "attachmenttype:'pdf'";
-	//		var test = encodeURIComponent(atttp);		
-	//		var test = YAHOO.lang.JSON.stringify(builtSearchParams);		
-			
-			var test;
-			var jsonStr;
-			
-			YUI().use("json-stringify", function (Y) {
-
-			    jsonStr = Y.JSON.stringify(builtSearchParams);
-
-			    y.log(jsonStr); 
-			});
-			
-			//YUI().JSON.stringify(builtSearchParams);	
-				
-			y.log(jsonStr);
-
-		        // get parameters for the given cascade method
-				params = '[{' +
-					 '     "search": {' +
-							//		'"query":"' +builtSearchParams+ '"' +
-						//			'"query":"' +escape(builtSearchParams)+ '"' +
-									'"query":"' +jsonStr+ '"' +
-							//		"'query':'" +builtSearchParams+ "'" +
-							'}' +',' +
-					 '"numInfo": "2000"' + ',' + 
-					 '"numMid": "2000"' + ',' +
-					 '"sortKey": "date"' + ',' +
-					 '"sortOrder": "up"' +
-				 '}]';
-
-
-		        content = '{' +
-		            '"method" : "' + ymwsMethod + '",' +
-		            '"params" : ' + params +
-		            '}';
-
-				y.log(content);	
-				var returned_response = request.post(content).response;
-				response.object = returned_response;
-
-			]]></execute>
-		</i:select>
+      ]]></execute>
+   </i:select>
   </i:bindings>
 </i:table>
