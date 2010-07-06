@@ -407,7 +407,7 @@ function searchMessagesReq(){
 		searchParams += 'flags:"' +escape(inputs['flags']) +'"' + " ";
 	}
 	if (inputs["fid"] != null){
-		searchParams += 'folder:' +inputs['fid'] +' + " ";	
+		searchParams += 'folder:' +escape(inputs['fid'])+ ' ';	
 	}
 	if (inputs['query'] != null){
 		searchParams += inputs['query'] ;
