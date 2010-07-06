@@ -177,7 +177,7 @@ function buildMsgParams(){
 	
 	var newmids = new Array(initmids);
 	y.log("newmids");
-	y.log(newmids);
+	y.log(newmids.toString());
 	
 	
 	/*
