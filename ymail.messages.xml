@@ -31,7 +31,7 @@
 		    <key id="mid" type='xs:string' paramType='variable' />
 		    <key id="pid" type='xs:string' paramType='variable' />
 		    <key id="search" type='xs:string' paramType='variable' />
-			<key id="refineBy" type='xs:string' paramType='variable' default='all'>
+			<key id="refineBy" type='xs:string' paramType='variable' default='all' />
 			<key id="groupBy" type='xs:string' paramType='variable' default='unRead' />
 		    <key id="sortKey" type='xs:string' paramType='variable' default='date' />
 		    <key id="sortOrder" type='xs:string' paramType='variable' default='up' />
