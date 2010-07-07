@@ -293,7 +293,7 @@ function searchMessagesReq(){
 				 '"numInfo": "' +inputs['numInfo'] +'",' + 
 				 '"numMid": "' +inputs['numMid']+ '",' +
 				 '"sortKey": "'+inputs['sortKey']+ '",' +
-				 '"sortOrder": "' +inputs[sortOrder]+ '",' +
+				 '"sortOrder": "' +inputs['sortOrder']+ '",' +
 				 '"refineBy": "' +inputs['refineBy']+ '"' +
 			 '}]';
 
