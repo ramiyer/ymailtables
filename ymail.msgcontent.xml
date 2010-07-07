@@ -32,19 +32,10 @@
 	    var content = '';
 	    var params = '[{}]';
 
-	 //  	var tmpArray;
-	//	tmpArray = inputs['mids'].toString();
-	
 		var msgs = buildMsgParams();
 		
-		
-	//	y.log("returned val from displayMessageParams are ");
-	//	y.log(msgs);
 	
 		var req = JSON.stringify(msgs);
-		y.log("req");
-		y.log(req);
-	
 		var returned_response = request.post(req).response;
 		response.object = returned_response;
 		
