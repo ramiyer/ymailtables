@@ -44,10 +44,10 @@
         //Intialization
         var content = '';
         var params = '[{}]';
-		var fid = escape(inputs["fid"]);
+	//	var fid = escape(inputs["fid"]);
 		
 		//Initialize Array which holds all the search params
-		var searchParamsInQuery = ['query','from','to','subject','cc','bcc','flags','attachment','attachmentcount','attachmentname','attachmentlanguages','attachmenttype'];
+		//var searchParamsInQuery = ['query','from','to','subject','cc','bcc','flags','attachment','attachmentcount','attachmentname','attachmentlanguages','attachmenttype'];
 		var checkForSearchParams = false;
 
 		y.log("value of ");
