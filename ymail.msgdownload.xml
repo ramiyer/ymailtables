@@ -13,7 +13,7 @@
 	  	    <key id="fid" type='xs:string' paramType='variable' required='true' />
 			<key id="mid" type='xs:string' paramType='variable' required='true' />
 			<key id="pid" type='xs:string' paramType='variable' required='true' />
-			<key id="clean" type='xs:string' paramType='variable' default='' />
+			<key id="clean" type='xs:string' paramType='variable' default='0' />
 	  </inputs>
 	  <execute><![CDATA[
 		
