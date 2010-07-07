@@ -66,14 +66,8 @@ function listMessagesReq(){
 	return listMsgReq;
 }
 
-/* 
-	Function called for any search message api call
-*/
 
-function searchMessages(searchParamss){
-	
-}
-
+/*
 function displayMessageParams(mids){
 	
 	y.log("in displayMessageParams - ready to build the parameters: ");
@@ -125,26 +119,6 @@ function displayMessageParams(mids){
 	 		"blockImages": inputs['blockImages']  
 	    });
 	}
-
-	/*	
-		 myObject = {
-			"mid":"'+ mids[i]  +'",
-			"restrictCSS":"true",
-			"enableWarnings":"true",
-			"expandCIDReferences":"true",
-			"blockImages":"true"
-		};
-	}*/
-	
-	/*
-		"mid":'"'+midval+'"' +','
-        "restrictCSS": '"' +inputs['restrictCSS']+ '"' + ',' +
-        "enableWarnings":'"' +inputs['enableWarnings']+ '"' + ',' +
-        "expandCIDReferences":'"' +inputs['expandCIDReferences']+ '"' +',' +
- 		"blockImages":'"' +inputs['blockImages']+ '"' +
-	
-	
-	*/
 	
 	y.log(messages);
 	//y.log(messages.toString());
@@ -159,101 +133,32 @@ function displayMessageParams(mids){
 
 function objarray(obj) {
 
-//	y.log(obj.constructor == Array);
 	return obj.constructor == Array;
-	
-	/*
-  	if (obj.constructor == Array)
-      	return false;
-   	else
-      	return true;
-	*/
-		
-}
+
+}*/
 
 
 
 function buildMsgParams(){
 	
-	y.log("in displayMessageParams - ready to build the parameters: ");
+//	y.log("in displayMessageParams - ready to build the parameters: ");
 	var messageIds = [];
-	y.log('inputs');
-	y.log(inputs['mids']);
+//	y.log('inputs');
+//	y.log(inputs['mids']);
 
-	var initmids = String(inputs['mids']);
-	var flagArrayCheck = false;
-//	var initmidsarray = [];
-	// There are two ways to get mids 
-	// 1. mids in ('mids val1','mids val2') / mids in ('midval1) or mids='midval' 
-	//Check for array or string here
-	
-	flagArrayCheck = objarray(mids);
-	y.log("mids val data is ");
-	y.log(mids.toString());
-	
-	/*
-	var newmids = new Array(initmids);
-	y.log("newmids");
-	y.log(newmids.toString());
-	*/
-	
-	/*
-	if (initmids.search(/,/) != -1) {
-	
-		initmidsarray = initmids.split(',');
+//	var initmids = String(inputs['mids']);
+//	var flagArrayCheck = false;
 
-		y.log("initmidsarray");
-		y.log(initmidsarray);
-		y.log(initmidsarray.toString());
-		y.log(initmidsarray.length);
-		y.log("initmids");
-		y.log(initmids);
-
-		flagArrayCheck = objarray(initmidsarray);
-		y.log(flagArrayCheck);
-	}else {
-		flagArrayCheck = false;
-	}*/
 	
+//	flagArrayCheck = objarray(mids);
+//	y.log("mids val data is ");
+//	y.log(mids.toString());
 	
-	/*
-	var initmids = ['1_60714_AGi3iGIAAA39TDIgzAsox0W9CIE','1_59997_ACK3iGIAAF3CTDGHlAlnuiCEQ98'];
-	y.log(initmids);
-	var flagArrayCheck = false;
-	flagArrayCheck = objarray(initmids);
-	y.log(flagArrayCheck);
-	*/
+	//y.log("flag array check");
+	//y.log(flagArrayCheck);
 	
-	y.log("flag array check");
-	y.log(flagArrayCheck);
+	//if (flagArrayCheck == true){
 	
-	if (flagArrayCheck == true){
-		
-		//	y.log(inputs['mids']);
-		//	y.log("object length");
-			
-			/*
-			messageIds.push(inputs['mids']);
-
-			y.log(messageIds.length);
-			y.log(messageIds.toString());
-			
-			//Add logic to just have one mid in mids - problem with string.length and array.length
-			y.log("inputs mids length");
-			y.log(messageIds.length);         
-			
-			
-			var mids = [];
-			
-			mids.push = messageIds.split(',');
-			
-		//	y.log(inputs['mids'].length);
-		
-//			"restrictCSS": inputs['restrictCSS'],
-//	        "enableWarnings": inputs['enableWarnings'],
-//	        "expandCIDReferences": inputs['expandCIDReferences'],
-//	 		"blockImages": inputs['blockImages']
-			*/
 			//Check how many mids are there and generate that many message object that many 
 			var methodReq = {
 				method : "GetMessage",
@@ -280,48 +185,11 @@ function buildMsgParams(){
 			y.log("methodReq is ");
 			y.log(methodReq);
 		
-	}else {
+//	}
+	/*
+	else {
 		
 			y.log(inputs['mids']);
-		
-		//	y.log(inputs['mids'].length)
-
-
-		//	y.log(messageIds.mids);
-		//	y.log(messageIds);
-
-			//Add logic to just have one mid in mids - problem with string.length and array.length
-
-		//	y.log(inputs['mids'].length);
-
-			//Check how many mids are there and generate that many message object that many 
-			/*
-			y.log("mids crossed");
-
-			var methodReq = {
-				method : "GetMessage",
-				params : []
-			};
-			
-			var message = [];
-	
-			message.push({
-				"mid": inputs['mids']
-			});
-	
-			y.log("message");
-			y.log(message);
-
-			methodReq.params.push({
-				"fid": inputs['fid'],
-				"message" : message ,
-				"charsetHint" : inputs['charsetHint']
-			});
-
-
-			y.log("methodReq is ");
-			y.log(methodReq);
-			*/
 			var midstring = inputs['mids'].toString();
 			
 			params = '[{' +
@@ -343,8 +211,8 @@ function buildMsgParams(){
 			y.log("methodReq");		
 			y.log(methodReq);		
 		
-	}
-	//[{"mid":"1_4867_AKLPjkQAABFWTCVJ9AC4sj6tf3Y","expandCIDReferences":true,"enableWarnings":true,"blockImages":"userpreference"}]
+	}*/
+
 	return methodReq;
 
 }
@@ -353,8 +221,7 @@ function buildMsgParams(){
 
 function searchMessagesReq(){
 	
-//	y.log("searchReqs are ");
-//	y.log(searchReqs);
+	
 	/*
 		'"to": "' +inputs['to']+ '"' + ',' +
 		'"from": "' +inputs['from']+ '"' + ',' +
@@ -423,10 +290,10 @@ function searchMessagesReq(){
 			'     "search": {' +
 								'"query":' +jsonStr+ 
 							'}' +',' +
-				 '"numInfo": "200"' + ',' + 
-				 '"numMid": "200"' + ',' +
-				 '"sortKey": "date"' + ',' +
-				 '"sortOrder": "up"' + ',' +
+				 '"numInfo": "' +inputs['numInfo'] +'",' + 
+				 '"numMid": "' +inputs['numMid']+ '",' +
+				 '"sortKey": "'+inputs['sortKey']+ '",' +
+				 '"sortOrder": "' +inputs[sortOrder]+ '",' +
 				 '"refineBy": "' +inputs['refineBy']+ '"' +
 			 '}]';
 
