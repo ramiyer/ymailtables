@@ -279,8 +279,6 @@ function searchMessagesReq(){
 	if (inputs['query'] != null){
 		searchParams += inputs['query'] ;
 	}
-	y.log("searchParamss built is");
-	y.log(searchParams);
 	
 	var jsonStr = JSON.stringify(searchParams);
 	y.log(jsonStr);
@@ -303,8 +301,6 @@ function searchMessagesReq(){
 	            '"params" : ' + params +
         	  '}';
 
-	y.log("search content is");
-	y.log(content);
 	return content;
 	
 }
