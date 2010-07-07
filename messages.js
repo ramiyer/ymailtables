@@ -55,8 +55,6 @@ function buildMsgParams(){
 			
 	for(i=0; i<mids.length; i++) {
 		message.push({
-			"restrictCSS" : inputs['restrictCSS'] ,
-			"blockImages" : inputs['blockImages'] ,
 			"mid": mids[i].toString()
 	 	});
 	}
