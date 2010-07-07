@@ -7,7 +7,7 @@
   <i:bindings>
    <i:select itemPath="json.result" produces="JSON" auth="yahooOauth">
       <urls>
-        <url>http://web32309.mail.mud.yahoo.com/ya/download</url>
+        <url>http://mail.yahooapis.com/ya/download</url>
       </urls>
       <inputs>
 	  	    <key id="fid" type='xs:string' paramType='variable' required='true' />
