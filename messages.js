@@ -1,28 +1,3 @@
-/* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * Functions make use of this to make a request
- */
-
-function requestMethod(method,params){
-
-
-
-    var returnedResponse = request.post(content).response;
-
-	return returnedResponse;
-}
-
-/*
-	Used for post Processing of response based on the filter specified
-*/
-function postResponseFilter(response,filter ) {
-
-
-}
 
 /*
  * Function called for any ListMessage api call
@@ -52,171 +27,52 @@ function listMessagesReq(){
 	content = '{' +
 	           		'"method" : "' + method + '",' +
 		          	'"params" : ' + params +
-		          '}';
-	y.log(content);
+		      '}';
 
 	var listMsgReq = '{' +
 		            	'"method" : "' + method + '",' +
 		            	'"params" : ' + params +
 		            '}';
-				
-	y.log("listMsgReq is ");
-	y.log(listMsgReq);
-	
+
 	return listMsgReq;
 }
 
-
 /*
-function displayMessageParams(mids){
-	
-	y.log("in displayMessageParams - ready to build the parameters: ");
-	
-	y.log(mids);
-	
-	var mids = ["1_12425_2_5025_0_ADa3iGIAAG00TAoKFQDTd3X7j30","1_11819_1_10818_0_AFS3iGIAANEuTAoKFQs55VN6t2U"];
-	
-//	var mids = new Array();
-		
-//	var mids = encodeURIComponent(inputs['mids']);
-//	mids = inputs['mids'];
-//	y.log(mids);
-	
-	//Add logic to just have one mid in mids - problem with string.length and array.length
-//	y.log("inputs mids length");
-//	y.log(inputs['mids'].length);
-		
-	//Check how many mids are there and generate that many message object that many 
-	
-	y.log("mids crossed");
-	var messages = {
-	    message: []
-	};
-	
-//	if(inputs['mids'])
-	
-	y.log("getting ready for loops and mids length is : ");
-	y.log(mids.length);
-	var i =0;
-//	var message= new Array();
-	
-	for(i=0; i<mids.length; i++) {
-
-		//var midval = encodeURIComponent(mids[i]);
-		y.log("mids[i]");
-		y.log(mids[i]);
-		var midval = mids[i];
-		y.log("mids array i");
-		y.log(mids[i].toString());
-		y.log("midval");
-		y.log(midval.toString());
-		
-		messages.message.push({
-			"mid": '1_12425_2_5025_0_ADa3iGIAAG00TAoKFQDTd3X7j30',
-	        "restrictCSS": inputs['restrictCSS'],
-	        "enableWarnings": inputs['enableWarnings'],
-	        "expandCIDReferences": inputs['expandCIDReferences'],
-	 		"blockImages": inputs['blockImages']  
-	    });
-	}
-	
-	y.log(messages);
-	//y.log(messages.toString());
-	//y.log(message);
-//	y.log(messages.message.toString());
-//	y.log("messages.message is ");
-//	y.log(message.toString())	;
-	
-	return messages;
-	
-}
-
-function objarray(obj) {
-
-	return obj.constructor == Array;
-
-}*/
-
-
+ *  Function used for building GetMessage request
+ */
 
 function buildMsgParams(){
 	
-//	y.log("in displayMessageParams - ready to build the parameters: ");
+	
 	var messageIds = [];
-//	y.log('inputs');
-//	y.log(inputs['mids']);
 
-//	var initmids = String(inputs['mids']);
-//	var flagArrayCheck = false;
-
-	
-//	flagArrayCheck = objarray(mids);
-//	y.log("mids val data is ");
-//	y.log(mids.toString());
-	
-	//y.log("flag array check");
-	//y.log(flagArrayCheck);
-	
-	//if (flagArrayCheck == true){
-	
-			//Check how many mids are there and generate that many message object that many 
-			var methodReq = {
-				method : "GetMessage",
-				params : []
-			};
+	var methodReq = {
+		method : "GetMessage",
+		params : []
+	};
 			
-			var message = [];
+	var message = [];
 			
-			for(i=0; i<mids.length; i++) {
-				
-				y.log(mids[i]);
-				message.push({
-					"mid": mids[i].toString()
-			 	});
-			}
+	for(i=0; i<mids.length; i++) {
+		//y.log(mids[i]);
+		message.push({
+			"mid": mids[i].toString()
+	 	});
+	}
 			
-			methodReq.params.push({
-				"fid": inputs['fid'],
-				"message" : message ,
-				"charsetHint" : inputs['charsetHint']
-			});
-
-
-			y.log("methodReq is ");
-			y.log(methodReq);
-		
-//	}
-	/*
-	else {
-		
-			y.log(inputs['mids']);
-			var midstring = inputs['mids'].toString();
-			
-			params = '[{' +
-					 		'"fid": "' +escape(inputs["fid"])+ '",' + 
-					 		'"message": [{' +
-									 	'"mid": "' +midstring+ '"' + 
-							'}]' +',' +
-					 		'"charsetHint": "' +inputs['charsetHint']+ '"' + ',' + 
-					 		'"truncateAt": "' +inputs['truncateAt']+ '"' + ',' +
-							'"enableRetry":"' +inputs['enableRetry']+ '"' +
-					 '}]';
-					
-			var ymwsMethod = 'GetMessage';
-			methodReq = '{' +
-			            '"method" : "' + ymwsMethod + '",' +
-			           	'"params" : ' + params +
-					'}';
-					
-			y.log("methodReq");		
-			y.log(methodReq);		
-		
-	}*/
+	methodReq.params.push({
+		"fid": inputs['fid'],
+		"message" : message ,
+		"charsetHint" : inputs['charsetHint']
+	});
 
 	return methodReq;
 
 }
 
+/*
+ * Function to build Search Message request
+ */
 
 
 function searchMessagesReq(){
@@ -238,11 +94,11 @@ function searchMessagesReq(){
 	var ymwsMethod = "SearchMessages";
 	
 	var searchParams = new String();	
-//	searchParams = 'null';
-	
+
 	if (inputs['to'] != null){
 		searchParams += 'to:"' +inputs['to']+ '" '; 
 	}
+	//Using fr instead of from because YQL query gets confused.
 	if (inputs['fr'] != null){
 		searchParams += 'from:"' +inputs['fr']+ '" ';
 	}
@@ -277,13 +133,13 @@ function searchMessagesReq(){
 		searchParams += 'folder:' +escape(inputs['fid'])+ ' ';	
 	}
 	if (inputs['query'] != null){
-		searchParams += inputs['query'] ;
+		searchParams += inputs['query'];
 	}
 	
 	var jsonStr = JSON.stringify(searchParams);
-	y.log(jsonStr);
+	//y.log(jsonStr);
 
-	        // get parameters for the given cascade method
+	// get parameters for the given cascade method
 	var params = '[{' +
 			'     "search": {' +
 								'"query":' +jsonStr+ 
