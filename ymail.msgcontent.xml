@@ -15,11 +15,11 @@
 		<key id="mids" type='xs:string' paramType='variable' batchable='true' maxBatchItems='20' />
 	    <key id="truncateAt" type='xs:string' paramType='variable' default='1024000'/>
 	    <key id="charsetHint" type='xs:string' paramType='variable' default="" />
-	    <key id="blockImages" type='xs:string' paramType='variable' default="true" />
-	    <key id="restrictCSS" type='xs:string' paramType='variable' default="true" />
-	    <key id="expandCIDReferences" type='xs:string' paramType='variable' default="true" />
-	    <key id="enableWarnings" type='xs:string' paramType='variable' default="true" />
-		<key id="enableRetry" type='xs:string' paramType='variable' default="true" />
+	    <key id="blockImages" type='xs:boolean' paramType='variable' default="false" />
+	    <key id="restrictCSS" type='xs:boolean' paramType='variable' default="false" />
+	    <key id="expandCIDReferences" type='xs:boolean' paramType='variable' default="false" />
+	    <key id="enableWarnings" type='xs:boolean' paramType='variable' default="false" />
+		<key id="enableRetry" type='xs:boolean' paramType='variable' default="false" />
 	   </inputs>
 	   <execute><![CDATA[
 	
