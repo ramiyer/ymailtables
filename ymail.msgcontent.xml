@@ -2,7 +2,8 @@
 <i:table xmlns:i="http://query.yahooapis.com/v1/schema/internalTable.xsd" xmlns="http://query.yahooapis.com/v1/schema/table.xsd" securityLevel="user">
   <meta>
     <author>Yahoo! Inc.</author>
-    <sampleQuery>select * from {table} where (fid,mid) in (select folder.folderInfo.fid,mid from ymail.messages where query="Yahoo") limit 1</sampleQuery>
+    <sampleQuery>select * from {table} where (fid,mid) in (select folder.folderInfo.fid,mid from ymail.messages where query="Yahoo" limit 1)</sampleQuery>
+	<description> This is the table to get message content of a message or list of messages. You would ideally give input to this query from a SeachMessage or ListMessage call. For the sample to work you need to atleast have one email in your mailbox which is from Yahoo or change the query parameter as per your need. </description>
   </meta>
   <i:bindings>
    <i:select itemPath="json.result" produces="XML" auth="yahooOauth">
@@ -11,8 +12,7 @@
       </urls>
 	  <inputs>
   	    <key id="fid" type='xs:string' paramType='variable' default='Inbox'/>
-	    <key id="mid" type='xs:string' paramType='variable' />
-		<key id="mids" type='xs:string' paramType='variable' batchable='true' maxBatchItems='20' />
+	    <key id="mids" type='xs:string' paramType='variable' batchable='true' maxBatchItems='20' />
 	    <key id="truncateAt" type='xs:string' paramType='variable' default='1024000'/>
 	    <key id="charsetHint" type='xs:string' paramType='variable' default="" />
 	    <key id="blockImages" type='xs:boolean' paramType='variable' default="false" />
