@@ -44,14 +44,10 @@
         //Intialization
         var content = '';
         var params = '[{}]';
-	//	var fid = escape(inputs["fid"]);
+	
 		
-		//Initialize Array which holds all the search params
-		//var searchParamsInQuery = ['query','from','to','subject','cc','bcc','flags','attachment','attachmentcount','attachmentname','attachmentlanguages','attachmenttype'];
 		var checkForSearchParams = false;
 
-		y.log("value of ");
-		y.log(inputs.query);
 		
 		if(inputs.query != null || inputs.from != null || inputs.to != null || inputs.subject != null || inputs.cc != null || inputs.bcc != null || inputs.flags != null || inputs.attachment != null || inputs.attachmentcount != null || inputs.attachmentname != null || inputs.attachmentlanguages != null || inputs.attachmenttype != null){
 				
@@ -65,11 +61,7 @@
 			content = listMessagesReq();
 		}
     
-		y.log("content is ");
-		y.log(content);
-		
 		var returned_response = request.post(content).response;
-//		y.log(returned_response);
 		
 		response.object = returned_response;
 
