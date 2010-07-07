@@ -44,17 +44,16 @@
         //Intialization
         var content = '';
         var params = '[{}]';
-	
-		
 		var checkForSearchParams = false;
 
-		
+		//Check if there are any search parameters in the request query
 		if(inputs.query != null || inputs.from != null || inputs.to != null || inputs.subject != null || inputs.cc != null || inputs.bcc != null || inputs.flags != null || inputs.attachment != null || inputs.attachmentcount != null || inputs.attachmentname != null || inputs.attachmentlanguages != null || inputs.attachmenttype != null){
 				
 					checkForSearchParams = true;
 	
 		}
 		
+		//Call the appropriate method based on the flag value
 		if (checkForSearchParams == true){
 			content = searchMessagesReq();
 		}else {
