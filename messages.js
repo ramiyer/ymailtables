@@ -427,7 +427,7 @@ function searchMessagesReq(){
 				 '"numMid": "200"' + ',' +
 				 '"sortKey": "date"' + ',' +
 				 '"sortOrder": "up"' + ',' +
-				 '"refineBy": "' +inputs['refineBy']+ '" +
+				 '"refineBy": "' +inputs['refineBy']+ '"' +
 			 '}]';
 
 			
