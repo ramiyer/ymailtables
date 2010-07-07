@@ -2,7 +2,8 @@
 <i:table xmlns:i="http://query.yahooapis.com/v1/schema/internalTable.xsd" xmlns="http://query.yahooapis.com/v1/schema/table.xsd" securityLevel="user">
   <meta>
     <author>Yahoo! Inc.</author>
-    <sampleQuery>select * from {table}</sampleQuery>
+    <sampleQuery>select * from {table} </sampleQuery>
+	<sampleQuery>select * from {table} where query='Yahoo'</sampleQuery>
   </meta>
   <i:bindings>
    <i:select itemPath="json.result" produces="JSON" auth="yahooOauth">
