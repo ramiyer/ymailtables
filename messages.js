@@ -423,10 +423,11 @@ function searchMessagesReq(){
 			'     "search": {' +
 								'"query":' +jsonStr+ 
 							'}' +',' +
-				 '"numInfo": "2000"' + ',' + 
-				 '"numMid": "2000"' + ',' +
+				 '"numInfo": "200"' + ',' + 
+				 '"numMid": "200"' + ',' +
 				 '"sortKey": "date"' + ',' +
-				 '"sortOrder": "up"' +
+				 '"sortOrder": "up"' + ',' +
+				 '"refineBy": "' +inputs['refineBy']+ '" +
 			 '}]';
 
 			
