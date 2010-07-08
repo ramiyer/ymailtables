@@ -37,7 +37,7 @@
 				  '}';
                    
 		y.log(content);
-		y.log(request);
+		y.log(request.toString());
 		var returned_response = request.post(content).response;
 		y.log(returned_response);
 		
