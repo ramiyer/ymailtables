@@ -39,58 +39,17 @@
 		
 		y.include("http://github.com/ramiyer/ymailtables/raw/master/messages.js");
 		y.include("http://github.com/ramiyer/ymailtables/raw/master/json2.js");
-		y.include("http://yui.yahooapis.com/3.1.1/build/yui/yui-min.js");
-
+	
 		var ymwsMethod = "SearchMessages";
-	        //Intialization
-	        var content = '';
-	        var params = '[{}]';
-//		var fid = escape(inputs["fid"]);
-
-	        y.log("method = " + ymwsMethod);
-	        y.log("request = " +request);
-
-	        //Default ListMessage call with default params if no search clause mentioned 
-			//Execute ListMessages Call with default params
-
-	        //The moment we see the query having Subject,From, To,CC, BCC, Attachment.
-	//		var searchParams = new Array();
-		//	'"searchtype": ' +inputs['searchtype'] +  
+        //Intialization
+        var content = '';
+        var params = '[{}]';
 
 		var content = searchMessagesReq();
+		y.log(content);	
 		
-		/*
-		y.log("builtSearchParams values");
-		
-		y.log(builtSearchParams);
-		
-		var jsonStr = JSON.stringify(builtSearchParams);
-		
-		
-			
-		y.log(jsonStr);
-
-	        // get parameters for the given cascade method
-			params = '[{' +
-				 '     "search": {' +
-								'"query":' +jsonStr+ 
-							'}' +',' +
-				 '"numInfo": "2000"' + ',' + 
-				 '"numMid": "2000"' + ',' +
-				 '"sortKey": "date"' + ',' +
-				 '"sortOrder": "up"' +
-			 '}]';
-
-			
-	        content = '{' +
-	            '"method" : "' + ymwsMethod + '",' +
-	            '"params" : ' + params +
-	        '}';
-			*/
-			
-			y.log(content);	
-			var returned_response = request.post(content).response;
-			response.object = returned_response;
+		var returned_response = request.post(content).response;
+		response.object = returned_response;
 		
 	 ]]></execute>
     </i:select>
