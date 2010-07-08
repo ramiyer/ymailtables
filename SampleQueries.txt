@@ -14,6 +14,9 @@ For searching mailbox via
 use 'http://github.com/ramiyer/ymailtables/raw/master/ymail.messages.xml' as mm; select * from mm where query="Yahoo" 
 use 'http://github.com/ramiyer/ymailtables/raw/master/ymail.messages.xml' as mm; select mid from mm where query="Yahoo" and numMid='2' 
 
+Also note for searching with from="someid" you need to have the request as - This is to handle Yql dependency on 'from' which is also used for specifying table name
+use 'http://github.com/ramiyer/ymailtables/raw/master/ymail.messages.xml' as mm; select mid from mm where fr="someid@yahoo.com"; 
+
 
 For ListMessages call - Listing 5 messages in your mailbox
 use 'http://github.com/ramiyer/ymailtables/raw/master/ymail.messages.xml' as mm; select * from mm where numMid='5';
