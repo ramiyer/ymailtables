@@ -37,6 +37,7 @@
 				  '}';
                    
 		y.log(content);
+		y.log(request);
 		var returned_response = request.post(content).response;
 		y.log(returned_response);
 		
