@@ -13,7 +13,7 @@
       </urls>
       <inputs>
 	  	    <key id="query" type='xs:string' paramType='variable' />
-		    <key id="from" type='xs:string' paramType='variable' />
+		    <key id="fr" type='xs:string' paramType='variable' />
 	   	    <key id="to" type='xs:string' paramType='variable' />
 	 	    <key id="subject" type='xs:string' paramType='variable'/>
 		    <key id="cc" type='xs:string' paramType='variable' />
@@ -49,7 +49,7 @@
 		var checkForSearchParams = false;
 
 		//Check if there are any search parameters in the request query
-		if(inputs.query != null || inputs.from != null || inputs.to != null || inputs.subject != null || inputs.cc != null || inputs.bcc != null || inputs.flags != null || inputs.attachment != null || inputs.attachmentcount != null || inputs.attachmentname != null || inputs.attachmentlanguages != null || inputs.attachmenttype != null){
+		if(inputs.query != null || inputs.fr != null || inputs.to != null || inputs.subject != null || inputs.cc != null || inputs.bcc != null || inputs.flags != null || inputs.attachment != null || inputs.attachmentcount != null || inputs.attachmentname != null || inputs.attachmentlanguages != null || inputs.attachmenttype != null){
 				
 					checkForSearchParams = true;
 	
@@ -62,7 +62,6 @@
 			content = listMessagesReq();
 		}
     	
-		y.log(content);
 		var returned_response = request.post(content).response;
 		
 		response.object = returned_response;
