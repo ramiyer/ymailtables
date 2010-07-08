@@ -61,7 +61,8 @@
 		}else {
 			content = listMessagesReq();
 		}
-    
+    	
+		y.log(content);
 		var returned_response = request.post(content).response;
 		
 		response.object = returned_response;
