@@ -21,3 +21,6 @@ use 'http://github.com/ramiyer/ymailtables/raw/master/ymail.messages.xml' as mm;
 For ListMessages call - Listing 5 messages in your mailbox
 use 'http://github.com/ramiyer/ymailtables/raw/master/ymail.messages.xml' as mm; select * from mm where numMid='5';
 
+
+For folders 
+use 'http://github.com/ramiyer/ymailtables/raw/master/ymail.folders.xml' as ymail.folders; select * from ymail.folders;
