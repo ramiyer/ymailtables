@@ -544,8 +544,6 @@
 	   </inputs>
 	   <execute><![CDATA[
 	
-	//	y.include("http://github.com/ramiyer/ymailtables/raw/master/json2.js");
-		
 		var ymwsMethod = "GetMessage";
 
 	   	//Intialization
