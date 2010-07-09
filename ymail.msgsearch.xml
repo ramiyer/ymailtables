@@ -59,10 +59,10 @@
 			searchParams += 'attachmentlanguages:"' +escape(inputs['attachmentlanguages'])+ '"' + " " ;
 		}
 		if (inputs['attachmentcount'] != null){
-			searchParams += 'attachmentcount:"' +escape(inputs['attachmentcount']) + '"' +' ' ;
+			searchParams += 'attachmentcount:"' +escape(inputs['attachmentcount']) + '" ';
 		}
 		if (inputs['flags'] != null){
-			searchParams += 'flags:"' +escape(inputs['flags']) +'"' + " ";
+			searchParams += 'flags:"' +escape(inputs['flags']) +'" ';
 		}
 		if (inputs["fid"] != null){
 			searchParams += 'folder:' +escape(inputs['fid'])+ ' ';	
@@ -139,8 +139,11 @@
 		
 		var removeItemsFromSearchResponse = ["folderInfo","inboxservices"];
 		
+		
+		
 		//loop through the response and remove the items added in the array. 
 		for (var i=0 ; i < response.length ; i++){
+			y.log(response[i]);
 			y.log(response[i].toString());
 			var obj = response[i];
 			for(var key in obj){
@@ -153,7 +156,7 @@
 		
 		var filteredResponse = response;
 		
-		return response;
+		return filteredResponse;
 	
 	}
 
@@ -215,6 +218,7 @@
 		}
     	
 		var returned_response = request.post(content).response;
+		y.log(checkForSearchParams);
 		
 		if(checkForSearchParams == true){
 			returned_response = postSearchFilter(returned_response);
