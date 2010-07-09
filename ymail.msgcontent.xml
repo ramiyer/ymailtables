@@ -3,8 +3,46 @@
   <meta>
     <author>Yahoo! Inc.</author>
     <sampleQuery>select message from {table} where (fid,mids) in (select folder.folderInfo.fid,mid from ymail.messages where query="Yahoo" limit 1)</sampleQuery>
-	<description> This is the table to get message content of a message or list of messages. You would ideally give input to this query from a SeachMessage or ListMessage call. For the sample to work you need to atleast have one email in your mailbox which is from Yahoo or change the query parameter as per your need. </description>
+    <description> This is the table to get message content of a message or list of messages. You would ideally give input to this query from a SeachMessage or ListMessage call. For the sample to work you need to atleast have one email in your mailbox which is from Yahoo or change the query parameter as per your need. </description>
   </meta>
+  <execute><![CDATA[
+	
+	
+	
+	/*
+	 *  Function used for building GetMessage request
+	 */
+
+	function buildMsgParams(){
+
+
+		var messageIds = [];
+
+		var methodReq = {
+			method : "GetMessage",
+			params : []
+		};
+
+		var message = [];
+
+		for(i=0; i<mids.length; i++) {
+			message.push({
+				"mid": mids[i].toString()
+		 	});
+		}
+
+		methodReq.params.push({
+			"fid": inputs['fid'],
+			"message" : message ,
+			"charsetHint" : inputs['charsetHint']
+		});
+
+		return methodReq;
+
+	}
+
+
+]]></execute>
   <i:bindings>
    <i:select itemPath="json.result" produces="XML" auth="yahooOauth">
       <urls>
@@ -23,18 +61,16 @@
 	   </inputs>
 	   <execute><![CDATA[
 	
-		y.include("http://github.com/ramiyer/ymailtables/raw/master/messages.js");
-		y.include("http://github.com/ramiyer/ymailtables/raw/master/json2.js");								 
-	
+		y.include("http://github.com/ramiyer/ymailtables/raw/master/json2.js");
+		
 		var ymwsMethod = "GetMessage";
 
-	   //Intialization
-	    var content = '';
-	    var params = '[{}]';
+	   	//Intialization
+	   	 var content = '';
+	    	var params = '[{}]';
 
 		var msgs = buildMsgParams();
 		
-	
 		var req = JSON.stringify(msgs);
 		var returned_response = request.post(req).response;
 		response.object = returned_response;
