@@ -137,9 +137,8 @@
 	
 	function postSearchFilter(response){
 		
+		y.log("inside postSearchFilter");
 		var removeItemsFromSearchResponse = ["folderInfo","inboxservices"];
-		
-		
 		
 		//loop through the response and remove the items added in the array. 
 		for (var i=0 ; i < response.length ; i++){
