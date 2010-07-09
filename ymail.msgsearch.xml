@@ -219,6 +219,8 @@
 		}
     	
 		var returned_response = request.post(content).response;
+		y.log("response which is going to be sent to post processing is");
+		y.log(returned_response);
 		y.log(checkForSearchParams);
 		
 		if(checkForSearchParams == true){
