@@ -7,7 +7,7 @@
   <i:bindings>
    <i:select itemPath="json.result" produces="JSON" auth="yahooOauth">
       <urls>
-        <url>http://web31802.mail.mud.yahoo.com/ws/mail/v1.1/jsonrpc</url>
+        <url>http://web31808.mail.mud.yahoo.com/ws/mail/v1.1/jsonrpc</url>
       </urls>
       <inputs>
 	  	    <key id="resetMessengerUnseen" type='xs:boolean' paramType='variable' default='true' />
