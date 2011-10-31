@@ -600,7 +600,7 @@
 		      	   '}';
 
 		var subject = " this is from yql";
-		var message = '{'
+		var message = '{' +
 				'"text" : "awesome table"' +
 			      '}';
 
