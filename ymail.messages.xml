@@ -637,22 +637,23 @@
 		var simplebody = new Object(); 
 		simplebody.text = "awesome table";
 
-		var message = new Object();
-		message.from = from;
-		message.to = to;
-		message.subject = subject;
-		message.simplebody = simplebody;
+		var msg = new Object();
+		msg.from = from;
+		msg.to = to;
+		msg.subject = subject;
+		msg.simplebody = simplebody;
+		
+		var messages = new Object();
+		messages.message = msg;
 	
-		y.log(message);
+		y.log(messages);
 			
-		params.push(message);
+		params.push(messages);
 		
 		var sendMsgReq = new Object();
 		sendMsgReq.method = 'SendMessage';
 		sendMsgReq.params = params;
 		
-		y.log(sendMsgReq);
-	
 		return sendMsgReq;
 	}
 
@@ -713,7 +714,8 @@
         	var content = '';
 			//Call the appropriate method based on the flag value
 			content = sendMessagesReq();
-    		content = JSON.stringify(content);
+    		//content = JSON.stringify(content);
+    		
     		y.log("content");
     		y.log(content);
     		
