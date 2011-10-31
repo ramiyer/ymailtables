@@ -591,12 +591,12 @@
 
 		var to = '{' +
 		           		'"email" : "devramiyer1@yahoo.com",' +
-			          	'"name" : "ramn " '  +
+			          	'"name" : "ramn" '  +
 					'}';
 
 		var from = '{' +
 		           		'"email" : "devramiyer1@yahoo.com",' +
-			          	'"name" :  "devram" + 
+			          	'"name" :  "devram"' + 
 		      	   '}';
 
 		var subject = " this is from yql";
@@ -692,7 +692,7 @@
 
 
 	  ]]></execute>
- 	</i:insert>
+   </i:insert>
    <i:select itemPath="json.result" produces="JSON" auth="yahooOauth">
       <urls>
         <url>http://mail.yahooapis.com/ws/mail/v1.1/jsonrpc</url>
