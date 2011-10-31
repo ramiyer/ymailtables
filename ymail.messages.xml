@@ -579,11 +579,9 @@
 
 	}
 	
-	
 	/*
-	 * Function called for any ListMessage api call
+	 * Function called for any SendMessage api call
 	 */
-
 	function sendMessagesReq() {
 	
 		var method = 'SendMessage';
@@ -596,7 +594,7 @@
 		var from = new Object();
 		//from.email = "devramiyer1@yahoo.com";
 		from.email = inputs['from'];
-		from.name = "ramiyer"; 
+		from.name = "ram"; 
 		
 		var subject = inputs['subject'];
 		
