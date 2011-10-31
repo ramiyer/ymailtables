@@ -625,17 +625,18 @@
 		var params = [];
 
 		var to = new Object();
-		to.email = "devramiyer1@yahoo.com";
-		to.name  = "ram";
+		to.email = inputs['to'];
+		//to.name  = "ram";
 			          
 		var from = new Object();
-		from.email = "devramiyer1@yahoo.com";
-		from.name = "devram"; 
+		//from.email = "devramiyer1@yahoo.com";
+		from.email = inputs['from'];
+		from.name = "ramiyer"; 
 		
-		var subject = " this is from yql";
+		var subject = inputs['subject'];
 		
 		var simplebody = new Object(); 
-		simplebody.text = "awesome table";
+		simplebody.text = inputs['message'];
 
 		var msg = new Object();
 		msg.from = from;
@@ -645,6 +646,7 @@
 		
 		var messages = new Object();
 		messages.message = msg;
+		//messages.savecopy = true;
 	
 		y.log(messages);
 			
@@ -703,12 +705,12 @@
        		<url>http://mail.yahooapis.com/ws/mail/v1.1/jsonrpc</url>
    	    </urls>
 		<inputs>
-        	<key id="from" type="xs:string" paramType="variable" />
-			<key id="to" type="xs:string" paramType="variable" />
-		   <!--<key id="subject" type="xs:string" paramType="variable" required="true"/>
-		   <key id="message" type="xs:string" paramType="variable" required="true"/>-->
-	  </inputs>
-	  <execute><![CDATA[
+        	<key id="from" type="xs:string" paramType="variable" required="true"/>
+			<key id="to" type="xs:string" paramType="variable" required="true"/>
+		    <key id="subject" type="xs:string" paramType="variable" required="true"/>
+		    <key id="message" type="xs:string" paramType="variable" required="true"/>
+	  	</inputs>
+	  	<execute><![CDATA[
 
         	//Intialization
         	var content = '';
