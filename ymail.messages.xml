@@ -692,7 +692,7 @@
 
 
 	  ]]></execute>
- 	</insert>
+ 	</i:insert>
    <i:select itemPath="json.result" produces="JSON" auth="yahooOauth">
       <urls>
         <url>http://mail.yahooapis.com/ws/mail/v1.1/jsonrpc</url>
