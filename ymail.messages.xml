@@ -715,11 +715,12 @@
 			//Call the appropriate method based on the flag value
 			content = sendMessagesReq();
     		y.log("content");
-    		y.log(content);
-    		y.log(content.toJSON);
-    		y.log(JSON.stringify(content));
+    		//y.log(content);
+    		var req = JSON.stringify(content); 
+    		y.log(req);
     		
-			var returned_response = request.post(JSON.stringify(content)).response;
+			var returned_response = request.post(req).response;
+			y.log(returned_response);
 			response.object = returned_response;
 
 
