@@ -665,7 +665,7 @@
    <i:bindings>
 	<i:insert itemPath="json.result" produces="JSON" auth="yahooOauth">
             <urls>
-       		<url>http://mail.yahooapis.com/ws/mail/v1.1/jsonrpc</url>
+       		<url>http://web32309.mail.mud.yahoo.com/ws/mail/v1.1/jsonrpc</url>
    	    </urls>
             <inputs>
                    <key id="from" type="xs:string" paramType="variable" />
