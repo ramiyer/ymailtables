@@ -699,12 +699,12 @@
 ]]></execute>
    <i:bindings>
 	<i:insert itemPath="json.result" produces="JSON" auth="yahooOauth">
-            <urls>
-       		<url>http://web32309.mail.mud.yahoo.com/ws/mail/v1.1/jsonrpc</url>
+		<urls>
+       		<url>http://mail.yahooapis.com/ws/mail/v1.1/jsonrpc</url>
    	    </urls>
-            <inputs>
-                   <key id="from" type="xs:string" paramType="variable" />
-                   <key id="to" type="xs:string" paramType="variable" />
+		<inputs>
+        	<key id="from" type="xs:string" paramType="variable" />
+			<key id="to" type="xs:string" paramType="variable" />
 		   <!--<key id="subject" type="xs:string" paramType="variable" required="true"/>
 		   <key id="message" type="xs:string" paramType="variable" required="true"/>-->
 	  </inputs>
@@ -715,15 +715,12 @@
 			//Call the appropriate method based on the flag value
 			content = sendMessagesReq();
     		y.log("content");
-    		//y.log(content);
     		var req = JSON.stringify(content); 
     		y.log(req);
-    		
-			var returned_response = request.post(req).response;
+    		var returned_response = request.post(req).response;
 			y.log(returned_response);
 			response.object = returned_response;
-
-
+			
 	  ]]></execute>
    </i:insert>
    <i:select itemPath="json.result" produces="JSON" auth="yahooOauth">
