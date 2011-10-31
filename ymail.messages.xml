@@ -714,12 +714,12 @@
         	var content = '';
 			//Call the appropriate method based on the flag value
 			content = sendMessagesReq();
-    		//content = JSON.stringify(content);
-    		
     		y.log("content");
     		y.log(content);
+    		y.log(content.toJSON);
+    		y.log(JSON.stringify(content));
     		
-			var returned_response = request.post(content).response;
+			var returned_response = request.post(JSON.stringify(content)).response;
 			response.object = returned_response;
 
 
