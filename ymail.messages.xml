@@ -585,41 +585,6 @@
 	 */
 
 	function sendMessagesReq() {
-	/*
-		var method = 'SendMessage';
-		var params = '[{}]';
-
-		var to = '{' +
-		           		'"email" : "devramiyer1@yahoo.com",' +
-			          	'"name" : "ramn" '  +
-					'}';
-
-		var from = '{' +
-		           		'"email" : "devramiyer1@yahoo.com",' +
-			          	'"name" :  "devram"' + 
-		      	   '}';
-
-		var subject = " this is from yql";
-		var message = '{' +
-					'"text" : "awesome table"' +
-			      '}';
-		message = '{' + 
-	                 '    "to"           : ' + to + ',' +
-	                 '    "from"      : ' + from + ',' +
-	                 '    "subject"        : "' + subject + '",' +
-	                 '    "simplebody"     : '+ message + 
-			 '}';
-
-
-		params = '[{' +
-					'    "message"       : ' + message +
-	             '}]';
-
-		var sendMsgReq = '{' +
-			            	'"method" : "' + method + '",' +
-			            	'"params" : ' + params +
-			            '}';
-	*/
 	
 		var method = 'SendMessage';
 		var params = [];
