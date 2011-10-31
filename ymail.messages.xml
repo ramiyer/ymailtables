@@ -585,7 +585,7 @@
 	 */
 
 	function sendMessagesReq() {
-
+	/*
 		var method = 'SendMessage';
 		var params = '[{}]';
 
@@ -603,7 +603,6 @@
 		var message = '{' +
 					'"text" : "awesome table"' +
 			      '}';
-
 		message = '{' + 
 	                 '    "to"           : ' + to + ',' +
 	                 '    "from"      : ' + from + ',' +
@@ -613,15 +612,40 @@
 
 
 		params = '[{' +
-			'    "message"       : ' + message +
-	                 '}]';
-
+					'    "message"       : ' + message +
+	             '}]';
 
 		var sendMsgReq = '{' +
 			            	'"method" : "' + method + '",' +
 			            	'"params" : ' + params +
 			            '}';
+	*/
+		var method = 'SendMessage';
+		var params = [];
 
+		var to = new Object();
+		to.email = "devramiyer1@yahoo.com";
+		to.name  = "ram";
+			          
+		var from = new Object();
+		from.email = "devramiyer1@yahoo.com",' +
+		from.name = "devram"; 
+		var subject = " this is from yql";
+		var simplebody = new Object(); 
+		simplebody.text = "awesome table";
+
+		var message = new Object();
+		message.from = from;
+		message.to = to;
+		message.subject = subject;
+		message.simplebody = simplebody;
+	
+		params.push(message);
+		
+		var sendMsgReq = new Object();
+		sendMsgReq.method = 'SendMessage';
+		sendMsgReq.params = params;
+	
 		return sendMsgReq;
 	}
 
@@ -680,18 +704,14 @@
 
         	//Intialization
         	var content = '';
-        	var params = '[{}]';
-
-		//Check if there are any search parameters in the request query
-		if(inputs.query != null || inputs.fr != null || inputs.to != null || inputs.subject != null || inputs.cc != null || inputs.bcc != null || inputs.flags != null || inputs.attachment != null || inputs.attachmentcount != null || inputs.attachmentname != null || inputs.attachmentlanguages != null || inputs.attachmenttype != null){
-		}
-		
-		//Call the appropriate method based on the flag value
-		content = sendMessagesReq();
-    	
-		var returned_response = request.post(content).response;
-		
-		response.object = returned_response;
+			//Call the appropriate method based on the flag value
+			content = sendMessagesReq();
+    		content = JSON.stringify(content);
+    		y.log("content");
+    		y.log(content);
+    		
+			var returned_response = request.post(content).response;
+			response.object = returned_response;
 
 
 	  ]]></execute>
