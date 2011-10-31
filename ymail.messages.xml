@@ -601,15 +601,16 @@
 
 		var subject = " this is from yql";
 		var message = '{' +
-				'"text" : "awesome table"' +
+					'"text" : "awesome table"' +
 			      '}';
 
 		message = '{' + 
-	                 '    "to"           : "' + to + '",' +
+	                 '    "to"           : ' + to + ',' +
 	                 '    "from"      : ' + from + ',' +
 	                 '    "subject"        : "' + subject + '",' +
-	                 '    "simplebody"     : '+message + 
+	                 '    "simplebody"     : '+ message + 
 			 '}';
+
 
 		params = '[{' +
 			'    "message"       : ' + message +
