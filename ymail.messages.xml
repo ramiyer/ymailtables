@@ -600,13 +600,15 @@
 		      	   '}';
 
 		var subject = " this is from yql";
-		var message = " awesome table";		
+		var message = '{'
+				'"text" : "awesome table"' +
+			      '}';
 
 		message = '{' + 
 	                 '    "to"           : "' + to + '",' +
 	                 '    "from"      : ' + from + ',' +
-	                 '    "subject"        : ' + subject + ',' +
-	                 '    "simplebody"     : ' +message + 
+	                 '    "subject"        : "' + subject + '",' +
+	                 '    "simplebody"     : '+message + 
 			 '}';
 
 		params = '[{' +
