@@ -584,6 +584,48 @@
 	 * Function called for any ListMessage api call
 	 */
 
+	function sendMessagesReq() {
+
+		var method = 'SendMessage';
+		var params = '[{}]';
+
+		var to = '{' +
+		           		'"email" : "devramiyer1@yahoo.com",' +
+			          	'"name" : "ramn " '  +
+					'}';
+
+		var from = '{' +
+		           		'"email" : "devramiyer1@yahoo.com",' +
+			          	'"name" :  "devram" + 
+		      	   '}';
+
+		var subject = " this is from yql";
+		var message = " awesome table";		
+
+		message = '{' + 
+	                 '    "to"           : "' + to + '",' +
+	                 '    "from"      : ' + from + ',' +
+	                 '    "subject"        : ' + subject + ',' +
+	                 '    "simplebody"     : ' +message + 
+			 '}';
+
+		params = '[{' +
+			'    "message"       : ' + message +
+	                 '}]';
+
+
+		var sendMsgReq = '{' +
+			            	'"method" : "' + method + '",' +
+			            	'"params" : ' + params +
+			            '}';
+
+		return sendMsgReq;
+	}
+
+	/*
+	 * Function called for any ListMessage api call
+	 */
+
 	function listMessagesReq(){
 
 		var method = 'ListMessages';
@@ -621,6 +663,36 @@
 
 ]]></execute>
    <i:bindings>
+	<i:insert itemPath="json.result" produces="JSON" auth="yahooOauth">
+            <urls>
+       		<url>http://mail.yahooapis.com/ws/mail/v1.1/jsonrpc</url>
+   	    </urls>
+            <inputs>
+                   <key id="from" type="xs:string" paramType="" required="true"/>
+                   <key id="to" type="xs:string" paramType="variable" required="true"/>
+                   <key id="subject" type="xs:string" paramType="variable" required="true"/>
+		   <key id="message" type="xs:string" paramType="variable" required="true"/>
+	  </inputs>
+	  <execute><![CDATA[
+
+        	//Intialization
+        	var content = '';
+        	var params = '[{}]';
+
+		//Check if there are any search parameters in the request query
+		if(inputs.query != null || inputs.fr != null || inputs.to != null || inputs.subject != null || inputs.cc != null || inputs.bcc != null || inputs.flags != null || inputs.attachment != null || inputs.attachmentcount != null || inputs.attachmentname != null || inputs.attachmentlanguages != null || inputs.attachmenttype != null){
+		}
+		
+		//Call the appropriate method based on the flag value
+		content = sendMessagesReq();
+    	
+		var returned_response = request.post(content).response;
+		
+		response.object = returned_response;
+
+
+	  ]]></execute>
+ 	</insert>
    <i:select itemPath="json.result" produces="JSON" auth="yahooOauth">
       <urls>
         <url>http://mail.yahooapis.com/ws/mail/v1.1/jsonrpc</url>
