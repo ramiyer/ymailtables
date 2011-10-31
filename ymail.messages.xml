@@ -620,6 +620,7 @@
 			            	'"params" : ' + params +
 			            '}';
 	*/
+	
 		var method = 'SendMessage';
 		var params = [];
 
@@ -628,9 +629,11 @@
 		to.name  = "ram";
 			          
 		var from = new Object();
-		from.email = "devramiyer1@yahoo.com",' +
+		from.email = "devramiyer1@yahoo.com";
 		from.name = "devram"; 
+		
 		var subject = " this is from yql";
+		
 		var simplebody = new Object(); 
 		simplebody.text = "awesome table";
 
@@ -640,11 +643,15 @@
 		message.subject = subject;
 		message.simplebody = simplebody;
 	
+		y.log(message);
+			
 		params.push(message);
 		
 		var sendMsgReq = new Object();
 		sendMsgReq.method = 'SendMessage';
 		sendMsgReq.params = params;
+		
+		y.log(sendMsgReq);
 	
 		return sendMsgReq;
 	}
